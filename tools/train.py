@@ -123,7 +123,7 @@ def main():
             strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
                 it, np.mean(outs[-1]), logs, time_cost, eta)
             logger.info(strs)
-            scalar_loss.add_record(it/cfg.log_iter, stats['loss'])
+            scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
 
 
         # 保存与评价窗口
@@ -147,7 +147,7 @@ def main():
                     best_box_ap_list[0], best_box_ap_list[1]))
 
                 ## 可视化map
-                step = it/cfg.snapshot_iter if it % cfg.snapshot_iter == 0 else it//cfg.snapshot_iter+1 
+                step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 else it//cfg.snapshot_iter+1 
                 scalar_map.add_record(step, box_ap_stats[0])
 
     train_loader.reset()
