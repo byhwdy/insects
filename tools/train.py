@@ -99,7 +99,7 @@ def main():
     cfg_name = os.path.basename(FLAGS.config).split('.')[0]
     save_dir = os.path.join(cfg.save_dir, cfg_name)
     best_box_ap_list = [0.0, 0]
-    log_writter = LogWriter("~/log", sync_cycle=10)
+    log_writter = LogWriter("/home/aistudio/log", sync_cycle=5)
     with log_writter.mode("train") as vdl_logger:
         scalar_loss = vdl_logger.scalar(tag="loss")
     with log_writter.mode("val") as vdl_logger:
@@ -124,7 +124,6 @@ def main():
                 it, np.mean(outs[-1]), logs, time_cost, eta)
             logger.info(strs)
             scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
-
 
         # 保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
