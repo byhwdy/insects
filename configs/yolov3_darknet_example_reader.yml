@@ -1,0 +1,119 @@
+TrainReader: # Reader参数
+  #### fields字段用来前向计算和评价，和architecture与metric有关
+  #### 以下参数为yolov3.build_inputs的参数
+  inputs_def: # model.build_inputs的参数
+    # image_shape: [3, None, None]
+    fields: ['image', 'gt_bbox', 'gt_class', 'gt_score']
+    # num_max_boxes: 50
+    # use_dataloader: True
+    # iterable: False
+  #### 数据源配
+  dataset:  
+    !InsectsDataSet
+      anno_dir: train
+      dataset_dir: dataset/insects
+  #### transfrom ####
+  sample_transforms:
+    - !DecodeImage  # 读取图片， 给sample字典添加image(shape: w,h,3)，im_info字段
+      to_rgb: True
+      # with_mixup: False
+    # - !MixupImage
+    #   alpha: 1.5
+    #   beta: 1.5
+    - !ColorDistort {}  # 修改sample.image
+      # hue=[-18, 18, 0.5],
+      # saturation=[0.5, 1.5, 0.5],
+      # contrast=[0.5, 1.5, 0.5],
+      # brightness=[0.5, 1.5, 0.5],
+      # random_apply=True
+    # - !RandomExpand
+      # fill_value: [123.675, 116.28, 103.53]
+    # - !RandomCrop {}
+    # - !RandomFlipImage
+    #   is_normalized: false
+    - !NormalizeBox {} # 利用 sample.w, sample.h 修改gt_bbox
+    - !PadBox # 0 padding gt_bbox, gt_class, gt_score，difficult（需input_def.fields中有is_difficult）等
+      num_max_boxes: 50
+    - !BboxXYXY2XYWH {}
+  batch_transforms:
+    - !RandomShape # 用插值的方法随机reshape sample.image, 要求正常channel_first: Fasle
+      sizes: [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
+      random_inter: True
+    - !NormalizeImage # 归一化sample.image
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      # is_scale: True
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+      # channel_first: True
+    # Gt2YoloTarget is only used when use_fine_grained_loss set as true,
+    # this operator will be deleted automatically if use_fine_grained_loss
+    # is set as false
+    # - !Gt2YoloTarget
+    #   anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]]
+    #   anchors: [[10, 13], [16, 30], [33, 23],
+    #             [30, 61], [62, 45], [59, 119],
+    #             [116, 90], [156, 198], [373, 326]]
+    #   downsample_ratios: [32, 16, 8]
+  # use_fine_grained_loss: False #
+  # num_classes: 80 #
+  #### data ####
+  batch_size: 2
+  shuffle: true
+  # drop_last: false
+  # drop_empty: true
+  #### sampling
+  # mixup_epoch: -1
+  #### multi-process
+  # worker_num: -1
+  # use_process: False
+  # bufsize: 100
+  # memsize: 3G
+
+EvalReader:
+  inputs_def:
+    fields: ['image', 'im_size', 'gt_bbox', 'gt_class', 'is_difficult']
+  dataset:  
+    !InsectsDataSet
+      anno_dir: val
+      dataset_dir: dataset/insects
+  sample_transforms:
+    - !DecodeImage
+      to_rgb: True
+    - !ResizeImage
+      target_size: 608
+      interp: 2
+    - !PadBox
+      num_max_boxes: 50
+    - !NormalizeImage
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      is_scale: True
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+      channel_first: True
+  batch_size: 5
+
+TestReader:
+  inputs_def:
+    fields: ['image', 'im_size', 'im_id']
+  dataset:
+    !InsectsImages
+      sample_num: 10
+  sample_transforms:
+    - !DecodeImage
+      to_rgb: True
+    - !ResizeImage
+      target_size: 608
+      interp: 2
+    - !NormalizeImage
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      is_scale: True
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+      channel_first: True
+  batch_size: 2
