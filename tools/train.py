@@ -100,10 +100,10 @@ def main():
     save_dir = os.path.join(cfg.save_dir, cfg_name)
     best_box_ap_list = [0.0, 0]
     log_writter = LogWriter("./log", sync_cycle=10)
-    with log_writter.mode("train") as logger:
-        scalar_loss = logger.scalar(tag="loss")
-    with log_writter.mode("val") as logger:
-        scalar_map = logger.scalar(tag="map")
+    with log_writter.mode("train") as vdl_logger:
+        scalar_loss = vdl_logger.scalar(tag="loss")
+    with log_writter.mode("val") as vdl_logger:
+        scalar_map = vdl_logger.scalar(tag="map")
 
     for it in range(start_iter, cfg.max_iters):
         # 训练
