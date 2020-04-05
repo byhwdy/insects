@@ -99,7 +99,7 @@ def main():
     cfg_name = os.path.basename(FLAGS.config).split('.')[0]
     save_dir = os.path.join(cfg.save_dir, cfg_name)
     best_box_ap_list = [0.0, 0]
-    log_writter = LogWriter("./log", sync_cycle=10)
+    log_writter = LogWriter("~/log", sync_cycle=10)
     with log_writter.mode("train") as vdl_logger:
         scalar_loss = vdl_logger.scalar(tag="loss")
     with log_writter.mode("val") as vdl_logger:
