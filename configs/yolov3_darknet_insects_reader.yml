@@ -23,7 +23,7 @@ TrainReader:
       is_channel_first: false
     - !Permute
       to_bgr: false
-  batch_size: 20 # ztodo
+  batch_size: 10 # ztodo
   shuffle: true
 
 EvalReader:
