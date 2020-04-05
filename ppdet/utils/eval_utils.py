@@ -39,76 +39,52 @@ def parse_fetches(fetches, prog=None, extra_keys=None):
 
     return keys, values, cls
 
-def eval_run(exe,
-             compile_program,
-             loader,
-             keys,
-             values,
-             cls,
-             cfg=None,
-             sub_prog=None,
-             sub_keys=None,
-             sub_values=None):
+def eval_run(exe, compile_program, loader, keys, values):
     """
     Run evaluation program, return program outputs.
     """
     iter_id = 0
-    results = []
     images_num = 0
-    start_time = time.time()
-    has_bbox = 'bbox' in keys
+    results = []
 
     try:
         loader.start()
         while True:
-            outs = exe.run(compile_program,
-                           fetch_list=values,
-                           return_numpy=False)
+            outs = exe.run(compile_program, fetch_list=values, return_numpy=False) 
             res = {
                 k: (np.array(v), v.recursive_sequence_lengths())
-                for k, v in zip(keys, outs)
-            }
+                for k, v in zip(keys, outs)}
             results.append(res)
 
-            # if iter_id % 100 == 0:
+            # if iter_id % 100 == 0:   # ztodo
             if iter_id % 1 == 0:
-                logger.info('Test iter {}'.format(iter_id))
+                logger.info('Infer iter {}'.format(iter_id))
             iter_id += 1
-            images_num += len(res['bbox'][1][0]) if has_bbox else 1
+            images_num += len(res['bbox'][1][0])
 
-            if iter_id == 1:
+            if iter_id == 2:  # ztodo
                 raise StopIteration
     except (StopIteration, fluid.core.EOFException):
         loader.reset()
-    logger.info('Test finish iter {}'.format(iter_id))
 
-    end_time = time.time()
-    fps = images_num / (end_time - start_time)
-    if has_bbox:
-        logger.info('Total number of images: {}, inference time: {} fps.'.
-                    format(images_num, fps))
-    else:
-        logger.info('Total iteration: {}, inference time: {} batch/s.'.format(
-            images_num, fps))
+    # 日志
+    logger.info('Infer finish iter {}'.format(iter_id))
+    logger.info('Infer total number of images: {}'.format(images_num))
 
     return results
-
 
 def eval_results(results,
                  num_classes,
                  is_bbox_normalized=False,
                  map_type='11point'):
     """Evaluation for evaluation program results"""
-    box_ap_stats = []
-    if 'bbox' in results[0]:
-        box_ap = voc_bbox_eval(
-            results,
-            num_classes,
-            is_bbox_normalized=is_bbox_normalized,
-            map_type=map_type)
-        box_ap_stats.append(box_ap)
+    box_ap = voc_bbox_eval(
+        results,
+        num_classes,
+        is_bbox_normalized=is_bbox_normalized,
+        map_type=map_type)
 
-    return box_ap_stats
+    return [box_ap]
 
 
 def json_eval_results(metric, json_directory=None, dataset=None):

@@ -1,5 +1,6 @@
 import os
 import glob
+import random
 
 import numpy as np
 from PIL import Image
@@ -47,7 +48,7 @@ def get_save_image_name(output_dir, image_path):
     return os.path.join(output_dir, "{}".format(name)) + ext
 
 
-def get_test_images(infer_dir, infer_img):
+def get_test_images(infer_dir, infer_img, random_seed=None):
     """
     Get image path list in TEST mode
     """
@@ -70,6 +71,9 @@ def get_test_images(infer_dir, infer_img):
     exts += [ext.upper() for ext in exts]
     for ext in exts:
         images.extend(glob.glob('{}/*.{}'.format(infer_dir, ext)))
+    if random_seed:
+        random.seed(random_seed)
+        random.shuffle(images)    
     assert len(images) > 0, "no image found in {}".format(infer_dir)
 
     logger.info("Found {} inference images in total.".format(len(images)))
@@ -78,6 +82,7 @@ def get_test_images(infer_dir, infer_img):
 
 
 def main():
+    ## 配置与检查
     cfg = load_config(FLAGS.config)
     if 'architecture' in cfg:
         main_arch = cfg.architecture
@@ -89,14 +94,11 @@ def main():
 
     # 数据源
     dataset = cfg.TestReader['dataset']
-    test_images = get_test_images(FLAGS.infer_dir, FLAGS.infer_img)
+    test_images = get_test_images(FLAGS.infer_dir, FLAGS.infer_img, FLAGS.random_seed)
     dataset.set_images(test_images)
     imid2path = dataset.get_imid2path()
     catid2name = dataset.get_cid2cname()
 
-    # 执行器
-    place = fluid.CUDAPlace(0) if cfg.use_gpu else fluid.CPUPlace()
-    exe = fluid.Executor(place)
 
     # 模型
     model = create(main_arch)
@@ -112,18 +114,22 @@ def main():
     extra_keys = ['im_id']
     keys, values, _ = parse_fetches(test_fetches, infer_prog, extra_keys)
 
+    # 执行器
+    place = fluid.CUDAPlace(0) if cfg.use_gpu else fluid.CPUPlace()
+    exe = fluid.Executor(place)
+
     # 数据
     reader = create_reader(cfg.TestReader)
     loader.set_sample_list_generator(reader, place)
 
-    # 运行
+    #### 运行 ####
     exe.run(startup_prog)
-
     # 加载权重
-    if cfg.weights:
-        checkpoint.load_params(exe, infer_prog, cfg.weights)
+    assert 'weights' in cfg, \
+           'model can not load weights'        
+    checkpoint.load_params(exe, infer_prog, cfg.weights)
 
-    # use tb-paddle to log image
+    # tb
     if FLAGS.use_tb:
         from tb_paddle import SummaryWriter
         tb_writer = SummaryWriter(FLAGS.tb_log_dir)
@@ -139,14 +145,10 @@ def main():
             k: (np.array(v), v.recursive_sequence_lengths())
             for k, v in zip(keys, outs)
         }
-        
         logger.info('Infer iter {}'.format(iter_id))
 
-        bbox_results = None
-        if 'bbox' in res:
-            bbox_results = bbox2out([res])
-
-        # visualize result
+        # 画图
+        bbox_results = bbox2out([res])
         im_ids = res['im_id'][0]
         for im_id in im_ids:
             image_path = imid2path[int(im_id)]
@@ -195,6 +197,11 @@ if __name__ == '__main__':
         type=str,
         default=None,
         help="Image path, has higher priority over --infer_dir")
+    parser.add_argument(
+        "--random_seed",
+        type=int,
+        default=1024,
+        help="Image path, has higher priority over --rondom_seed")
     parser.add_argument(
         "--output_dir",
         type=str,

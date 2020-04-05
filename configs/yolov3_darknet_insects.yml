@@ -1,63 +1,37 @@
 architecture: YOLOv3
-# use_gpu: True
-use_gpu: false
-max_iters: 20000
+use_gpu: True  # ztodo
+# use_gpu: false
+max_iters: 20000 # ztodo
 log_iter: 20
 log_smooth_window: 20
 snapshot_iter: 2000
 save_dir: output
-# metric: VOC
 map_type: 11point
-#### 迁移学习 ####
-# pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/DarkNet53_pretrained.tar
 pretrain_weights: 
-# finetune_exclude_pretrained_params: 
-#### 评价预测用权重
 weights: output/yolov3_darknet_insects/model_final
-#### 全局类实例化参数
 num_classes: 7
 use_fine_grained_loss: false
-# weight_prefix_name: 
-# norm_type: bn
 
 YOLOv3:
   backbone: DarkNet
-  # yolo_head: YOLOv3Head
-  # use_fine_grained_loss: False #
 
 DarkNet:
   depth: 53
-  # norm_type: bn #
-  # norm_decay: 0.
-  # weight_prefix_name: '' #
 
 YOLOv3Head:
-  # norm_decay: 0.
-  # num_classes: 80 #
   anchors: [[19, 29], [28, 20], [25, 40], 
             [31, 47], [36, 37], [41, 26], 
             [47, 66], [48, 33], [67, 53]]
   anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]]
-  # drop_block: False
-  # block_size: 3
-  # keep_prob: 0.9
-  # yolo_loss: YOLOv3Loss
   nms:
     score_threshold: 0.01
     nms_top_k: 1000
-    # keep_top_k: 100
     nms_threshold: 0.45
-    # normalized: false
-    # nms_eta: 1.0
     background_label: -1
-  # weight_prefix_name: ''  #
 
 YOLOv3Loss:
   batch_size: 8
-  # ignore_thresh: 0.7
   label_smooth: false
-  # use_fine_grained_loss: False #
-  # iou_loss: 
 
 LearningRate:
   base_lr: 0.001
@@ -65,9 +39,8 @@ LearningRate:
   - !PiecewiseDecay
     gamma: 0.1
     milestones:
-    - 400000
-    - 450000
-    # values:
+    - 5000
+    - 10000
   - !LinearWarmup
     steps: 4000
     start_factor: 0.

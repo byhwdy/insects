@@ -10,13 +10,10 @@ def visualize_results(image,
                       im_id,
                       catid2name,
                       threshold=0.5,
-                      bbox_results=None,
-                      mask_results=None):
+                      bbox_results=None):
     """
     Visualize bbox and mask results
     """
-    if mask_results:
-        image = draw_mask(image, im_id, mask_results, threshold)
     if bbox_results:
         image = draw_bbox(image, im_id, catid2name, bbox_results, threshold)
     return image

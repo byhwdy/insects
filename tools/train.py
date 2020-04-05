@@ -5,6 +5,7 @@ import datetime
 from collections import deque
 
 from paddle import fluid
+from visualdl import LogWriter
 
 import sys
 sys.path.append('/paddle/insects')
@@ -38,26 +39,14 @@ def main():
     place = fluid.CUDAPlace(0) if cfg.use_gpu else fluid.CPUPlace()
     exe = fluid.Executor(place)
 
-    # build program
+    # 模型
     lr_builder = create('LearningRate')
     optim_builder = create('OptimizerBuilder')
-    # print(vars(lr_builder))
-    # print(vars(lr_builder.schedulers[0]))
-    # print(vars(lr_builder.schedulers[1]))
-    # print(optim_builder.regularizer)
-    # print(optim_builder.optimizer)
-    # exit(0)
     startup_prog = fluid.Program()
     train_prog = fluid.Program()
     with fluid.program_guard(train_prog, startup_prog):
         with fluid.unique_name.guard():
             model = create(main_arch)
-            # print(vars(model))
-            # print(vars(model.backbone))
-            # print(vars(model.yolo_head))
-            # print(vars(model.yolo_head.yolo_loss))
-            # print(vars(model.yolo_head.nms))
-            # exit(0)
             inputs_def = cfg['TrainReader']['inputs_def']
             feed_vars, train_loader = model.build_inputs(**inputs_def)
             train_fetches = model.train(feed_vars)
@@ -65,10 +54,8 @@ def main():
             lr = lr_builder()
             optimizer = optim_builder(lr)
             optimizer.minimize(loss)
-    # parse train fetches
     train_keys, train_values, _ = parse_fetches(train_fetches)
     train_values.append(lr)
-
     if FLAGS.eval:
         eval_prog = fluid.Program()
         with fluid.program_guard(eval_prog, startup_prog):
@@ -80,15 +67,13 @@ def main():
         eval_prog = eval_prog.clone(True)
         eval_reader = create_reader(cfg.EvalReader)
         eval_loader.set_sample_list_generator(eval_reader, place)
-        # parse eval fetches
         extra_keys = ['gt_bbox', 'gt_class', 'is_difficult']
-        eval_keys, eval_values, eval_cls = parse_fetches(fetches, eval_prog,
+        eval_keys, eval_values, _ = parse_fetches(fetches, eval_prog,
                                                          extra_keys)
 
-
+    ##### 运行 ####
     exe.run(startup_prog)
-
-    # 恢复训练与迁移学习
+    ## 恢复与迁移
     ignore_params = cfg.finetune_exclude_pretrained_params \
                  if 'finetune_exclude_pretrained_params' in cfg else []
     start_iter = 0
@@ -99,86 +84,71 @@ def main():
         checkpoint.load_params(
             exe, train_prog, cfg.pretrain_weights, ignore_params=ignore_params)
 
-    # 数据
+    # 数据迭代器
     train_reader = create_reader(cfg.TrainReader, cfg.max_iters - start_iter, cfg)
     train_loader.set_sample_list_generator(train_reader, place)
 
-    # whether output bbox is normalized in model output layer
-    is_bbox_normalized = False
-    # if map_type not set, use default 11point, only use in VOC eval
-    map_type = cfg.map_type if 'map_type' in cfg else '11point'
-    # 状态
+    # 训练循环
     train_loader.start()
+
+    # 过程跟踪
     train_stats = TrainingStats(cfg.log_smooth_window, train_keys)
     start_time = time.time()
     end_time = time.time()
     time_stat = deque(maxlen=cfg.log_smooth_window)
     cfg_name = os.path.basename(FLAGS.config).split('.')[0]
     save_dir = os.path.join(cfg.save_dir, cfg_name)
-    best_box_ap_list = [0.0, 0]  #[map, iter]
+    best_box_ap_list = [0.0, 0]
+    log_writter = LogWriter("./log", sync_cycle=10)
+    with log_writter.mode("train") as logger:
+        scalar_loss = logger.scalar(tag="loss")
+    with log_writter.mode("val") as logger:
+        scalar_map = logger.scalar(tag="map")
 
-    # tensorboard
-    if FLAGS.use_tb:
-        from tb_paddle import SummaryWriter
-        tb_writer = SummaryWriter(FLAGS.tb_log_dir)
-        tb_loss_step = 0
-        tb_mAP_step = 0
-
-    ### 训练循环 ###
     for it in range(start_iter, cfg.max_iters):
+        # 训练
+        outs = exe.run(train_prog, fetch_list=train_values)
+        stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
+        
+        # 日志与可视化
         start_time = end_time
         end_time = time.time()
         time_stat.append(end_time - start_time)
         time_cost = np.mean(time_stat)
         eta_sec = (cfg.max_iters - it) * time_cost
         eta = str(datetime.timedelta(seconds=int(eta_sec)))
+        train_stats.update(stats)
+        logs = train_stats.log()
+        if it % cfg.log_iter == 0:
+            strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
+                it, np.mean(outs[-1]), logs, time_cost, eta)
+            logger.info(strs)
+            scalar_loss.add_record(it/cfg.log_iter, stats['loss'])
 
-        # 执行
-        # outs = exe.run(train_prog, fetch_list=train_values)
-        # stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
 
-        # # tb
-        # if FLAGS.use_tb and it % cfg.log_iter == 0:
-        #     for loss_name, loss_value in stats.items():
-        #         tb_writer.add_scalar(loss_name, loss_value, tb_loss_step)
-        #     tb_loss_step += 1
-
-        # # log
-        # train_stats.update(stats)
-        # logs = train_stats.log()
-        # if it % cfg.log_iter == 0:
-        #     strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
-        #         it, np.mean(outs[-1]), logs, time_cost, eta)
-        #     logger.info(strs)
-
-        ## 验证
+        # 保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
-            ## 保存模型
-            # save_name = str(it) if it != cfg.max_iters - 1 else "model_final"
-            # checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
+            # 保存
+            save_name = str(it) if it != cfg.max_iters - 1 else "model_final"
+            checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
 
-            ## 验证
+            # 评价
             if FLAGS.eval:
-                # evaluation
                 results = eval_run(exe, eval_prog, eval_loader,
-                                   eval_keys, eval_values, eval_cls)
-                box_ap_stats = eval_results(results, cfg.num_classes,
-                                            is_bbox_normalized, map_type)
-                print(box_ap_stats)
-                exit()
-                # use tb_paddle to log mAP
-                if FLAGS.use_tb:
-                    tb_writer.add_scalar("mAP", box_ap_stats[0], tb_mAP_step)
-                    tb_mAP_step += 1
+                                   eval_keys, eval_values)
+                box_ap_stats = eval_results(results, cfg.num_classes)
 
                 ## 保存最佳模型
                 if box_ap_stats[0] > best_box_ap_list[0]:
                     best_box_ap_list[0] = box_ap_stats[0]
                     best_box_ap_list[1] = it
-                    checkpoint.save(exe, train_prog,
-                                    os.path.join(save_dir, "best_model"))
+                    checkpoint.save(exe, train_prog, os.path.join(save_dir, "best_model"))
                 logger.info("Best test box ap: {}, in iter: {}".format(
                     best_box_ap_list[0], best_box_ap_list[1]))
+
+                ## 可视化map
+                step = it/cfg.snapshot_iter if it % cfg.snapshot_iter == 0 else it//cfg.snapshot_iter+1 
+                scalar_map.add_record(step, box_ap_stats[0])
 
     train_loader.reset()
 
@@ -196,11 +166,6 @@ if __name__ == '__main__':
         action='store_true',
         default=False,
         help="Whether to perform evaluation in train")
-    parser.add_argument(
-        "--output_eval",
-        default=None,
-        type=str,
-        help="Evaluation directory, default is current directory.")
     parser.add_argument(
         "--use_tb",
         type=bool,

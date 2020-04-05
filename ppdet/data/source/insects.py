@@ -31,6 +31,39 @@ def get_cid2cname():
 
     return insect_id2category
 
+def get_bbox_out(test_images):
+    annos_files = [os.path.split(image_name)[0].replace('images', 'annotations/xmls/')
+             + os.path.split(image_name)[1].replace('jpeg', 'xml')  
+             for image_name in test_images]
+
+    records = []
+    for im_id, annos_file in enumerate(annos_files):
+        tree = ET.parse(annos_file)
+        objs = tree.findall('object')
+        for i, obj in enumerate(objs):
+            cname = obj.find('name').text
+            clsid = get_cname2cid()[cname]
+            xmin = float(obj.find('bndbox').find('xmin').text)
+            ymin = float(obj.find('bndbox').find('ymin').text)
+            xmax = float(obj.find('bndbox').find('xmax').text)
+            ymax = float(obj.find('bndbox').find('ymax').text)
+            w = xmax - xmin + 1
+            h = ymax - ymin + 1
+            bbox = [xmin, ymin, w, h]
+        
+            voc_rec = {
+                'image_id': im_id,
+                'category_id': clsid,
+                'bbox': bbox,
+                'score': 1
+            }
+            records.append(voc_rec)
+
+    logger.info('{} samples in file {}'.format(im_id+1, 
+        os.path.split(annos_files[0])[0]))
+
+    return records
+
 @register
 @serializable
 class InsectsDataSet(DataSet):
@@ -135,7 +168,7 @@ class InsectsImages(object):
 
     def _load_images(self):
         images = self.images
-        
+
         ct = 0
         records = []
         for image in images:
