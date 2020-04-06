@@ -56,14 +56,10 @@ def eval_run(exe, compile_program, loader, keys, values):
                 for k, v in zip(keys, outs)}
             results.append(res)
 
-            # if iter_id % 100 == 0:   # ztodo
-            if iter_id % 1 == 0:
+            if iter_id % 100 == 0:   # ztodo
                 logger.info('Infer iter {}'.format(iter_id))
             iter_id += 1
             images_num += len(res['bbox'][1][0])
-
-            if iter_id == 2:  # ztodo
-                raise StopIteration
     except (StopIteration, fluid.core.EOFException):
         loader.reset()
 
