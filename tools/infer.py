@@ -1,7 +1,11 @@
+import logging
+FORMAT = '%(asctime)s - <%(name)s> - %(levelname)s: %(message)s'
+logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
+logger = logging.getLogger(__name__)
+
 import os
 import glob
 import random
-
 import numpy as np
 from PIL import Image
 
@@ -20,21 +24,14 @@ set_paddle_flags(
 from paddle import fluid
 
 from ppdet.core.workspace import load_config, merge_config, create
-
 from ppdet.utils.eval_utils import parse_fetches
 from ppdet.utils.cli import ArgsParser
 from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.visualizer import visualize_results
 import ppdet.utils.checkpoint as checkpoint
-from ppdet.utils.voc_eval import bbox2out
-
+from ppdet.utils.eval import bbox2out
 from ppdet.data.reader import create_reader
 from ppdet.data.source.insects import get_cid2cname
-
-import logging
-FORMAT = '%(asctime)s-%(levelname)s: %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT)
-logger = logging.getLogger(__name__)
 
 
 def get_save_image_name(output_dir, image_path):
@@ -48,7 +45,7 @@ def get_save_image_name(output_dir, image_path):
     return os.path.join(output_dir, "{}".format(name)) + ext
 
 
-def get_test_images(infer_dir, infer_img, random_seed=None):
+def get_test_images(infer_img, infer_dir, random_seed=None, num_img=-1):
     """
     Get image path list in TEST mode
     """
@@ -64,6 +61,7 @@ def get_test_images(infer_dir, infer_img, random_seed=None):
     # infer_img has a higher priority
     if infer_img and os.path.isfile(infer_img):
         images.append(infer_img)
+        logger.info("Loaded img {}.".format(infer_img))
         return images
 
     infer_dir = os.path.abspath(infer_dir)
@@ -73,16 +71,20 @@ def get_test_images(infer_dir, infer_img, random_seed=None):
         images.extend(glob.glob('{}/*.{}'.format(infer_dir, ext)))
     if random_seed:
         random.seed(random_seed)
-        random.shuffle(images)    
+        random.shuffle(images)
+    if num_img > 0:
+        images = images[:num_img]    
+
     assert len(images) > 0, "no image found in {}".format(infer_dir)
 
-    logger.info("Found {} inference images in total.".format(len(images)))
+    logger.info("Found {} inference images in dir {}.".format(
+        len(images), infer_dir))
 
     return images
 
 
 def main():
-    ## 配置与检查
+    ## 配置
     cfg = load_config(FLAGS.config)
     if 'architecture' in cfg:
         main_arch = cfg.architecture
@@ -94,11 +96,11 @@ def main():
 
     # 数据源
     dataset = cfg.TestReader['dataset']
-    test_images = get_test_images(FLAGS.infer_dir, FLAGS.infer_img, FLAGS.random_seed)
+    test_images = get_test_images(FLAGS.infer_img, 
+        FLAGS.infer_dir, FLAGS.random_seed, FLAGS.num_img)
     dataset.set_images(test_images)
     imid2path = dataset.get_imid2path()
-    catid2name = dataset.get_cid2cname()
-
+    catid2name = get_cid2cname()
 
     # 模型
     model = create(main_arch)
@@ -124,23 +126,14 @@ def main():
 
     #### 运行 ####
     exe.run(startup_prog)
+
     # 加载权重
     assert 'weights' in cfg, \
            'model can not load weights'        
     checkpoint.load_params(exe, infer_prog, cfg.weights)
 
-    # tb
-    if FLAGS.use_tb:
-        from tb_paddle import SummaryWriter
-        tb_writer = SummaryWriter(FLAGS.tb_log_dir)
-        tb_image_step = 0
-        tb_image_frame = 0  # each frame can display ten pictures at most. 
-
     for iter_id, data in enumerate(loader()):
-        outs = exe.run(infer_prog,
-                       feed=data,
-                       fetch_list=values,
-                       return_numpy=False)
+        outs = exe.run(infer_prog, feed=data, fetch_list=values, return_numpy=False)
         res = {
             k: (np.array(v), v.recursive_sequence_lengths())
             for k, v in zip(keys, outs)
@@ -154,31 +147,9 @@ def main():
             image_path = imid2path[int(im_id)]
             image = Image.open(image_path).convert('RGB')
 
-            # use tb-paddle to log original image           
-            if FLAGS.use_tb:
-                original_image_np = np.array(image)
-                tb_writer.add_image(
-                    "original/frame_{}".format(tb_image_frame),
-                    original_image_np,
-                    tb_image_step,
-                    dataformats='HWC')
-
             image = visualize_results(image,
                                       int(im_id), catid2name,
                                       FLAGS.draw_threshold, bbox_results)
-
-            # use tb-paddle to log image with bbox
-            if FLAGS.use_tb:
-                infer_image_np = np.array(image)
-                tb_writer.add_image(
-                    "bbox/frame_{}".format(tb_image_frame),
-                    infer_image_np,
-                    tb_image_step,
-                    dataformats='HWC')
-                tb_image_step += 1
-                if tb_image_step % 10 == 0:
-                    tb_image_step = 0
-                    tb_image_frame += 1
 
             save_name = get_save_image_name(FLAGS.output_dir, image_path)
             logger.info("Detection bbox results save in {}".format(save_name))
@@ -188,39 +159,39 @@ def main():
 if __name__ == '__main__':
     parser = ArgsParser()
     parser.add_argument(
-        "--infer_dir",
-        type=str,
-        default=None,
-        help="Directory for images to perform inference on.")
+        "--json_mode",
+        action="store_false",
+        default=False,
+        help="Infer image to json result")
     parser.add_argument(
         "--infer_img",
         type=str,
         default=None,
         help="Image path, has higher priority over --infer_dir")
     parser.add_argument(
+        "--infer_dir",
+        type=str,
+        default=None,
+        help="Directory for images to perform inference on.")
+    parser.add_argument(
         "--random_seed",
         type=int,
-        default=1024,
-        help="Image path, has higher priority over --rondom_seed")
+        default=None,
+        help="when infer in dir, select img randomly at seed")
     parser.add_argument(
-        "--output_dir",
-        type=str,
-        default="output",
-        help="Directory for storing the output visualization files.")
+        "--num_img",
+        type=int,
+        default=-1,
+        help="when infer in dir, number of img selected")
     parser.add_argument(
         "--draw_threshold",
         type=float,
         default=0.5,
         help="Threshold to reserve the result for visualization.")
     parser.add_argument(
-        "--use_tb",
-        type=bool,
-        default=False,
-        help="whether to record the data to Tensorboard.")
-    parser.add_argument(
-        '--tb_log_dir',
+        "--output_dir",
         type=str,
-        default="tb_log_dir/image",
-        help='Tensorboard logging directory for image.')
+        default="output",
+        help="Directory for storing the output visualization or json files.")
     FLAGS = parser.parse_args()
     main()

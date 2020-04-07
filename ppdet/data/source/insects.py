@@ -1,4 +1,3 @@
-import os
 import numpy as np
 import xml.etree.ElementTree as ET
 from collections import Sequence
@@ -139,48 +138,3 @@ class InsectsDataSet(DataSet):
 
         self.roidbs = records
 
-@register
-@serializable
-class InsectsImages(object):
-    def __init__(self, sample_num=-1):
-        self.sample_num = sample_num
-
-        self.images = None
-        self.roidbs = None
-        self._imid2path = {}
-
-    def get_imid2path(self):
-        return self._imid2path
-
-    # 模型输入
-    def get_roidb(self):
-        if not self.roidbs:
-            self.roidbs = self._load_images()
-        return self.roidbs
-
-    def set_images(self, images):
-        self.images = images
-        self.roidbs = self._load_images()
-
-    def _load_images(self):
-        images = self.images
-
-        ct = 0
-        records = []
-        for image in images:
-            assert image != '' and os.path.isfile(image), \
-                    "Image {} not found".format(image)
-            if self.sample_num > 0 and ct >= self.sample_num:
-                break
-
-            self._imid2path[ct] = image
-            rec = {
-                'im_id': np.array([ct]), 
-                'im_file': image
-            }
-            records.append(rec)
-            ct += 1
-
-        assert len(records) > 0, "No image file found"
-
-        return records

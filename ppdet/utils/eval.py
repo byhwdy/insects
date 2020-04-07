@@ -7,7 +7,7 @@ from .map_utils import DetectionMAP
 import logging
 logger = logging.getLogger(__name__)
 
-__all__ = ['eval_results', 'eval_json_results']
+__all__ = ['eval_results', 'eval_json_results', 'bbox2out']
 
 def eval_results(results,
                  class_num,
@@ -119,3 +119,61 @@ def eval_json_results(json_directory, dataset, num_classes,
     logger.info("mAP({:.2f}, {}) = {:.2f}".format(overlap_thresh, map_type,
                                                   map_stat))
     return map_stat
+
+def bbox2out(results, clsid2catid, is_bbox_normalized=False):
+    """
+    Args:
+        results: request a dict, should include: `bbox`, `im_id`,
+                 if is_bbox_normalized=True, also need `im_shape`.
+        clsid2catid: class id to category id map of COCO2017 dataset.
+        is_bbox_normalized: whether or not bbox is normalized.
+    """
+    xywh_res = []
+    for t in results:
+        bboxes = t['bbox'][0]
+        lengths = t['bbox'][1][0]
+        im_ids = np.array(t['im_id'][0]).flatten()
+        if bboxes.shape == (1, 1) or bboxes is None:
+            continue
+
+        k = 0
+        for i in range(len(lengths)):
+            num = lengths[i]
+            im_id = int(im_ids[i])
+            for j in range(num):
+                dt = bboxes[k]
+                clsid, score, xmin, ymin, xmax, ymax = dt.tolist()
+                catid = (clsid2catid[int(clsid)])
+
+                if is_bbox_normalized:
+                    xmin, ymin, xmax, ymax = \
+                            clip_bbox([xmin, ymin, xmax, ymax])
+                    w = xmax - xmin
+                    h = ymax - ymin
+                    im_shape = t['im_shape'][0][i].tolist()
+                    im_height, im_width = int(im_shape[0]), int(im_shape[1])
+                    xmin *= im_width
+                    ymin *= im_height
+                    w *= im_width
+                    h *= im_height
+                else:
+                    w = xmax - xmin + 1
+                    h = ymax - ymin + 1
+
+                bbox = [xmin, ymin, w, h]
+                coco_res = {
+                    'image_id': im_id,
+                    'category_id': catid,
+                    'bbox': bbox,
+                    'score': score
+                }
+                xywh_res.append(coco_res)
+                k += 1
+    return xywh_res
+
+def clip_bbox(bbox):
+    xmin = max(min(bbox[0], 1.), 0.)
+    ymin = max(min(bbox[1], 1.), 0.)
+    xmax = max(min(bbox[2], 1.), 0.)
+    ymax = max(min(bbox[3], 1.), 0.)
+    return xmin, ymin, xmax, ymax
