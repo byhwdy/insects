@@ -1,3 +1,8 @@
+import logging
+FORMAT = '%(asctime)s-%(name)s-%(levelname)s: %(message)s'
+logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
+logger = logging.getLogger(__name__)
+
 import os
 import os.path as osp
 import shutil
@@ -8,9 +13,6 @@ import tarfile
 import zipfile
 
 from .voc_utils import create_list
-
-import logging
-logger = logging.getLogger(__name__)
 
 __all__ = [
     'get_weights_path', 'get_dataset_path', 'download_dataset',

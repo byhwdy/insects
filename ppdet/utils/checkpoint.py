@@ -1,3 +1,8 @@
+import logging
+FORMAT = '%(asctime)s-%(name)s-%(levelname)s: %(message)s'
+logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
+logger = logging.getLogger(__name__)
+
 import errno
 import os
 import shutil
@@ -9,16 +14,12 @@ import paddle.fluid as fluid
 
 from .download import get_weights_path
 
-import logging
-logger = logging.getLogger(__name__)
-
 __all__ = [
     'load_checkpoint',
     'load_and_fusebn',
     'load_params',
     'save',
 ]
-
 
 def is_url(path):
     """

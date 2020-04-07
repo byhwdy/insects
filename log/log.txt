@@ -1,0 +1,3 @@
+2020-04-07 08:29:50,685-__main__-INFO: zsh
+2020-04-07 08:35:11,215-__main__-INFO: zsh
+2020-04-07 10:11:21,256-ppdet.core.workspace-INFO: Loading config

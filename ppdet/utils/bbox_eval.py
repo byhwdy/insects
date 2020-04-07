@@ -1,29 +1,26 @@
+import json
 import os
-import sys
 import numpy as np
 
 from .map_utils import DetectionMAP
-from .coco_eval import bbox2out
 
 import logging
 logger = logging.getLogger(__name__)
 
-__all__ = ['bbox_eval']
+__all__ = ['bbox_eval', 'bbox2out', 'get_category_info']
 
-
-def bbox_eval(results,
-              class_num,
-              overlap_thresh=0.5,
-              map_type='11point',
-              is_bbox_normalized=False,
-              evaluate_difficult=False):
+def eval_results(results,
+                 class_num,
+                 overlap_thresh=0.5,
+                 map_type='11point',
+                 is_bbox_normalized=False,
+                 evaluate_difficult=False):
     """
     Bounding box evaluation for VOC dataset
 
     Args:
         results (list): prediction bounding box results.
         class_num (int): evaluation class number.
-        overlap_thresh (float): the postive threshold of
                         bbox overlap
         map_type (string): method for mAP calcualtion,
                         can only be '11point' or 'integral'
@@ -67,7 +64,7 @@ def bbox_eval(results,
     map_stat = 100. * detection_map.get_map()
     logger.info("mAP({:.2f}, {}) = {:.2f}".format(overlap_thresh, map_type,
                                                   map_stat))
-    return map_stat
+    return [map_stat]
 
 
 def prune_zero_padding(gt_box, gt_label, difficult=None):
@@ -79,3 +76,46 @@ def prune_zero_padding(gt_box, gt_label, difficult=None):
         valid_cnt += 1
     return (gt_box[:valid_cnt], gt_label[:valid_cnt], difficult[:valid_cnt]
             if difficult is not None else None)
+
+
+def eval_json_results(json_directory, dataset, num_classes,
+                      overlap_thresh=0.5,
+                      map_type='11point',
+                      is_bbox_normalized=False,
+                      evaluate_difficult=False):
+    """
+    评价json结果
+    """
+    assert os.path.isfile(json_directory), \
+        "invalid json file"
+    with open(json_directory, 'r') as f:
+        results = json.load(f)
+
+    records = dataset.get_roidb()
+    records_dict = {}
+    for record in records:
+        k = os.path.basename(record['im_file']).split('.')[0]
+        records_dict[k] = record
+
+    detection_map = DetectionMAP(
+        class_num=num_classes,
+        overlap_thresh=overlap_thresh,
+        map_type=map_type,
+        is_bbox_normalized=is_bbox_normalized,
+        evaluate_difficult=evaluate_difficult)
+
+    logger.info("Start evaluate...")
+    for im in results:
+        bbox = np.array(im[1])
+        record = records_dict[im[0]]
+        gt_box = record['gt_bbox']
+        gt_label = record['gt_class']
+        difficult = record['difficult']
+        detection_map.update(bbox, gt_box, gt_label, difficult)
+
+    logger.info("Accumulating evaluatation results...")
+    detection_map.accumulate()
+    map_stat = 100. * detection_map.get_map()
+    logger.info("mAP({:.2f}, {}) = {:.2f}".format(overlap_thresh, map_type,
+                                                  map_stat))
+    return map_stat

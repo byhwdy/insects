@@ -1,20 +1,21 @@
 architecture: YOLOv3
-# use_gpu: True
-use_gpu: false
-max_iters: 20000
-log_iter: 20
-log_smooth_window: 20
-snapshot_iter: 2000
-save_dir: output
-# metric: VOC
-map_type: 11point
 #### 迁移学习 ####
 # pretrain_weights: https://paddle-imagenet-models-name.bj.bcebos.com/DarkNet53_pretrained.tar
 pretrain_weights: 
 # finetune_exclude_pretrained_params: 
-#### 评价预测用权重
+#### 评价预测用权重 ####
 weights: output/yolov3_darknet_insects/model_final
-#### 全局类实例化参数
+#### 训练过程 ####
+# use_gpu: True
+use_gpu: False
+max_iters: 20000
+log_iter: 20 # log窗口 
+log_smooth_window: 20 # 训练过程指标平滑窗口  
+snapshot_iter: 2000 # 评价窗口
+save_dir: output # 训练过程中的模型保存目录
+# metric: VOC
+map_type: 11point
+#### 全局参数 ####
 num_classes: 7
 use_fine_grained_loss: false
 # weight_prefix_name: 

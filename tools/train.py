@@ -1,28 +1,26 @@
+import logging
+FORMAT = '%(asctime)s-%(name)s-%(levelname)s: %(message)s'
+logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
+logger = logging.getLogger(__name__)
+
 import os
 import time
-import numpy as np
 import datetime
 from collections import deque
+import numpy as np
 
 from paddle import fluid
 from visualdl import LogWriter
 
 import sys
 sys.path.append('/paddle/insects')
-
 from ppdet.core.workspace import load_config, merge_config, create
 from ppdet.data.reader import create_reader
-
 from ppdet.utils.cli import ArgsParser
 from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.eval_utils import parse_fetches, eval_run, eval_results
 from ppdet.utils.stats import TrainingStats
 import ppdet.utils.checkpoint as checkpoint
-
-import logging
-FORMAT = '%(asctime)s-%(levelname)s: %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT)
-logger = logging.getLogger(__name__)
 
 def main():
     # 配置
@@ -47,7 +45,7 @@ def main():
     with fluid.program_guard(train_prog, startup_prog):
         with fluid.unique_name.guard():
             model = create(main_arch)
-            inputs_def = cfg['TrainReader']['inputs_def']
+            inputs_def = cfg.TrainReader['inputs_def']
             feed_vars, train_loader = model.build_inputs(**inputs_def)
             train_fetches = model.train(feed_vars)
             loss = train_fetches['loss']
@@ -61,18 +59,18 @@ def main():
         with fluid.program_guard(eval_prog, startup_prog):
             with fluid.unique_name.guard():
                 model = create(main_arch)
-                inputs_def = cfg['EvalReader']['inputs_def']
+                inputs_def = cfg.EvalReader['inputs_def']
                 feed_vars, eval_loader = model.build_inputs(**inputs_def)
                 fetches = model.eval(feed_vars)
         eval_prog = eval_prog.clone(True)
+        extra_keys = ['gt_bbox', 'gt_class', 'is_difficult']
+        eval_keys, eval_values, _ = parse_fetches(fetches, eval_prog, extra_keys)
         eval_reader = create_reader(cfg.EvalReader)
         eval_loader.set_sample_list_generator(eval_reader, place)
-        extra_keys = ['gt_bbox', 'gt_class', 'is_difficult']
-        eval_keys, eval_values, _ = parse_fetches(fetches, eval_prog,
-                                                         extra_keys)
 
     ##### 运行 ####
     exe.run(startup_prog)
+
     ## 恢复与迁移
     ignore_params = cfg.finetune_exclude_pretrained_params \
                  if 'finetune_exclude_pretrained_params' in cfg else []
@@ -84,11 +82,11 @@ def main():
         checkpoint.load_params(
             exe, train_prog, cfg.pretrain_weights, ignore_params=ignore_params)
 
-    # 数据迭代器
+    ## 数据迭代器
     train_reader = create_reader(cfg.TrainReader, cfg.max_iters - start_iter, cfg)
     train_loader.set_sample_list_generator(train_reader, place)
 
-    # 训练循环
+    ## 训练循环
     train_loader.start()
 
     # 过程跟踪
@@ -106,11 +104,11 @@ def main():
         scalar_map = vdl_logger.scalar(tag="map")
 
     for it in range(start_iter, cfg.max_iters):
-        # 训练
+        # 运行程序
         outs = exe.run(train_prog, fetch_list=train_values)
         stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
         
-        # 日志与可视化
+        # 日志与可视化窗口
         start_time = end_time
         end_time = time.time()
         time_stat.append(end_time - start_time)
@@ -120,15 +118,17 @@ def main():
         train_stats.update(stats)
         logs = train_stats.log()
         if it % cfg.log_iter == 0:
+            # log
             strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
                 it, np.mean(outs[-1]), logs, time_cost, eta)
             logger.info(strs)
+            # vdl
             scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
 
         # 保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
-            # 保存
-            save_name = str(it) if it != cfg.max_iters - 1 else "model_final"
+            # 模型保存
+            save_name = str(it) if it != cfg.max_iters - 1 else "final"
             checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
 
             # 评价
@@ -138,16 +138,16 @@ def main():
                 box_ap_stats = eval_results(results, cfg.num_classes)
 
                 ## 保存最佳模型
-                if box_ap_stats[0] > best_box_ap_list[0]:
-                    best_box_ap_list[0] = box_ap_stats[0]
+                if box_ap_stats > best_box_ap_list[0]:
+                    best_box_ap_list[0] = box_ap_stats
                     best_box_ap_list[1] = it
                     checkpoint.save(exe, train_prog, os.path.join(save_dir, "best_model"))
-                logger.info("Best test box ap: {}, in iter: {}".format(
-                    best_box_ap_list[0], best_box_ap_list[1]))
+                    logger.info("Best eval box ap: {}, in iter: {}".format(
+                        best_box_ap_list[0], best_box_ap_list[1]))
 
-                ## 可视化map
+                ## 记录map窗口
                 step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 else it//cfg.snapshot_iter+1 
-                scalar_map.add_record(step, box_ap_stats[0])
+                scalar_map.add_record(step, box_ap_stats)
 
     train_loader.reset()
 

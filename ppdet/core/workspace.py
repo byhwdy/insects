@@ -9,6 +9,9 @@ import collections
 from .config.schema import SchemaDict, SharedConfig, extract_schema
 from .config.yaml_helpers import serializable
 
+import logging
+logger = logging.getLogger(__name__)
+
 __all__ = [
     'global_config',
     'load_config',
@@ -83,6 +86,7 @@ def load_config(file_path):
 
     Returns: global config
     """
+
     _, ext = os.path.splitext(file_path)
     assert ext in ['.yml', '.yaml'], "only support yaml files for now"
 
