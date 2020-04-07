@@ -7,7 +7,7 @@ from .map_utils import DetectionMAP
 import logging
 logger = logging.getLogger(__name__)
 
-__all__ = ['bbox_eval', 'bbox2out', 'get_category_info']
+__all__ = ['eval_results', 'eval_json_results']
 
 def eval_results(results,
                  class_num,

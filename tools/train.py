@@ -18,7 +18,8 @@ from ppdet.core.workspace import load_config, merge_config, create
 from ppdet.data.reader import create_reader
 from ppdet.utils.cli import ArgsParser
 from ppdet.utils.check import check_gpu, check_version
-from ppdet.utils.eval_utils import parse_fetches, eval_run, eval_results
+from ppdet.utils.eval_utils import parse_fetches, eval_run
+from ppdet.utils.eval import eval_results
 from ppdet.utils.stats import TrainingStats
 import ppdet.utils.checkpoint as checkpoint
 
@@ -97,11 +98,12 @@ def main():
     cfg_name = os.path.basename(FLAGS.config).split('.')[0]
     save_dir = os.path.join(cfg.save_dir, cfg_name)
     best_box_ap_list = [0.0, 0]
-    log_writter = LogWriter("/home/aistudio/log", sync_cycle=5)
-    with log_writter.mode("train") as vdl_logger:
-        scalar_loss = vdl_logger.scalar(tag="loss")
-    with log_writter.mode("val") as vdl_logger:
-        scalar_map = vdl_logger.scalar(tag="map")
+    if FLAGS.use_vdl:
+        log_writter = LogWriter(FLAGS.vdl_dir, sync_cycle=5)
+        with log_writter.mode("train") as vdl_logger:
+            scalar_loss = vdl_logger.scalar(tag="loss")
+        with log_writter.mode("val") as vdl_logger:
+            scalar_map = vdl_logger.scalar(tag="map")
 
     for it in range(start_iter, cfg.max_iters):
         # 运行程序
@@ -123,7 +125,8 @@ def main():
                 it, np.mean(outs[-1]), logs, time_cost, eta)
             logger.info(strs)
             # vdl
-            scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
+            if FLAGS.use_vdl:
+                scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
 
         # 保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
@@ -146,8 +149,10 @@ def main():
                         best_box_ap_list[0], best_box_ap_list[1]))
 
                 ## 记录map窗口
-                step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 else it//cfg.snapshot_iter+1 
-                scalar_map.add_record(step, box_ap_stats)
+                if FLAGS.use_vdl:
+                    step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 \
+                           else it//cfg.snapshot_iter+1 
+                    scalar_map.add_record(step, box_ap_stats)
 
     train_loader.reset()
 
@@ -166,14 +171,14 @@ if __name__ == '__main__':
         default=False,
         help="Whether to perform evaluation in train")
     parser.add_argument(
-        "--use_tb",
+        "--use_vdl",
         type=bool,
         default=False,
         help="whether to record the data to Tensorboard.")
     parser.add_argument(
-        '--tb_log_dir',
+        '--vdl_log_dir',
         type=str,
-        default="tb_log_dir/scalar",
+        default="/home/aistudio/log",
         help='Tensorboard logging directory for scalar.')
     FLAGS = parser.parse_args()
     main()
