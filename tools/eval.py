@@ -36,6 +36,14 @@ def main():
     check_gpu(cfg.use_gpu)
     check_version()
 
+    # json评价模式
+    if FLAGS.json_eval:
+        logger.info(
+            "start evalute in json_eval mode")
+        json_eval_results(FLAGS.eval_file, 
+            dataset=cfg.EvalReader['dataset'], num_classes=cfg.num_classes)
+        return
+
     ## 模型
     model = create(main_arch)   ####
     startup_prog = fluid.Program()
@@ -75,5 +83,11 @@ if __name__ == '__main__':
         action='store_true',
         default=False,
         help="Whether to re eval with already exists bbox.json or mask.json")
+    parser.add_argument(
+        "-f",
+        "--eval_file",
+        default=None,
+        type=str,
+        help="Evaluation file directory, default is current directory.")
     FLAGS = parser.parse_args()
     main()

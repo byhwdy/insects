@@ -2,12 +2,14 @@ import sys
 sys.path.append('/paddle/insects')
 
 from ppdet.core.workspace import load_config, merge_config, create
+from test import Person
 
+# cfg = load_config('configs/yolov3_darknet_insects.yml')
 cfg = load_config('configs/test.yml')
-# merge_config(FLAGS.opt)
 # print(cfg)
-# myobj = create('MyClass')
-# myobj.run()
+# cfg.myclass.run()
+myobj = create(Person)
+myobj.run()
 
-model = create('YOLOv3')
-print(type(model))
+# model = create('YOLOv3')
+# print(type(model))
