@@ -1,5 +1,5 @@
 import logging
-FORMAT = '%(asctime)s-%(name)s-%(levelname)s: %(message)s'
+FORMAT = '%(asctime)s-%([name])s-%(levelname)s: %(message)s'
 logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
 logger = logging.getLogger(__name__)
 
