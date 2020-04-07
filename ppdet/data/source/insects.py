@@ -148,10 +148,6 @@ class InsectsImages(object):
         self.images = None
         self.roidbs = None
         self._imid2path = {}
-        self._cid2cname = get_cid2cname()
-
-    def get_cid2cname(self):
-        return self._cid2cname
 
     def get_imid2path(self):
         return self._imid2path

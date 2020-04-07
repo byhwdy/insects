@@ -3,6 +3,7 @@ import sys
 import numpy as np
 
 from .map_utils import DetectionMAP
+from .coco_eval import bbox2out
 
 import logging
 logger = logging.getLogger(__name__)

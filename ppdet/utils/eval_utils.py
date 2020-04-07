@@ -2,11 +2,13 @@ import logging
 import numpy as np
 import os
 import time
+import json
 
 import paddle.fluid as fluid
 
 from .voc_eval import bbox_eval as voc_bbox_eval
 from .post_process import mstest_box_post_process, mstest_mask_post_process, box_flip
+from .map_utils import DetectionMAP
 
 __all__ = ['parse_fetches', 'eval_run', 'eval_results', 'json_eval_results']
 
@@ -83,24 +85,47 @@ def eval_results(results,
     return [box_ap]
 
 
-def json_eval_results(metric, json_directory=None, dataset=None):
+def json_eval_results(json_directory, dataset, num_classes,
+                      overlap_thresh=0.5,
+                      map_type='11point',
+                      is_bbox_normalized=False,
+                      evaluate_difficult=False):
     """
-    cocoapi eval with already exists proposal.json, bbox.json or mask.json
+    评价json结果
     """
-    assert metric == 'COCO'
-    from ppdet.utils.coco_eval import cocoapi_eval
-    anno_file = dataset.get_anno()
-    json_file_list = ['proposal.json', 'bbox.json', 'mask.json']
-    if json_directory:
-        assert os.path.exists(
-            json_directory), "The json directory:{} does not exist".format(
-                json_directory)
-        for k, v in enumerate(json_file_list):
-            json_file_list[k] = os.path.join(str(json_directory), v)
+    assert os.path.isfile(json_directory), \
+        "invalid json file"
+    with open(json_directory, 'r') as f:
+        results = json.load(f)
 
-    coco_eval_style = ['proposal', 'bbox', 'segm']
-    for i, v_json in enumerate(json_file_list):
-        if os.path.exists(v_json):
-            cocoapi_eval(v_json, coco_eval_style[i], anno_file=anno_file)
-        else:
-            logger.info("{} not exists!".format(v_json))
+    records = dataset.get_roidb()
+    records_dict = {}
+    for record in records:
+        k = os.path.basename(record['im_file']).split('.')[0]
+        records_dict[k] = record
+
+    detection_map = DetectionMAP(
+        class_num=num_classes,
+        overlap_thresh=overlap_thresh,
+        map_type=map_type,
+        is_bbox_normalized=is_bbox_normalized,
+        evaluate_difficult=evaluate_difficult)
+
+    logger.info("Start evaluate...")
+    for im in results:
+        bbox = np.array(im[1])
+        record = records_dict[im[0]]
+        gt_box = record['gt_bbox']
+        gt_label = record['gt_class']
+        difficult = record['difficult']
+        detection_map.update(bbox, gt_box, gt_label, difficult)
+
+    logger.info("Accumulating evaluatation results...")
+    detection_map.accumulate()
+    map_stat = 100. * detection_map.get_map()
+    logger.info("mAP({:.2f}, {}) = {:.2f}".format(overlap_thresh, map_type,
+                                                  map_stat))
+    return map_stat
+
+
+

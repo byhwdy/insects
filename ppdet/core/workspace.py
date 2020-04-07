@@ -17,20 +17,7 @@ __all__ = [
     'create',
     'register',
     'serializable',
-    'dump_value',
 ]
-
-
-def dump_value(value):
-    # XXX this is hackish, but collections.abc is not available in python 2
-    if hasattr(value, '__dict__') or isinstance(value, (dict, tuple, list)):
-        value = yaml.dump(value, default_flow_style=True)
-        value = value.replace('\n', '')
-        value = value.replace('...', '')
-        return "'{}'".format(value)
-    else:
-        # primitive types
-        return str(value)
 
 
 class AttrDict(dict):
@@ -45,10 +32,46 @@ class AttrDict(dict):
             return self[key]
         raise AttributeError("object has no attribute '{}'".format(key))
 
-
 global_config = AttrDict()
 
 READER_KEY = '_READER_'
+
+def make_partial(cls):
+    op_module = importlib.import_module(cls.__op__.__module__)
+    op = getattr(op_module, cls.__op__.__name__)
+
+    cls.__category__ = getattr(cls, '__category__', None) or 'op'
+
+    def partial_apply(self, *args, **kwargs):
+        kwargs_ = self.__dict__.copy()
+        kwargs_.update(kwargs)
+        return op(*args, **kwargs_)
+
+    if getattr(cls, '__append_doc__', True):  # XXX should default to True?
+        cls.__doc__ = "Wrapper for `{}` OP".format(op.__name__)
+        cls.__init__.__doc__ = op.__doc__
+        cls.__call__ = partial_apply
+        cls.__call__.__doc__ = op.__doc__
+        
+    return cls
+
+def register(cls):
+    """
+    Register a given module class.
+
+    Args:
+        cls (type): Module class to be registered.
+
+    Returns: cls
+    """
+    if cls.__name__ in global_config:
+        raise ValueError("Module class already registered: {}".format(
+            cls.__name__))
+    if hasattr(cls, '__op__'):
+        cls = make_partial(cls)
+    global_config[cls.__name__] = extract_schema(cls)
+
+    return cls
 
 
 def load_config(file_path):
@@ -102,7 +125,6 @@ def dict_merge(dct, merge_dct):
             dct[k] = merge_dct[k]
     return dct
 
-
 def merge_config(config, another_cfg=None):
     """
     Merge config into global config or another_cfg.
@@ -115,51 +137,6 @@ def merge_config(config, another_cfg=None):
     global global_config
     dct = another_cfg if another_cfg is not None else global_config
     return dict_merge(dct, config)
-
-
-def get_registered_modules():
-    return {k: v for k, v in global_config.items() if isinstance(v, SchemaDict)}
-
-
-def make_partial(cls):
-    op_module = importlib.import_module(cls.__op__.__module__)
-    op = getattr(op_module, cls.__op__.__name__)
-    cls.__category__ = getattr(cls, '__category__', None) or 'op'
-
-    def partial_apply(self, *args, **kwargs):
-        kwargs_ = self.__dict__.copy()
-        kwargs_.update(kwargs)
-        return op(*args, **kwargs_)
-
-    if getattr(cls, '__append_doc__', True):  # XXX should default to True?
-        if sys.version_info[0] > 2:
-            cls.__doc__ = "Wrapper for `{}` OP".format(op.__name__)
-            cls.__init__.__doc__ = op.__doc__
-            cls.__call__ = partial_apply
-            cls.__call__.__doc__ = op.__doc__
-        else:
-            # XXX work around for python 2
-            partial_apply.__doc__ = op.__doc__
-            cls.__call__ = partial_apply
-    return cls
-
-
-def register(cls):
-    """
-    Register a given module class.
-
-    Args:
-        cls (type): Module class to be registered.
-
-    Returns: cls
-    """
-    if cls.__name__ in global_config:
-        raise ValueError("Module class already registered: {}".format(
-            cls.__name__))
-    if hasattr(cls, '__op__'):
-        cls = make_partial(cls)
-    global_config[cls.__name__] = extract_schema(cls)
-    return cls
 
 
 def create(cls_or_name, **kwargs):

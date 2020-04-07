@@ -161,19 +161,10 @@ def extract_schema(cls):
         schema (SchemaDict): Extracted schema.
     """
     ctor = cls.__init__
-    # python 2 compatibility
-    if hasattr(inspect, 'getfullargspec'):
-        argspec = inspect.getfullargspec(ctor)
-        annotations = argspec.annotations
-        has_kwargs = argspec.varkw is not None
-    else:
-        argspec = inspect.getargspec(ctor)
-        # python 2 type hinting workaround, see pep-3107
-        # however, since `typeguard` does not support python 2, type checking
-        # is still python 3 only for now
-        annotations = getattr(ctor, '__annotations__', {})
-        has_kwargs = argspec.keywords is not None
 
+    argspec = inspect.getargspec(ctor)
+    annotations = getattr(ctor, '__annotations__', {})
+    has_kwargs = argspec.keywords is not None
     names = [arg for arg in argspec.args if arg != 'self']
     defaults = argspec.defaults
     num_defaults = argspec.defaults is not None and len(argspec.defaults) or 0
