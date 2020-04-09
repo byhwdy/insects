@@ -49,7 +49,7 @@ EvalReader:
     - !Permute
       to_bgr: false
       channel_first: True
-  batch_size: 2   # ztodo
+  batch_size: 10   # ztodo
 
 TestReader:
   inputs_def:
@@ -70,4 +70,4 @@ TestReader:
     - !Permute
       to_bgr: false
       channel_first: True
-  batch_size: 2 # ztodo
+  batch_size: 10 # ztodo
