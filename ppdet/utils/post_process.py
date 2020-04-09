@@ -66,20 +66,3 @@ def bbox_area(box):
     w = box[2] - box[0] + 1
     h = box[3] - box[1] + 1
     return w * h
-
-
-def bbox_overlaps(x, y):
-    N = x.shape[0]
-    K = y.shape[0]
-    overlaps = np.zeros((N, K), dtype=np.float32)
-    for k in range(K):
-        y_area = bbox_area(y[k])
-        for n in range(N):
-            iw = min(x[n, 2], y[k, 2]) - max(x[n, 0], y[k, 0]) + 1
-            if iw > 0:
-                ih = min(x[n, 3], y[k, 3]) - max(x[n, 1], y[k, 1]) + 1
-                if ih > 0:
-                    x_area = bbox_area(x[n])
-                    ua = x_area + y_area - iw * ih
-                    overlaps[n, k] = iw * ih / ua
-    return overlaps
