@@ -21,7 +21,8 @@ from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.eval_utils import parse_fetches, eval_run, eval_results
 from ppdet.utils.stats import TrainingStats
 import ppdet.utils.checkpoint as checkpoint
-logger.info('123');exit(0)
+
+
 def main():
     # 配置
     cfg = load_config(FLAGS.config)
