@@ -8,6 +8,7 @@ import glob
 import random
 import numpy as np
 from PIL import Image
+import json
 
 import sys
 sys.path.append('/paddle/insects')
@@ -24,26 +25,13 @@ set_paddle_flags(
 from paddle import fluid
 
 from ppdet.core.workspace import load_config, merge_config, create
-from ppdet.utils.eval_utils import parse_fetches
+from ppdet.utils.eval_utils import parse_fetches, bbox2out
 from ppdet.utils.cli import ArgsParser
 from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.visualizer import visualize_results
 import ppdet.utils.checkpoint as checkpoint
-from ppdet.utils.eval import bbox2out
 from ppdet.data.reader import create_reader
 from ppdet.data.source.insects import get_cid2cname
-
-
-def get_save_image_name(output_dir, image_path):
-    """
-    Get save image name from source image path.
-    """
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    image_name = os.path.split(image_path)[-1]
-    name, ext = os.path.splitext(image_name)
-    return os.path.join(output_dir, "{}".format(name)) + ext
-
 
 def get_test_images(infer_img, infer_dir, random_seed=None, num_img=-1):
     """
@@ -82,6 +70,36 @@ def get_test_images(infer_img, infer_dir, random_seed=None, num_img=-1):
 
     return images
 
+def get_save_image_name(output_dir, image_path):
+    """
+    Get save image name from source image path.
+    """
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    image_name = os.path.split(image_path)[-1]
+    name, ext = os.path.splitext(image_name)
+    return os.path.join(output_dir, "{}".format(name)) + ext
+
+def save_json_results(results, imid2name, output_dir, json_name):
+    """
+    save results in json format
+    """
+    json_results = []
+    for result in results:
+        im_lengths = result['bbox'][1][0]
+        start_ind = 0
+        for i, im_length in enumerate(im_lengths):
+            im = []
+            im_name = imid2name[int(result['im_id'][0][i])]
+            im.append(im_name)
+            bbox = result['bbox'][0][start_ind:start_ind+im_length].tolist()
+            im.append(bbox)
+            json_results.append(im)
+            start_ind += im_length
+    file_path = os.path.join(output_dir, json_name)
+    with open(file_path, 'w') as f:
+        json.dump(json_results, f)
+    logging.info("saved {}".format(file_path))
 
 def main():
     ## 配置
@@ -101,6 +119,8 @@ def main():
     dataset.set_images(test_images)
     imid2path = dataset.get_imid2path()
     catid2name = get_cid2cname()
+    imid2name = {k: str(os.path.basename(v).split('.')[0])
+                 for k, v in imid2path.items()}
 
     # 模型
     model = create(main_arch)
@@ -132,6 +152,8 @@ def main():
            'model can not load weights'        
     checkpoint.load_params(exe, infer_prog, cfg.weights)
 
+    results = []
+    im_ids = []
     for iter_id, data in enumerate(loader()):
         outs = exe.run(infer_prog, feed=data, fetch_list=values, return_numpy=False)
         res = {
@@ -140,27 +162,35 @@ def main():
         }
         logger.info('Infer iter {}'.format(iter_id))
 
-        # 画图
-        bbox_results = bbox2out([res])
-        im_ids = res['im_id'][0]
-        for im_id in im_ids:
-            image_path = imid2path[int(im_id)]
-            image = Image.open(image_path).convert('RGB')
+        results.append(res)
+        im_ids.extend([int(id) for id in res['im_id'][0]])
+    
+    ## 输出json结果
+    if FLAGS.json_mode:
+        save_json_results(results, imid2name, FLAGS.output_dir, FLAGS.json_name)
+        return 
 
-            image = visualize_results(image,
-                                      int(im_id), catid2name,
-                                      FLAGS.draw_threshold, bbox_results)
+    # 输出画图结果
+    bbox_results = bbox2out(results)
+    for im_id in im_ids:
+        image_path = imid2path[im_id]
+        image = Image.open(image_path).convert('RGB')
 
-            save_name = get_save_image_name(FLAGS.output_dir, image_path)
-            logger.info("Detection bbox results save in {}".format(save_name))
-            image.save(save_name, quality=95)
+        image = visualize_results(image,
+                                  int(im_id), catid2name,
+                                  FLAGS.draw_threshold, bbox_results)
+
+        save_name = get_save_image_name(FLAGS.output_dir, image_path)
+        logger.info("Detection bbox results save in {}".format(save_name))
+        image.save(save_name, quality=95)
+
 
 
 if __name__ == '__main__':
     parser = ArgsParser()
     parser.add_argument(
         "--json_mode",
-        action="store_false",
+        action="store_true",
         default=False,
         help="Infer image to json result")
     parser.add_argument(
@@ -193,5 +223,10 @@ if __name__ == '__main__':
         type=str,
         default="output",
         help="Directory for storing the output visualization or json files.")
+    parser.add_argument(
+        "--json_name",
+        type=str,
+        default="prediction.json",
+        help="Json files name.")
     FLAGS = parser.parse_args()
     main()

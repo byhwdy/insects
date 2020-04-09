@@ -1,3 +1,8 @@
+import logging
+FORMAT = '%(asctime)s - <%(name)s> - %(levelname)s: %(message)s'
+logging.basicConfig(filename='./log/log.txt', level=logging.INFO, format=FORMAT)
+logger = logging.getLogger(__name__)
+
 import sys
 sys.path.append('/paddle/insects')
 
@@ -13,17 +18,11 @@ set_paddle_flags(
 import paddle.fluid as fluid
 
 from ppdet.core.workspace import load_config, merge_config, create
-from ppdet.utils.eval_utils import parse_fetches, eval_run, eval_results, json_eval_results
+from ppdet.utils.eval_utils import parse_fetches, eval_run, eval_results, eval_json_results
 import ppdet.utils.checkpoint as checkpoint
 from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.cli import ArgsParser
 from ppdet.data.reader import create_reader
-
-import logging
-FORMAT = '%(asctime)s-%(levelname)s: %(message)s'
-logging.basicConfig(level=logging.INFO, format=FORMAT)
-logger = logging.getLogger(__name__)
-
 
 def main():
     ## 配置
@@ -37,10 +36,9 @@ def main():
     check_version()
 
     # json评价模式
-    if FLAGS.json_eval:
-        logger.info(
-            "start evalute in json_eval mode")
-        json_eval_results(FLAGS.eval_file, 
+    if FLAGS.json_file:
+        logger.info("start evalute in json mode")
+        eval_json_results(FLAGS.json_file, 
             dataset=cfg.EvalReader['dataset'], num_classes=cfg.num_classes)
         return
 
@@ -79,13 +77,8 @@ def main():
 if __name__ == '__main__':
     parser = ArgsParser()
     parser.add_argument(
-        "--json_eval",
-        action='store_true',
-        default=False,
-        help="Whether to re eval with already exists bbox.json or mask.json")
-    parser.add_argument(
         "-f",
-        "--eval_file",
+        "--json_file",
         default=None,
         type=str,
         help="Evaluation file directory, default is current directory.")
