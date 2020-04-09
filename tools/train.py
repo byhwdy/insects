@@ -106,33 +106,32 @@ def main():
 
     for it in range(start_iter, cfg.max_iters):
         # 运行程序
-        # outs = exe.run(train_prog, fetch_list=train_values)
-        # stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
+        outs = exe.run(train_prog, fetch_list=train_values)
+        stats = {k: np.array(v).mean() for k, v in zip(train_keys, outs[:-1])}
         
-        # # 日志与可视化窗口
-        # start_time = end_time
-        # end_time = time.time()
-        # time_stat.append(end_time - start_time)
-        # time_cost = np.mean(time_stat)
-        # eta_sec = (cfg.max_iters - it) * time_cost
-        # eta = str(datetime.timedelta(seconds=int(eta_sec)))
-        # train_stats.update(stats)
-        # logs = train_stats.log()
-        # if it % cfg.log_iter == 0:
-        #     # log
-        #     strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
-        #         it, np.mean(outs[-1]), logs, time_cost, eta)
-        #     logger.info(strs)
-        #     # vdl
-        #     if FLAGS.use_vdl:
-        #         scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
+        # 日志与可视化窗口
+        start_time = end_time
+        end_time = time.time()
+        time_stat.append(end_time - start_time)
+        time_cost = np.mean(time_stat)
+        eta_sec = (cfg.max_iters - it) * time_cost
+        eta = str(datetime.timedelta(seconds=int(eta_sec)))
+        train_stats.update(stats)
+        logs = train_stats.log()
+        if it % cfg.log_iter == 0:
+            # log
+            strs = 'iter: {}, lr: {:.6f}, {}, time: {:.3f}, eta: {}'.format(
+                it, np.mean(outs[-1]), logs, time_cost, eta)
+            logger.info(strs)
+            # vdl
+            if FLAGS.use_vdl:
+                scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
 
         # 保存与评价窗口
-        # if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
-        if True:
+        if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
             # 模型保存
-            # save_name = str(it) if it != cfg.max_iters - 1 else "final"
-            # checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
+            save_name = str(it) if it != cfg.max_iters - 1 else "final"
+            checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
 
             # 评价
             if FLAGS.eval:
