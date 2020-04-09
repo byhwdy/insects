@@ -124,7 +124,7 @@ def eval_results(results,
     map_stat = 100. * detection_map.get_map()
     logger.info("mAP({:.2f}, {}) = {:.2f}".format(overlap_thresh, map_type,
                                                   map_stat))
-    return [map_stat]
+    return map_stat
 
 
 def prune_zero_padding(gt_box, gt_label, difficult=None):
