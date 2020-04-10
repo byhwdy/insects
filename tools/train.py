@@ -172,7 +172,7 @@ if __name__ == '__main__':
         help="Whether to perform evaluation in train")
     parser.add_argument(
         "--use_vdl",
-        type=bool,
+        action='store_true',
         default=False,
         help="whether to record the data to Tensorboard.")
     parser.add_argument(
