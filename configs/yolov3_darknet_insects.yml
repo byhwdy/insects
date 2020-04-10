@@ -1,4 +1,6 @@
 architecture: YOLOv3
+pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_darknet.tar
+# finetune_exclude_pretrained_params: 
 use_gpu: True
 # use_gpu: False  # ztodo
 max_iters: 20000
@@ -39,10 +41,10 @@ LearningRate:
   - !PiecewiseDecay
     gamma: 0.1
     milestones:
-    - 5000
     - 10000
+    - 15000
   - !LinearWarmup
-    steps: 4000
+    steps: 2000
     start_factor: 0.
 
 OptimizerBuilder:
