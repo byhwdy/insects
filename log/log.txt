@@ -1,9 +1,0 @@
-2020-04-09 13:33:00,890 - <ppdet.data.source.insects> - INFO: 245 samples in file dataset/insects/val/annotations/xmls
-2020-04-09 13:33:00,891 - <root> - INFO: places would be ommited when DataLoader is not iterable
-2020-04-09 13:33:01,857 - <ppdet.utils.checkpoint> - INFO: Loading parameters from output/yolov3_darknet_insects/best_model...
-2020-04-09 13:33:07,760 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
-2020-04-09 13:33:10,982 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 2
-2020-04-09 13:33:10,983 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 4
-2020-04-09 13:33:10,983 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
-2020-04-09 13:33:10,985 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
-2020-04-09 13:33:10,986 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 64.31
