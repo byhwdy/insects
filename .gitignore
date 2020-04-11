@@ -67,3 +67,5 @@ dataset
 dataset/insects
 
 .DS_Store
+
+log/log.txt
