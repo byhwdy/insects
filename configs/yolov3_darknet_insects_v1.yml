@@ -9,7 +9,7 @@ log_smooth_window: 20
 snapshot_iter: 2000
 save_dir: output
 map_type: 11point
-weights: output/yolov3_darknet_insects_v1/final
+weights: output/yolov3_darknet_insects_v1/best_model
 num_classes: 7
 use_fine_grained_loss: false
 
