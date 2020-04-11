@@ -1,0 +1,63 @@
+architecture: YOLOv3
+# pretrain_weights: 
+# finetune_exclude_pretrained_params: ['yolo_output']
+use_gpu: True
+use_gpu: False  # ztodo
+max_iters: 20000
+log_iter: 20
+log_smooth_window: 20
+snapshot_iter: 2000
+save_dir: output
+map_type: 11point
+weights: output/yolov3_darknet_insects/best_model
+num_classes: 7
+use_fine_grained_loss: false
+
+YOLOv3:
+  backbone: ResNet
+
+ResNet:
+  norm_type: sync_bn
+  freeze_at: 0
+  freeze_norm: false
+  norm_decay: 0.
+  depth: 50
+  feature_maps: [3, 4, 5]
+
+YOLOv3Head:
+  anchors: [[19, 29], [28, 20], [25, 40], 
+            [31, 47], [36, 37], [41, 26], 
+            [47, 66], [48, 33], [67, 53]]
+  anchor_masks: [[6, 7, 8], [3, 4, 5], [0, 1, 2]]
+  nms:
+    score_threshold: 0.01
+    nms_top_k: 1000
+    nms_threshold: 0.45
+    background_label: -1
+
+YOLOv3Loss:
+  batch_size: 8
+  label_smooth: false
+
+LearningRate:
+  base_lr: 0.001
+  schedulers:
+  - !PiecewiseDecay
+    gamma: 0.1
+    milestones:
+    - 10000
+    - 15000
+  - !LinearWarmup
+    steps: 2000
+    start_factor: 0.
+
+OptimizerBuilder:
+  optimizer:
+    momentum: 0.9
+    type: Momentum
+  regularizer:
+    factor: 0.0005
+    type: L2
+
+_READER_: 'yolov3_darknet_insects_reader.yml'
+

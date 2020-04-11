@@ -38,8 +38,11 @@ def main():
     # json评价模式
     if FLAGS.json_file:
         logger.info("start evalute in json mode")
+        dataset = cfg.EvalReader['dataset']
+        if FLAGS.dataset == 'train':
+            dataset = cfg.TrainReader['dataset']
         eval_json_results(FLAGS.json_file, 
-            dataset=cfg.EvalReader['dataset'], num_classes=cfg.num_classes)
+            dataset=dataset, num_classes=cfg.num_classes)
         return
 
     ## 模型
@@ -82,5 +85,11 @@ if __name__ == '__main__':
         default=None,
         type=str,
         help="Evaluation file directory, default is current directory.")
+    parser.add_argument(
+        "-d",
+        "--dataset",
+        default='val',
+        type=str,
+        help="which dataset to use, support train/val")
     FLAGS = parser.parse_args()
     main()
