@@ -1087,6 +1087,17 @@
 2020-04-11 10:31:22,860 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
 2020-04-11 10:31:22,864 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 65.52
 
+##### best_model json验证
+2020-04-11 17:13:34,364 - <__main__> - INFO: Found 245 inference images in dir /home/aistudio/work/insects/dataset/insects/val/images.
+2020-04-11 17:13:36,900 - <ppdet.utils.checkpoint> - INFO: Loading parameters from output/yolov3_darknet_insects_v1/best_model...
+2020-04-11 17:13:51,489 - <root> - INFO: saved output/best_model.json
+2020-04-11 17:29:26,560 - <__main__> - INFO: start evalute in json mode
+2020-04-11 17:29:26,683 - <ppdet.data.source.insects> - INFO: 245 samples in file dataset/insects/val/annotations/xmls
+2020-04-11 17:29:26,683 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-11 17:29:26,772 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-11 17:29:26,778 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 75.80
+
+
 ##### 245个训练样本评价
 2020-04-11 10:40:39,306 - <__main__> - INFO: start evalute in json mode
 2020-04-11 10:40:39,521 - <ppdet.data.source.insects> - INFO: 1693 samples in file dataset/insects/train/annotations/xmls
