@@ -53,8 +53,6 @@ def main():
             lr = lr_builder()
             optimizer = optim_builder(lr)
             optimizer.minimize(loss)
-    print(123)
-    exit()
     train_keys, train_values, _ = parse_fetches(train_fetches)
     train_values.append(lr)
     if FLAGS.eval:
