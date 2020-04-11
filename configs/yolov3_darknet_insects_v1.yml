@@ -1,3 +1,10 @@
+####
+# 加入预训练参数
+####
+# loss能降低到13
+# 最佳map出现在8000step，#后续map出现降低（无法学习到有用的东西）#
+# 最终验证集和测试集上的map为75左右
+####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_darknet.tar
 finetune_exclude_pretrained_params: ['yolo_output']
