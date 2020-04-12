@@ -1,0 +1,79 @@
+TrainReader: 
+  inputs_def: 
+    fields: ['image', 'gt_bbox', 'gt_class', 'gt_score']
+  dataset:  
+    !InsectsDataSet
+      anno_dir: train
+      dataset_dir: dataset/insects
+  sample_transforms:
+    - !DecodeImage  
+      to_rgb: True
+      with_mixup: True
+    - !MixupImage
+      alpha: 1.5
+      beta: 1.5
+    - !ColorDistort {}  
+    - !NormalizeBox {} 
+    - !PadBox 
+      num_max_boxes: 50
+    - !BboxXYXY2XYWH {}
+  batch_transforms:
+    - !RandomShape 
+      sizes: [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
+      random_inter: True
+    - !NormalizeImage 
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+  batch_size: 2 # ztodo
+  shuffle: true
+  mixup_epoch: 250
+
+
+EvalReader:
+  inputs_def:
+    fields: ['image', 'im_size', 'gt_bbox', 'gt_class', 'is_difficult']
+  dataset:  
+    !InsectsDataSet
+      anno_dir: val
+      dataset_dir: dataset/insects
+  sample_transforms:
+    - !DecodeImage
+      to_rgb: True
+    - !ResizeImage
+      target_size: 608
+      interp: 2
+    - !PadBox
+      num_max_boxes: 50
+    - !NormalizeImage
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      is_scale: True
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+      channel_first: True
+  batch_size: 10   # ztodo
+
+TestReader:
+  inputs_def:
+    fields: ['image', 'im_size', 'im_id']
+  dataset:
+    !ImagesFolder {}
+  sample_transforms:
+    - !DecodeImage
+      to_rgb: True
+    - !ResizeImage
+      target_size: 608
+      interp: 2
+    - !NormalizeImage
+      mean: [0.9076, 0.9265, 0.9232]
+      std: [0.1023, 0.1095, 0.1122]
+      is_scale: True
+      is_channel_first: false
+    - !Permute
+      to_bgr: false
+      channel_first: True
+  batch_size: 10 # ztodo
