@@ -14,10 +14,10 @@ TrainReader:
       beta: 1.5
     - !ColorDistort {}  
     # - !RandomRotateImage {}
-    - !ExpandImage
-      max_ratio: 3
-      prob: 0.5
-      mean: [0.9076, 0.9265, 0.9232]
+    # - !ExpandImage
+    #   max_ratio: 4.0
+    #   prob: 0.5
+    #   mean: [0.9076, 0.9265, 0.9232]
     - !RandomCrop
       allow_no_crop: true
     - !RandomInterpImage
