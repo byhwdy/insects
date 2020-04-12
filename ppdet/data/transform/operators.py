@@ -1439,3 +1439,55 @@ class BboxXYXY2XYWH(BaseOperator):
         bbox[:, :2] = bbox[:, :2] + bbox[:, 2:4] / 2.
         sample['gt_bbox'] = bbox
         return sample
+
+@register_op
+class RandomRotateImage(BaseOperator):
+
+    def __init__(self, max_angle=90, scale=1., mean=[0.9076, 0.9265, 0.9232]):
+        super(RandomRotateImage, self).__init__()
+
+        self.max_angle = max_angle
+        self.angles = list(range(-95, -85)) + list(range(-5, 5)) + list(range(85, 95))
+        self.scale = scale
+        self.mean = np.array(mean) * 255
+        self.mean = self.mean.astype("int").tolist()
+
+    def __call__(self, sample, context=None):
+        img = sample["image"]
+        bboxes = sample["gt_bbox"]
+        w = sample['w']
+        h = sample['h']
+        angle = np.random.choice(self.angles)
+
+        cx, cy = w // 2, h // 2
+        M = cv2.getRotationMatrix2D((cx, cy), angle, self.scale)
+        cos = np.abs(M[0, 0])
+        sin = np.abs(M[0, 1])
+        nW = h * sin + w * cos
+        nH = h * cos + w * sin
+
+        M[0, 2] += (nW / 2) - cx
+        M[1, 2] += (nH / 2) - cy
+        rot_img = cv2.warpAffine(img, M, (int(nW), int(nH)), borderValue=self.mean)
+
+        shift = int((nW - w) / 2)
+        rot_img = rot_img[shift: int(nH - shift), shift: int(nW - shift)]
+
+        rot_bboxes = np.zeros_like(bboxes)
+        for idx, box in enumerate(bboxes):
+            new_box = [[box[0], box[1]], [box[2], box[1]],
+                       [box[0], box[3]], [box[2], box[3]]]
+            out_box = [nW, nH, 0, 0]
+            for j, coord in enumerate(new_box):
+                v = [coord[0], coord[1], 1]
+                calculated = np.dot(M, v)
+                out_box[0] = min(out_box[0], calculated[0])
+                out_box[1] = min(out_box[1], calculated[1])
+                out_box[2] = max(out_box[2], calculated[0])
+                out_box[3] = max(out_box[3], calculated[1])
+            rot_bboxes[idx] = np.array(out_box) - shift
+        sample["image"] = rot_img
+        sample["gt_bbox"] = rot_bboxes
+        sample["h"] = rot_img.shape[0]
+        sample["w"] = rot_img.shape[1]
+        return sample

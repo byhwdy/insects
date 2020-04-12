@@ -24,15 +24,7 @@ class Compose(object):
         ctx = self.ctx if self.ctx else {}
         for f in self.transforms:
             try:
-                if str(f).split('_')[0] == 'MixupImage':
-                    print(f)
-                    print(data.keys())
-                    print(data)
                 data = f(data, ctx)
-                if str(f).split('_')[0] == 'MixupImage':
-                    print(data.keys())
-                    print(data)
-                    exit()
             except Exception as e:
                 stack_info = traceback.format_exc()
                 logger.info("fail to map op [{}] with error: {} and stack:\n{}".
