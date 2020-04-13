@@ -39,6 +39,21 @@ class PiecewiseDecay(object):
             values.append(lr)
         return fluid.layers.piecewise_decay(self.milestones, values)
 
+@serializable
+class CosineDecay(object):
+    """
+    Args:
+
+    """
+    def __init__(self, step_per_epoch, epochs):
+        super(CosineDecay, self).__init__()
+        self.step_per_epoch = step_per_epoch
+        self.epochs = epochs
+
+    def __call__(self, base_lr=None, learning_rate=None):
+        return fluid.layers.cosine_decay(
+            base_lr, self.step_per_epoch, self.epochs)
+
 
 @serializable
 class LinearWarmup(object):
