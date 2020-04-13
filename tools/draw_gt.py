@@ -13,12 +13,11 @@ from paddle import fluid
 
 from ppdet.core.workspace import load_config, merge_config, create
 
-from ppdet.utils.eval_utils import parse_fetches
+from ppdet.utils.eval_utils import parse_fetches, bbox2out
 from ppdet.utils.cli import ArgsParser
 from ppdet.utils.check import check_gpu, check_version
 from ppdet.utils.visualizer import visualize_results
 import ppdet.utils.checkpoint as checkpoint
-from ppdet.utils.voc_eval import bbox2out
 
 from ppdet.data.reader import create_reader
 from ppdet.data.source.insects import get_cid2cname, get_bbox_out
@@ -77,7 +76,7 @@ def main():
     # 数据源
     catid2name = get_cid2cname()
     test_images = get_test_images(FLAGS.infer_dir, FLAGS.infer_img, FLAGS.random_seed)
-    test_images = test_images[:FLAGS.sample_num]
+    test_images = test_images[:FLAGS.num_img]
     bbox_out = get_bbox_out(test_images)
 
     for im_id, im_path in enumerate(test_images):
@@ -101,14 +100,14 @@ if __name__ == '__main__':
         default=None,
         help="Directory for images to perform inference on.")
     parser.add_argument(
-        "--sample_num",
+        "--num_img",
         type=int,
         default=1,
         help="Directory for images to perform inference on.")
     parser.add_argument(
         "--random_seed",
         type=int,
-        default=1024,
+        default=None,
         help="Image path, has higher priority over --rondom_seed")
     parser.add_argument(
         "--infer_img",

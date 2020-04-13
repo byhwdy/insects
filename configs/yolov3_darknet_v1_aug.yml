@@ -1,7 +1,7 @@
 ####
 # 应用数据增强、mixup
 ####
-# 
+# 学习曲线 val map很快升高到81.80 然后持续降低，总体比v1的75高了5点
 ####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_darknet.tar
@@ -14,7 +14,7 @@ log_smooth_window: 20
 snapshot_iter: 2000
 save_dir: output
 map_type: 11point
-weights: output/yolov3_darknet_insects_v1/best_model
+weights: output/yolov3_darknet_v1_aug/best_model
 num_classes: 7
 use_fine_grained_loss: false
 
