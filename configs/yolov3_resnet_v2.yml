@@ -1,15 +1,20 @@
+####
+# resnet模型
+####
+#
+####
 architecture: YOLOv3
-# pretrain_weights: 
-# finetune_exclude_pretrained_params: ['yolo_output']
+pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
+finetune_exclude_pretrained_params: ['yolo_output']
 use_gpu: True
-use_gpu: False  # ztodo
-max_iters: 20000
+# use_gpu: False  # ztodo
+max_iters: 40000
 log_iter: 20
 log_smooth_window: 20
-snapshot_iter: 2000
+snapshot_iter: 1000
 save_dir: output
 map_type: 11point
-weights: output/yolov3_darknet_insects/best_model
+weights: output/yolov3_resnet_v2/best_model
 num_classes: 7
 use_fine_grained_loss: false
 
@@ -17,7 +22,7 @@ YOLOv3:
   backbone: ResNet
 
 ResNet:
-  norm_type: sync_bn
+  norm_type: bn
   freeze_at: 0
   freeze_norm: false
   norm_decay: 0.
@@ -42,11 +47,9 @@ YOLOv3Loss:
 LearningRate:
   base_lr: 0.001
   schedulers:
-  - !PiecewiseDecay
-    gamma: 0.1
-    milestones:
-    - 10000
-    - 15000
+  - !CosineDecay
+    step_per_epoch: 170 # ztodo
+    epochs: 235 # ztodo
   - !LinearWarmup
     steps: 2000
     start_factor: 0.
@@ -59,5 +62,5 @@ OptimizerBuilder:
     factor: 0.0005
     type: L2
 
-_READER_: 'yolov3_darknet_insects_reader.yml'
+_READER_: 'yolov3_darknet_v1_aug_reader.yml'
 
