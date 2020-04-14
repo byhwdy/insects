@@ -1,7 +1,7 @@
 ####
 # 应用学习率 cosine,调整warmup4000， 调整max_iters40000
 ####
-#
+# 没有什么变化，最佳val map 还是80 且出现较晚
 ####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_darknet.tar
