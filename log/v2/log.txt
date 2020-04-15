@@ -1,0 +1,1488 @@
+2020-04-14 22:41:01,886 - <ppdet.data.source.insects> - INFO: 245 samples in file dataset/insects/val/annotations/xmls
+2020-04-14 22:41:01,887 - <root> - INFO: places would be ommited when DataLoader is not iterable
+2020-04-14 22:41:05,773 - <ppdet.utils.download> - INFO: Downloading yolov3_r50vd_dcn_obj365_pretrained_coco.tar from https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
+2020-04-14 22:41:18,263 - <ppdet.utils.download> - INFO: Decompressing /home/aistudio/.cache/paddle/weights/yolov3_r50vd_dcn_obj365_pretrained_coco.tar...
+2020-04-14 22:41:18,693 - <ppdet.utils.checkpoint> - INFO: Loading parameters from /home/aistudio/.cache/paddle/weights/yolov3_r50vd_dcn_obj365_pretrained_coco...
+2020-04-14 22:41:19,087 - <paddle.fluid.io> - WARNING: /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco.pdparams not found, try to load model file saved with [ save_params, save_persistables, save_vars ]
+2020-04-14 22:41:19,103 - <paddle.fluid.io> - WARNING: variable file [ /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_3_mean /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_2_scale /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5a_branch2b_conv_offset.w_0 /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/conv1_1_weights /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_3_scale /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_2_offset /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_2_mean /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_1_mean /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5c_branch2b_conv_offset.b_0 /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_1_variance /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_3_offset /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/conv1_2_weights /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5b_branch2b_conv_offset.b_0 /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_3_variance /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/conv1_3_weights /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_1_offset /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5a_branch2b_conv_offset.b_0 /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_2_variance /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5b_branch2b_conv_offset.w_0 /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/bnv1_1_scale /tmp/tmp0mqi1y_n/yolov3_r50vd_dcn_obj365_pretrained_coco/res5c_branch2b_conv_offset.w_0 ] not used
+2020-04-14 22:41:20,499 - <ppdet.data.source.insects> - INFO: 1693 samples in file dataset/insects/train/annotations/xmls
+2020-04-14 22:41:20,499 - <root> - INFO: places would be ommited when DataLoader is not iterable
+2020-04-14 22:41:23,487 - <__main__> - INFO: iter: 0, lr: 0.000000, 'loss': '12395.013672', time: 2.984, eta: 1 day, 9:09:28
+2020-04-14 22:42:17,528 - <__main__> - INFO: iter: 20, lr: 0.000010, 'loss': '232.565018', time: 2.702, eta: 1 day, 6:00:26
+2020-04-14 22:43:10,941 - <__main__> - INFO: iter: 40, lr: 0.000020, 'loss': '111.796051', time: 2.671, eta: 1 day, 5:38:40
+2020-04-14 22:44:05,822 - <__main__> - INFO: iter: 60, lr: 0.000030, 'loss': '88.274437', time: 2.744, eta: 1 day, 6:26:38
+2020-04-14 22:45:00,124 - <__main__> - INFO: iter: 80, lr: 0.000040, 'loss': '72.460526', time: 2.715, eta: 1 day, 6:06:27
+2020-04-14 22:45:53,115 - <__main__> - INFO: iter: 100, lr: 0.000050, 'loss': '62.883186', time: 2.650, eta: 1 day, 5:21:57
+2020-04-14 22:46:45,548 - <__main__> - INFO: iter: 120, lr: 0.000060, 'loss': '57.932091', time: 2.622, eta: 1 day, 5:02:30
+2020-04-14 22:47:41,546 - <__main__> - INFO: iter: 140, lr: 0.000070, 'loss': '54.228233', time: 2.800, eta: 1 day, 7:00:04
+2020-04-14 22:48:33,448 - <__main__> - INFO: iter: 160, lr: 0.000080, 'loss': '53.888275', time: 2.595, eta: 1 day, 4:43:07
+2020-04-14 22:49:23,329 - <__main__> - INFO: iter: 180, lr: 0.000090, 'loss': '53.309341', time: 2.494, eta: 1 day, 3:35:17
+2020-04-14 22:50:13,403 - <__main__> - INFO: iter: 200, lr: 0.000100, 'loss': '49.252056', time: 2.504, eta: 1 day, 3:40:44
+2020-04-14 22:51:04,667 - <__main__> - INFO: iter: 220, lr: 0.000110, 'loss': '45.865299', time: 2.563, eta: 1 day, 4:19:23
+2020-04-14 22:51:58,924 - <__main__> - INFO: iter: 240, lr: 0.000120, 'loss': '47.517429', time: 2.713, eta: 1 day, 5:57:42
+2020-04-14 22:52:53,493 - <__main__> - INFO: iter: 260, lr: 0.000130, 'loss': '44.154026', time: 2.728, eta: 1 day, 6:07:06
+2020-04-14 22:53:46,701 - <__main__> - INFO: iter: 280, lr: 0.000140, 'loss': '44.440338', time: 2.660, eta: 1 day, 5:21:13
+2020-04-14 22:54:37,557 - <__main__> - INFO: iter: 300, lr: 0.000150, 'loss': '41.352028', time: 2.543, eta: 1 day, 4:02:30
+2020-04-14 22:55:31,196 - <__main__> - INFO: iter: 320, lr: 0.000160, 'loss': '42.182583', time: 2.682, eta: 1 day, 5:33:37
+2020-04-14 22:56:19,304 - <__main__> - INFO: iter: 340, lr: 0.000170, 'loss': '42.943096', time: 2.405, eta: 1 day, 2:29:59
+2020-04-14 22:57:08,435 - <__main__> - INFO: iter: 360, lr: 0.000180, 'loss': '40.405106', time: 2.456, eta: 1 day, 3:02:55
+2020-04-14 22:58:00,986 - <__main__> - INFO: iter: 380, lr: 0.000190, 'loss': '37.995342', time: 2.628, eta: 1 day, 4:55:05
+2020-04-14 22:58:54,471 - <__main__> - INFO: iter: 400, lr: 0.000200, 'loss': '38.552444', time: 2.674, eta: 1 day, 5:25:00
+2020-04-14 22:59:44,379 - <__main__> - INFO: iter: 420, lr: 0.000210, 'loss': '42.033195', time: 2.495, eta: 1 day, 3:26:06
+2020-04-14 23:00:36,456 - <__main__> - INFO: iter: 440, lr: 0.000220, 'loss': '40.386646', time: 2.604, eta: 1 day, 4:36:50
+2020-04-14 23:01:26,662 - <__main__> - INFO: iter: 460, lr: 0.000230, 'loss': '39.318657', time: 2.510, eta: 1 day, 3:34:16
+2020-04-14 23:02:22,204 - <__main__> - INFO: iter: 480, lr: 0.000240, 'loss': '39.355423', time: 2.777, eta: 1 day, 6:29:13
+2020-04-14 23:03:13,893 - <__main__> - INFO: iter: 500, lr: 0.000250, 'loss': '36.877960', time: 2.584, eta: 1 day, 4:21:24
+2020-04-14 23:04:03,572 - <__main__> - INFO: iter: 520, lr: 0.000260, 'loss': '36.483719', time: 2.484, eta: 1 day, 3:14:25
+2020-04-14 23:04:57,430 - <__main__> - INFO: iter: 540, lr: 0.000270, 'loss': '37.032570', time: 2.693, eta: 1 day, 5:31:03
+2020-04-14 23:05:52,405 - <__main__> - INFO: iter: 560, lr: 0.000280, 'loss': '37.505619', time: 2.749, eta: 1 day, 6:06:48
+2020-04-14 23:06:45,857 - <__main__> - INFO: iter: 580, lr: 0.000290, 'loss': '37.364590', time: 2.673, eta: 1 day, 5:15:55
+2020-04-14 23:07:38,165 - <__main__> - INFO: iter: 600, lr: 0.000300, 'loss': '39.536594', time: 2.615, eta: 1 day, 4:37:25
+2020-04-14 23:08:30,100 - <__main__> - INFO: iter: 620, lr: 0.000310, 'loss': '37.456352', time: 2.597, eta: 1 day, 4:24:20
+2020-04-14 23:09:21,114 - <__main__> - INFO: iter: 640, lr: 0.000320, 'loss': '37.690544', time: 2.551, eta: 1 day, 3:53:14
+2020-04-14 23:10:14,875 - <__main__> - INFO: iter: 660, lr: 0.000330, 'loss': '34.382378', time: 2.688, eta: 1 day, 5:22:27
+2020-04-14 23:11:04,720 - <__main__> - INFO: iter: 680, lr: 0.000340, 'loss': '39.876961', time: 2.492, eta: 1 day, 3:13:15
+2020-04-14 23:11:52,740 - <__main__> - INFO: iter: 700, lr: 0.000350, 'loss': '37.396683', time: 2.401, eta: 1 day, 2:12:38
+2020-04-14 23:12:43,007 - <__main__> - INFO: iter: 720, lr: 0.000360, 'loss': '36.060585', time: 2.513, eta: 1 day, 3:25:25
+2020-04-14 23:13:38,150 - <__main__> - INFO: iter: 740, lr: 0.000370, 'loss': '37.021400', time: 2.757, eta: 1 day, 6:04:03
+2020-04-14 23:14:29,834 - <__main__> - INFO: iter: 760, lr: 0.000380, 'loss': '34.658619', time: 2.584, eta: 1 day, 4:10:04
+2020-04-14 23:15:23,949 - <__main__> - INFO: iter: 780, lr: 0.000390, 'loss': '36.094559', time: 2.706, eta: 1 day, 5:28:40
+2020-04-14 23:16:16,856 - <__main__> - INFO: iter: 800, lr: 0.000400, 'loss': '34.649784', time: 2.645, eta: 1 day, 4:48:16
+2020-04-14 23:17:08,979 - <__main__> - INFO: iter: 820, lr: 0.000410, 'loss': '35.763832', time: 2.606, eta: 1 day, 4:21:49
+2020-04-14 23:17:59,488 - <__main__> - INFO: iter: 840, lr: 0.000420, 'loss': '35.563652', time: 2.526, eta: 1 day, 3:28:19
+2020-04-14 23:18:49,207 - <__main__> - INFO: iter: 860, lr: 0.000430, 'loss': '38.733501', time: 2.486, eta: 1 day, 3:01:37
+2020-04-14 23:19:44,540 - <__main__> - INFO: iter: 880, lr: 0.000440, 'loss': '35.664604', time: 2.767, eta: 1 day, 6:03:52
+2020-04-14 23:20:39,080 - <__main__> - INFO: iter: 900, lr: 0.000450, 'loss': '35.660851', time: 2.727, eta: 1 day, 5:37:04
+2020-04-14 23:21:27,688 - <__main__> - INFO: iter: 920, lr: 0.000460, 'loss': '35.190670', time: 2.430, eta: 1 day, 2:23:01
+2020-04-14 23:22:21,513 - <__main__> - INFO: iter: 940, lr: 0.000470, 'loss': '35.616268', time: 2.691, eta: 1 day, 5:11:58
+2020-04-14 23:23:11,724 - <__main__> - INFO: iter: 960, lr: 0.000480, 'loss': '35.009991', time: 2.511, eta: 1 day, 3:13:31
+2020-04-14 23:24:04,000 - <__main__> - INFO: iter: 980, lr: 0.000490, 'loss': '36.176811', time: 2.614, eta: 1 day, 4:19:51
+2020-04-14 23:24:55,366 - <__main__> - INFO: iter: 1000, lr: 0.000500, 'loss': '33.084488', time: 2.568, eta: 1 day, 3:49:24
+2020-04-14 23:24:55,367 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/1000.
+2020-04-14 23:25:00,952 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-14 23:25:15,756 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-14 23:25:15,756 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-14 23:25:15,757 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-14 23:25:16,017 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-14 23:25:16,038 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 46.13
+2020-04-14 23:25:16,039 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-14 23:25:20,758 - <__main__> - INFO: Best eval box ap: 46.13123091311163, in iter: 1000
+2020-04-14 23:25:51,343 - <__main__> - INFO: iter: 1020, lr: 0.000510, 'loss': '33.739574', time: 2.799, eta: 1 day, 6:18:18
+2020-04-14 23:26:43,050 - <__main__> - INFO: iter: 1040, lr: 0.000520, 'loss': '37.185993', time: 2.585, eta: 1 day, 3:58:47
+2020-04-14 23:27:34,046 - <__main__> - INFO: iter: 1060, lr: 0.000530, 'loss': '34.630173', time: 2.550, eta: 1 day, 3:34:49
+2020-04-14 23:28:27,142 - <__main__> - INFO: iter: 1080, lr: 0.000540, 'loss': '34.183346', time: 2.655, eta: 1 day, 4:42:04
+2020-04-14 23:29:19,528 - <__main__> - INFO: iter: 1100, lr: 0.000550, 'loss': '32.758377', time: 2.619, eta: 1 day, 4:18:10
+2020-04-14 23:30:11,168 - <__main__> - INFO: iter: 1120, lr: 0.000560, 'loss': '36.322296', time: 2.582, eta: 1 day, 3:53:09
+2020-04-14 23:31:01,219 - <__main__> - INFO: iter: 1140, lr: 0.000570, 'loss': '34.243759', time: 2.503, eta: 1 day, 3:00:49
+2020-04-14 23:31:52,025 - <__main__> - INFO: iter: 1160, lr: 0.000580, 'loss': '32.761063', time: 2.540, eta: 1 day, 3:24:25
+2020-04-14 23:32:42,897 - <__main__> - INFO: iter: 1180, lr: 0.000590, 'loss': '31.509884', time: 2.544, eta: 1 day, 3:25:41
+2020-04-14 23:33:32,517 - <__main__> - INFO: iter: 1200, lr: 0.000600, 'loss': '34.782383', time: 2.481, eta: 1 day, 2:44:21
+2020-04-14 23:34:21,119 - <__main__> - INFO: iter: 1220, lr: 0.000610, 'loss': '34.612152', time: 2.430, eta: 1 day, 2:10:39
+2020-04-14 23:35:13,145 - <__main__> - INFO: iter: 1240, lr: 0.000620, 'loss': '33.358200', time: 2.601, eta: 1 day, 4:00:26
+2020-04-14 23:36:04,568 - <__main__> - INFO: iter: 1260, lr: 0.000630, 'loss': '34.637321', time: 2.571, eta: 1 day, 3:40:08
+2020-04-14 23:36:55,570 - <__main__> - INFO: iter: 1280, lr: 0.000640, 'loss': '34.329842', time: 2.550, eta: 1 day, 3:25:39
+2020-04-14 23:37:45,368 - <__main__> - INFO: iter: 1300, lr: 0.000650, 'loss': '34.255630', time: 2.490, eta: 1 day, 2:45:57
+2020-04-14 23:38:35,262 - <__main__> - INFO: iter: 1320, lr: 0.000660, 'loss': '32.610680', time: 2.495, eta: 1 day, 2:48:15
+2020-04-14 23:39:28,293 - <__main__> - INFO: iter: 1340, lr: 0.000670, 'loss': '31.262413', time: 2.652, eta: 1 day, 4:28:28
+2020-04-14 23:40:18,681 - <__main__> - INFO: iter: 1360, lr: 0.000680, 'loss': '32.393894', time: 2.519, eta: 1 day, 3:02:30
+2020-04-14 23:41:12,846 - <__main__> - INFO: iter: 1380, lr: 0.000690, 'loss': '33.864449', time: 2.708, eta: 1 day, 5:03:11
+2020-04-14 23:42:02,795 - <__main__> - INFO: iter: 1400, lr: 0.000700, 'loss': '32.063900', time: 2.497, eta: 1 day, 2:46:43
+2020-04-14 23:42:54,544 - <__main__> - INFO: iter: 1420, lr: 0.000710, 'loss': '33.531487', time: 2.587, eta: 1 day, 3:43:43
+2020-04-14 23:43:47,248 - <__main__> - INFO: iter: 1440, lr: 0.000720, 'loss': '32.654419', time: 2.635, eta: 1 day, 4:13:32
+2020-04-14 23:44:39,536 - <__main__> - INFO: iter: 1460, lr: 0.000730, 'loss': '34.473602', time: 2.614, eta: 1 day, 3:59:19
+2020-04-14 23:45:32,581 - <__main__> - INFO: iter: 1480, lr: 0.000740, 'loss': '35.504677', time: 2.652, eta: 1 day, 4:22:45
+2020-04-14 23:46:25,104 - <__main__> - INFO: iter: 1500, lr: 0.000750, 'loss': '33.302383', time: 2.626, eta: 1 day, 4:05:07
+2020-04-14 23:47:18,540 - <__main__> - INFO: iter: 1520, lr: 0.000760, 'loss': '34.159683', time: 2.672, eta: 1 day, 4:33:30
+2020-04-14 23:48:08,874 - <__main__> - INFO: iter: 1540, lr: 0.000770, 'loss': '33.954517', time: 2.517, eta: 1 day, 2:53:11
+2020-04-14 23:48:58,363 - <__main__> - INFO: iter: 1560, lr: 0.000780, 'loss': '32.208588', time: 2.474, eta: 1 day, 2:25:18
+2020-04-14 23:49:50,203 - <__main__> - INFO: iter: 1580, lr: 0.000790, 'loss': '32.948288', time: 2.592, eta: 1 day, 3:39:44
+2020-04-14 23:50:45,202 - <__main__> - INFO: iter: 1600, lr: 0.000800, 'loss': '32.290207', time: 2.750, eta: 1 day, 5:19:58
+2020-04-14 23:51:38,623 - <__main__> - INFO: iter: 1620, lr: 0.000810, 'loss': '32.666542', time: 2.671, eta: 1 day, 4:28:35
+2020-04-14 23:52:29,969 - <__main__> - INFO: iter: 1640, lr: 0.000820, 'loss': '32.476944', time: 2.567, eta: 1 day, 3:21:21
+2020-04-14 23:53:22,575 - <__main__> - INFO: iter: 1660, lr: 0.000830, 'loss': '31.547737', time: 2.630, eta: 1 day, 4:00:44
+2020-04-14 23:54:12,953 - <__main__> - INFO: iter: 1680, lr: 0.000840, 'loss': '31.271318', time: 2.519, eta: 1 day, 2:48:44
+2020-04-14 23:55:03,646 - <__main__> - INFO: iter: 1700, lr: 0.000850, 'loss': '33.102196', time: 2.535, eta: 1 day, 2:58:00
+2020-04-14 23:55:53,695 - <__main__> - INFO: iter: 1720, lr: 0.000860, 'loss': '34.107189', time: 2.502, eta: 1 day, 2:36:30
+2020-04-14 23:56:46,538 - <__main__> - INFO: iter: 1740, lr: 0.000870, 'loss': '32.257523', time: 2.642, eta: 1 day, 4:04:48
+2020-04-14 23:57:34,593 - <__main__> - INFO: iter: 1760, lr: 0.000880, 'loss': '31.140766', time: 2.403, eta: 1 day, 1:31:20
+2020-04-14 23:58:27,056 - <__main__> - INFO: iter: 1780, lr: 0.000890, 'loss': '32.898724', time: 2.623, eta: 1 day, 3:50:56
+2020-04-14 23:59:21,594 - <__main__> - INFO: iter: 1800, lr: 0.000900, 'loss': '32.264332', time: 2.727, eta: 1 day, 4:56:09
+2020-04-15 00:00:11,065 - <__main__> - INFO: iter: 1820, lr: 0.000910, 'loss': '31.647316', time: 2.474, eta: 1 day, 2:14:00
+2020-04-15 00:01:01,763 - <__main__> - INFO: iter: 1840, lr: 0.000920, 'loss': '30.880917', time: 2.535, eta: 1 day, 2:52:11
+2020-04-15 00:01:54,832 - <__main__> - INFO: iter: 1860, lr: 0.000930, 'loss': '29.178127', time: 2.653, eta: 1 day, 4:06:43
+2020-04-15 00:02:41,272 - <__main__> - INFO: iter: 1880, lr: 0.000940, 'loss': '32.393677', time: 2.322, eta: 1 day, 0:35:14
+2020-04-15 00:03:32,727 - <__main__> - INFO: iter: 1900, lr: 0.000950, 'loss': '32.311874', time: 2.573, eta: 1 day, 3:13:42
+2020-04-15 00:04:22,852 - <__main__> - INFO: iter: 1920, lr: 0.000960, 'loss': '31.814344', time: 2.506, eta: 1 day, 2:30:37
+2020-04-15 00:05:15,544 - <__main__> - INFO: iter: 1940, lr: 0.000970, 'loss': '31.837343', time: 2.635, eta: 1 day, 3:51:13
+2020-04-15 00:06:05,737 - <__main__> - INFO: iter: 1960, lr: 0.000980, 'loss': '32.308525', time: 2.510, eta: 1 day, 2:31:06
+2020-04-15 00:06:58,841 - <__main__> - INFO: iter: 1980, lr: 0.000990, 'loss': '31.757189', time: 2.655, eta: 1 day, 4:02:28
+2020-04-15 00:07:52,562 - <__main__> - INFO: iter: 2000, lr: 0.000995, 'loss': '30.493607', time: 2.686, eta: 1 day, 4:21:10
+2020-04-15 00:07:52,562 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/2000.
+2020-04-15 00:07:58,103 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 00:08:12,304 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 00:08:12,305 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 00:08:12,305 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 00:08:12,527 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 00:08:12,543 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 57.17
+2020-04-15 00:08:12,544 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 00:08:21,117 - <__main__> - INFO: Best eval box ap: 57.17301193148238, in iter: 2000
+2020-04-15 00:08:46,061 - <__main__> - INFO: iter: 2020, lr: 0.000995, 'loss': '30.701450', time: 2.675, eta: 1 day, 4:13:16
+2020-04-15 00:09:35,690 - <__main__> - INFO: iter: 2040, lr: 0.000994, 'loss': '30.836937', time: 2.481, eta: 1 day, 2:09:54
+2020-04-15 00:10:26,728 - <__main__> - INFO: iter: 2060, lr: 0.000994, 'loss': '31.477398', time: 2.552, eta: 1 day, 2:53:39
+2020-04-15 00:11:16,760 - <__main__> - INFO: iter: 2080, lr: 0.000994, 'loss': '29.892326', time: 2.502, eta: 1 day, 2:21:00
+2020-04-15 00:12:07,899 - <__main__> - INFO: iter: 2100, lr: 0.000994, 'loss': '33.255653', time: 2.557, eta: 1 day, 2:55:09
+2020-04-15 00:12:55,567 - <__main__> - INFO: iter: 2120, lr: 0.000994, 'loss': '31.286713', time: 2.383, eta: 1 day, 1:04:42
+2020-04-15 00:13:47,221 - <__main__> - INFO: iter: 2140, lr: 0.000994, 'loss': '29.630379', time: 2.583, eta: 1 day, 3:09:39
+2020-04-15 00:14:38,242 - <__main__> - INFO: iter: 2160, lr: 0.000994, 'loss': '31.174311', time: 2.551, eta: 1 day, 2:48:51
+2020-04-15 00:15:27,284 - <__main__> - INFO: iter: 2180, lr: 0.000994, 'loss': '32.642788', time: 2.452, eta: 1 day, 1:45:40
+2020-04-15 00:16:18,399 - <__main__> - INFO: iter: 2200, lr: 0.000994, 'loss': '30.671349', time: 2.556, eta: 1 day, 2:50:06
+2020-04-15 00:17:08,601 - <__main__> - INFO: iter: 2220, lr: 0.000992, 'loss': '30.863796', time: 2.510, eta: 1 day, 2:20:32
+2020-04-15 00:18:01,084 - <__main__> - INFO: iter: 2240, lr: 0.000992, 'loss': '31.422272', time: 2.624, eta: 1 day, 3:31:27
+2020-04-15 00:18:54,788 - <__main__> - INFO: iter: 2260, lr: 0.000992, 'loss': '32.139164', time: 2.685, eta: 1 day, 4:09:00
+2020-04-15 00:19:48,112 - <__main__> - INFO: iter: 2280, lr: 0.000992, 'loss': '30.198383', time: 2.666, eta: 1 day, 3:56:12
+2020-04-15 00:20:38,136 - <__main__> - INFO: iter: 2300, lr: 0.000992, 'loss': '29.110090', time: 2.501, eta: 1 day, 2:11:32
+2020-04-15 00:21:29,843 - <__main__> - INFO: iter: 2320, lr: 0.000992, 'loss': '31.190443', time: 2.585, eta: 1 day, 3:03:33
+2020-04-15 00:22:22,140 - <__main__> - INFO: iter: 2340, lr: 0.000992, 'loss': '30.986124', time: 2.615, eta: 1 day, 3:21:16
+2020-04-15 00:23:10,421 - <__main__> - INFO: iter: 2360, lr: 0.000992, 'loss': '30.359039', time: 2.414, eta: 1 day, 1:14:24
+2020-04-15 00:24:00,357 - <__main__> - INFO: iter: 2380, lr: 0.000991, 'loss': '30.037600', time: 2.497, eta: 1 day, 2:05:30
+2020-04-15 00:24:51,761 - <__main__> - INFO: iter: 2400, lr: 0.000991, 'loss': '29.781197', time: 2.570, eta: 1 day, 2:50:38
+2020-04-15 00:25:42,993 - <__main__> - INFO: iter: 2420, lr: 0.000991, 'loss': '29.937672', time: 2.562, eta: 1 day, 2:44:26
+2020-04-15 00:26:35,644 - <__main__> - INFO: iter: 2440, lr: 0.000991, 'loss': '30.373554', time: 2.633, eta: 1 day, 3:27:57
+2020-04-15 00:27:27,846 - <__main__> - INFO: iter: 2460, lr: 0.000991, 'loss': '30.402702', time: 2.610, eta: 1 day, 3:13:02
+2020-04-15 00:28:20,060 - <__main__> - INFO: iter: 2480, lr: 0.000991, 'loss': '29.740440', time: 2.611, eta: 1 day, 3:12:34
+2020-04-15 00:29:11,858 - <__main__> - INFO: iter: 2500, lr: 0.000991, 'loss': '29.045513', time: 2.590, eta: 1 day, 2:58:42
+2020-04-15 00:30:03,660 - <__main__> - INFO: iter: 2520, lr: 0.000991, 'loss': '30.588310', time: 2.590, eta: 1 day, 2:57:56
+2020-04-15 00:30:53,751 - <__main__> - INFO: iter: 2540, lr: 0.000991, 'loss': '29.882511', time: 2.505, eta: 1 day, 2:03:40
+2020-04-15 00:31:42,499 - <__main__> - INFO: iter: 2560, lr: 0.000990, 'loss': '32.230637', time: 2.437, eta: 1 day, 1:20:57
+2020-04-15 00:32:36,387 - <__main__> - INFO: iter: 2580, lr: 0.000990, 'loss': '30.077932', time: 2.694, eta: 1 day, 4:00:24
+2020-04-15 00:33:28,979 - <__main__> - INFO: iter: 2600, lr: 0.000990, 'loss': '31.882072', time: 2.630, eta: 1 day, 3:19:06
+2020-04-15 00:34:21,754 - <__main__> - INFO: iter: 2620, lr: 0.000990, 'loss': '29.435696', time: 2.639, eta: 1 day, 3:23:55
+2020-04-15 00:35:17,359 - <__main__> - INFO: iter: 2640, lr: 0.000990, 'loss': '31.739555', time: 2.780, eta: 1 day, 4:51:09
+2020-04-15 00:36:08,091 - <__main__> - INFO: iter: 2660, lr: 0.000990, 'loss': '28.859116', time: 2.537, eta: 1 day, 2:18:37
+2020-04-15 00:36:57,246 - <__main__> - INFO: iter: 2680, lr: 0.000990, 'loss': '28.083035', time: 2.458, eta: 1 day, 1:28:43
+2020-04-15 00:37:50,427 - <__main__> - INFO: iter: 2700, lr: 0.000990, 'loss': '29.446554', time: 2.659, eta: 1 day, 3:33:02
+2020-04-15 00:38:41,697 - <__main__> - INFO: iter: 2720, lr: 0.000989, 'loss': '28.948460', time: 2.564, eta: 1 day, 2:32:48
+2020-04-15 00:39:34,476 - <__main__> - INFO: iter: 2740, lr: 0.000989, 'loss': '29.515501', time: 2.639, eta: 1 day, 3:18:47
+2020-04-15 00:40:27,918 - <__main__> - INFO: iter: 2760, lr: 0.000989, 'loss': '30.936512', time: 2.672, eta: 1 day, 3:38:29
+2020-04-15 00:41:19,956 - <__main__> - INFO: iter: 2780, lr: 0.000989, 'loss': '28.010763', time: 2.602, eta: 1 day, 2:54:01
+2020-04-15 00:42:11,134 - <__main__> - INFO: iter: 2800, lr: 0.000989, 'loss': '29.222225', time: 2.559, eta: 1 day, 2:26:30
+2020-04-15 00:42:59,358 - <__main__> - INFO: iter: 2820, lr: 0.000989, 'loss': '29.995935', time: 2.411, eta: 1 day, 0:54:09
+2020-04-15 00:43:48,861 - <__main__> - INFO: iter: 2840, lr: 0.000989, 'loss': '28.841497', time: 2.475, eta: 1 day, 1:32:55
+2020-04-15 00:44:39,443 - <__main__> - INFO: iter: 2860, lr: 0.000989, 'loss': '29.768509', time: 2.529, eta: 1 day, 2:05:31
+2020-04-15 00:45:30,200 - <__main__> - INFO: iter: 2880, lr: 0.000989, 'loss': '28.813873', time: 2.538, eta: 1 day, 2:10:04
+2020-04-15 00:46:20,890 - <__main__> - INFO: iter: 2900, lr: 0.000987, 'loss': '29.694405', time: 2.534, eta: 1 day, 2:07:09
+2020-04-15 00:47:12,549 - <__main__> - INFO: iter: 2920, lr: 0.000987, 'loss': '28.396332', time: 2.583, eta: 1 day, 2:36:18
+2020-04-15 00:48:05,190 - <__main__> - INFO: iter: 2940, lr: 0.000987, 'loss': '29.537184', time: 2.632, eta: 1 day, 3:05:42
+2020-04-15 00:48:56,969 - <__main__> - INFO: iter: 2960, lr: 0.000987, 'loss': '27.854008', time: 2.589, eta: 1 day, 2:38:12
+2020-04-15 00:49:51,380 - <__main__> - INFO: iter: 2980, lr: 0.000987, 'loss': '27.787386', time: 2.721, eta: 1 day, 3:58:37
+2020-04-15 00:50:42,940 - <__main__> - INFO: iter: 3000, lr: 0.000987, 'loss': '29.840677', time: 2.578, eta: 1 day, 2:29:46
+2020-04-15 00:50:42,940 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/3000.
+2020-04-15 00:50:48,808 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 00:51:03,408 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 00:51:03,408 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 00:51:03,408 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 00:51:03,604 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 00:51:03,617 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 67.53
+2020-04-15 00:51:03,618 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 00:51:12,013 - <__main__> - INFO: Best eval box ap: 67.52951192223756, in iter: 3000
+2020-04-15 00:51:39,921 - <__main__> - INFO: iter: 3020, lr: 0.000987, 'loss': '29.483332', time: 2.849, eta: 1 day, 5:16:01
+2020-04-15 00:52:31,221 - <__main__> - INFO: iter: 3040, lr: 0.000987, 'loss': '28.298656', time: 2.565, eta: 1 day, 2:19:59
+2020-04-15 00:53:21,659 - <__main__> - INFO: iter: 3060, lr: 0.000986, 'loss': '28.361767', time: 2.522, eta: 1 day, 1:52:39
+2020-04-15 00:54:14,993 - <__main__> - INFO: iter: 3080, lr: 0.000986, 'loss': '28.762180', time: 2.667, eta: 1 day, 3:20:53
+2020-04-15 00:55:07,702 - <__main__> - INFO: iter: 3100, lr: 0.000986, 'loss': '30.412394', time: 2.636, eta: 1 day, 3:00:51
+2020-04-15 00:55:59,420 - <__main__> - INFO: iter: 3120, lr: 0.000986, 'loss': '27.207382', time: 2.586, eta: 1 day, 2:29:25
+2020-04-15 00:56:51,532 - <__main__> - INFO: iter: 3140, lr: 0.000986, 'loss': '29.016518', time: 2.606, eta: 1 day, 2:40:43
+2020-04-15 00:57:43,276 - <__main__> - INFO: iter: 3160, lr: 0.000986, 'loss': '27.505350', time: 2.587, eta: 1 day, 2:28:31
+2020-04-15 00:58:36,052 - <__main__> - INFO: iter: 3180, lr: 0.000986, 'loss': '26.825779', time: 2.639, eta: 1 day, 2:59:19
+2020-04-15 00:59:26,527 - <__main__> - INFO: iter: 3200, lr: 0.000986, 'loss': '26.266731', time: 2.524, eta: 1 day, 1:47:54
+2020-04-15 01:00:18,518 - <__main__> - INFO: iter: 3220, lr: 0.000986, 'loss': '28.523371', time: 2.600, eta: 1 day, 2:33:32
+2020-04-15 01:01:07,962 - <__main__> - INFO: iter: 3240, lr: 0.000984, 'loss': '29.361666', time: 2.472, eta: 1 day, 1:14:37
+2020-04-15 01:01:58,895 - <__main__> - INFO: iter: 3260, lr: 0.000984, 'loss': '28.703653', time: 2.547, eta: 1 day, 1:59:25
+2020-04-15 01:02:49,817 - <__main__> - INFO: iter: 3280, lr: 0.000984, 'loss': '28.530846', time: 2.546, eta: 1 day, 1:58:12
+2020-04-15 01:03:40,962 - <__main__> - INFO: iter: 3300, lr: 0.000984, 'loss': '28.148241', time: 2.557, eta: 1 day, 2:04:09
+2020-04-15 01:04:29,617 - <__main__> - INFO: iter: 3320, lr: 0.000984, 'loss': '27.966904', time: 2.433, eta: 1 day, 0:47:16
+2020-04-15 01:05:23,356 - <__main__> - INFO: iter: 3340, lr: 0.000984, 'loss': '26.933865', time: 2.687, eta: 1 day, 3:21:40
+2020-04-15 01:06:15,588 - <__main__> - INFO: iter: 3360, lr: 0.000984, 'loss': '27.616318', time: 2.612, eta: 1 day, 2:34:51
+2020-04-15 01:07:05,292 - <__main__> - INFO: iter: 3380, lr: 0.000984, 'loss': '27.646187', time: 2.485, eta: 1 day, 1:16:46
+2020-04-15 01:07:56,570 - <__main__> - INFO: iter: 3400, lr: 0.000982, 'loss': '29.228390', time: 2.564, eta: 1 day, 2:03:57
+2020-04-15 01:08:46,112 - <__main__> - INFO: iter: 3420, lr: 0.000982, 'loss': '27.769209', time: 2.477, eta: 1 day, 1:10:09
+2020-04-15 01:09:38,830 - <__main__> - INFO: iter: 3440, lr: 0.000982, 'loss': '27.494404', time: 2.636, eta: 1 day, 2:46:08
+2020-04-15 01:10:29,304 - <__main__> - INFO: iter: 3460, lr: 0.000982, 'loss': '27.535034', time: 2.524, eta: 1 day, 1:36:57
+2020-04-15 01:11:20,209 - <__main__> - INFO: iter: 3480, lr: 0.000982, 'loss': '26.825928', time: 2.545, eta: 1 day, 1:49:11
+2020-04-15 01:12:06,597 - <__main__> - INFO: iter: 3500, lr: 0.000982, 'loss': '26.847816', time: 2.319, eta: 23:30:59
+2020-04-15 01:12:56,915 - <__main__> - INFO: iter: 3520, lr: 0.000982, 'loss': '26.665461', time: 2.516, eta: 1 day, 1:29:40
+2020-04-15 01:13:47,170 - <__main__> - INFO: iter: 3540, lr: 0.000982, 'loss': '26.584118', time: 2.513, eta: 1 day, 1:26:57
+2020-04-15 01:14:39,701 - <__main__> - INFO: iter: 3560, lr: 0.000982, 'loss': '26.372768', time: 2.627, eta: 1 day, 2:35:10
+2020-04-15 01:15:25,437 - <__main__> - INFO: iter: 3580, lr: 0.000980, 'loss': '27.196388', time: 2.287, eta: 23:08:02
+2020-04-15 01:16:19,350 - <__main__> - INFO: iter: 3600, lr: 0.000980, 'loss': '28.335697', time: 2.696, eta: 1 day, 3:15:23
+2020-04-15 01:17:09,726 - <__main__> - INFO: iter: 3620, lr: 0.000980, 'loss': '27.179951', time: 2.519, eta: 1 day, 1:27:12
+2020-04-15 01:18:01,863 - <__main__> - INFO: iter: 3640, lr: 0.000980, 'loss': '27.585798', time: 2.607, eta: 1 day, 2:19:47
+2020-04-15 01:18:51,371 - <__main__> - INFO: iter: 3660, lr: 0.000980, 'loss': '29.090519', time: 2.475, eta: 1 day, 0:59:15
+2020-04-15 01:19:41,009 - <__main__> - INFO: iter: 3680, lr: 0.000980, 'loss': '27.616879', time: 2.482, eta: 1 day, 1:02:21
+2020-04-15 01:20:29,109 - <__main__> - INFO: iter: 3700, lr: 0.000980, 'loss': '26.498800', time: 2.405, eta: 1 day, 0:15:02
+2020-04-15 01:21:21,761 - <__main__> - INFO: iter: 3720, lr: 0.000980, 'loss': '27.386868', time: 2.633, eta: 1 day, 2:31:51
+2020-04-15 01:22:11,422 - <__main__> - INFO: iter: 3740, lr: 0.000979, 'loss': '26.887806', time: 2.483, eta: 1 day, 1:00:38
+2020-04-15 01:23:00,972 - <__main__> - INFO: iter: 3760, lr: 0.000979, 'loss': '28.865629', time: 2.477, eta: 1 day, 0:56:22
+2020-04-15 01:23:53,045 - <__main__> - INFO: iter: 3780, lr: 0.000979, 'loss': '26.248491', time: 2.604, eta: 1 day, 2:11:44
+2020-04-15 01:24:41,729 - <__main__> - INFO: iter: 3800, lr: 0.000979, 'loss': '26.714771', time: 2.434, eta: 1 day, 0:28:36
+2020-04-15 01:25:32,682 - <__main__> - INFO: iter: 3820, lr: 0.000979, 'loss': '27.382637', time: 2.548, eta: 1 day, 1:36:14
+2020-04-15 01:26:21,849 - <__main__> - INFO: iter: 3840, lr: 0.000979, 'loss': '26.511875', time: 2.458, eta: 1 day, 0:41:34
+2020-04-15 01:27:13,079 - <__main__> - INFO: iter: 3860, lr: 0.000979, 'loss': '26.632589', time: 2.562, eta: 1 day, 1:42:53
+2020-04-15 01:28:03,824 - <__main__> - INFO: iter: 3880, lr: 0.000979, 'loss': '25.702187', time: 2.537, eta: 1 day, 1:27:26
+2020-04-15 01:28:53,551 - <__main__> - INFO: iter: 3900, lr: 0.000979, 'loss': '27.741022', time: 2.486, eta: 1 day, 0:55:54
+2020-04-15 01:29:44,092 - <__main__> - INFO: iter: 3920, lr: 0.000977, 'loss': '27.681438', time: 2.527, eta: 1 day, 1:19:35
+2020-04-15 01:30:32,827 - <__main__> - INFO: iter: 3940, lr: 0.000977, 'loss': '27.807232', time: 2.437, eta: 1 day, 0:24:30
+2020-04-15 01:31:23,190 - <__main__> - INFO: iter: 3960, lr: 0.000977, 'loss': '26.328243', time: 2.518, eta: 1 day, 1:12:33
+2020-04-15 01:32:11,150 - <__main__> - INFO: iter: 3980, lr: 0.000977, 'loss': '27.095562', time: 2.398, eta: 23:59:36
+2020-04-15 01:33:04,493 - <__main__> - INFO: iter: 4000, lr: 0.000977, 'loss': '25.374994', time: 2.667, eta: 1 day, 2:40:17
+2020-04-15 01:33:04,494 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/4000.
+2020-04-15 01:33:10,210 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 01:33:24,287 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 01:33:24,288 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 01:33:24,288 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 01:33:24,457 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 01:33:24,468 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 74.19
+2020-04-15 01:33:24,469 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 01:33:32,612 - <__main__> - INFO: Best eval box ap: 74.19371201705265, in iter: 4000
+2020-04-15 01:34:03,705 - <__main__> - INFO: iter: 4020, lr: 0.000977, 'loss': '25.581781', time: 2.961, eta: 1 day, 5:35:25
+2020-04-15 01:34:55,060 - <__main__> - INFO: iter: 4040, lr: 0.000977, 'loss': '27.728420', time: 2.568, eta: 1 day, 1:38:52
+2020-04-15 01:35:46,755 - <__main__> - INFO: iter: 4060, lr: 0.000977, 'loss': '26.808918', time: 2.585, eta: 1 day, 1:48:16
+2020-04-15 01:36:35,635 - <__main__> - INFO: iter: 4080, lr: 0.000974, 'loss': '27.414183', time: 2.444, eta: 1 day, 0:23:08
+2020-04-15 01:37:29,380 - <__main__> - INFO: iter: 4100, lr: 0.000974, 'loss': '27.461296', time: 2.687, eta: 1 day, 2:47:52
+2020-04-15 01:38:21,843 - <__main__> - INFO: iter: 4120, lr: 0.000974, 'loss': '27.221626', time: 2.623, eta: 1 day, 2:08:37
+2020-04-15 01:39:11,856 - <__main__> - INFO: iter: 4140, lr: 0.000974, 'loss': '26.916597', time: 2.501, eta: 1 day, 0:54:34
+2020-04-15 01:40:04,690 - <__main__> - INFO: iter: 4160, lr: 0.000974, 'loss': '26.816811', time: 2.642, eta: 1 day, 2:17:58
+2020-04-15 01:40:59,371 - <__main__> - INFO: iter: 4180, lr: 0.000974, 'loss': '26.711132', time: 2.734, eta: 1 day, 3:12:14
+2020-04-15 01:41:48,715 - <__main__> - INFO: iter: 4200, lr: 0.000974, 'loss': '26.796328', time: 2.467, eta: 1 day, 0:32:05
+2020-04-15 01:42:44,770 - <__main__> - INFO: iter: 4220, lr: 0.000974, 'loss': '27.385530', time: 2.803, eta: 1 day, 3:51:21
+2020-04-15 01:43:38,092 - <__main__> - INFO: iter: 4240, lr: 0.000974, 'loss': '25.989357', time: 2.666, eta: 1 day, 2:29:00
+2020-04-15 01:44:31,622 - <__main__> - INFO: iter: 4260, lr: 0.000972, 'loss': '27.962831', time: 2.677, eta: 1 day, 2:34:18
+2020-04-15 01:45:22,908 - <__main__> - INFO: iter: 4280, lr: 0.000972, 'loss': '25.370174', time: 2.564, eta: 1 day, 1:26:35
+2020-04-15 01:46:15,663 - <__main__> - INFO: iter: 4300, lr: 0.000972, 'loss': '26.072878', time: 2.638, eta: 1 day, 2:09:28
+2020-04-15 01:47:10,170 - <__main__> - INFO: iter: 4320, lr: 0.000972, 'loss': '26.714886', time: 2.725, eta: 1 day, 3:00:43
+2020-04-15 01:48:00,609 - <__main__> - INFO: iter: 4340, lr: 0.000972, 'loss': '27.107952', time: 2.522, eta: 1 day, 0:58:48
+2020-04-15 01:48:55,532 - <__main__> - INFO: iter: 4360, lr: 0.000972, 'loss': '27.358814', time: 2.746, eta: 1 day, 3:11:13
+2020-04-15 01:49:46,636 - <__main__> - INFO: iter: 4380, lr: 0.000972, 'loss': '25.668320', time: 2.555, eta: 1 day, 1:16:56
+2020-04-15 01:50:37,421 - <__main__> - INFO: iter: 4400, lr: 0.000972, 'loss': '25.983938', time: 2.539, eta: 1 day, 1:06:37
+2020-04-15 01:51:25,180 - <__main__> - INFO: iter: 4420, lr: 0.000970, 'loss': '25.721529', time: 2.388, eta: 23:36:02
+2020-04-15 01:52:18,201 - <__main__> - INFO: iter: 4440, lr: 0.000970, 'loss': '25.302906', time: 2.651, eta: 1 day, 2:11:10
+2020-04-15 01:53:12,405 - <__main__> - INFO: iter: 4460, lr: 0.000970, 'loss': '26.327934', time: 2.710, eta: 1 day, 2:45:20
+2020-04-15 01:54:03,880 - <__main__> - INFO: iter: 4480, lr: 0.000970, 'loss': '26.003975', time: 2.574, eta: 1 day, 1:23:39
+2020-04-15 01:54:52,535 - <__main__> - INFO: iter: 4500, lr: 0.000970, 'loss': '26.280136', time: 2.433, eta: 23:59:22
+2020-04-15 01:55:42,026 - <__main__> - INFO: iter: 4520, lr: 0.000970, 'loss': '26.588211', time: 2.475, eta: 1 day, 0:23:16
+2020-04-15 01:56:34,462 - <__main__> - INFO: iter: 4540, lr: 0.000970, 'loss': '26.803123', time: 2.622, eta: 1 day, 1:49:28
+2020-04-15 01:57:26,506 - <__main__> - INFO: iter: 4560, lr: 0.000970, 'loss': '25.238251', time: 2.602, eta: 1 day, 1:37:02
+2020-04-15 01:58:19,855 - <__main__> - INFO: iter: 4580, lr: 0.000970, 'loss': '25.312117', time: 2.668, eta: 1 day, 2:14:43
+2020-04-15 01:59:09,979 - <__main__> - INFO: iter: 4600, lr: 0.000968, 'loss': '25.547794', time: 2.506, eta: 1 day, 0:38:37
+2020-04-15 01:59:59,502 - <__main__> - INFO: iter: 4620, lr: 0.000968, 'loss': '27.428211', time: 2.476, eta: 1 day, 0:20:05
+2020-04-15 02:00:49,748 - <__main__> - INFO: iter: 4640, lr: 0.000968, 'loss': '25.473072', time: 2.512, eta: 1 day, 0:40:36
+2020-04-15 02:01:37,448 - <__main__> - INFO: iter: 4660, lr: 0.000968, 'loss': '25.010601', time: 2.385, eta: 23:24:43
+2020-04-15 02:02:29,051 - <__main__> - INFO: iter: 4680, lr: 0.000968, 'loss': '26.013844', time: 2.580, eta: 1 day, 1:18:51
+2020-04-15 02:03:19,862 - <__main__> - INFO: iter: 4700, lr: 0.000968, 'loss': '27.496384', time: 2.541, eta: 1 day, 0:54:41
+2020-04-15 02:04:10,210 - <__main__> - INFO: iter: 4720, lr: 0.000968, 'loss': '26.214760', time: 2.517, eta: 1 day, 0:40:15
+2020-04-15 02:05:02,402 - <__main__> - INFO: iter: 4740, lr: 0.000968, 'loss': '25.233574', time: 2.610, eta: 1 day, 1:33:33
+2020-04-15 02:05:54,965 - <__main__> - INFO: iter: 4760, lr: 0.000965, 'loss': '27.362337', time: 2.628, eta: 1 day, 1:43:35
+2020-04-15 02:06:47,294 - <__main__> - INFO: iter: 4780, lr: 0.000965, 'loss': '25.919062', time: 2.616, eta: 1 day, 1:35:52
+2020-04-15 02:07:37,443 - <__main__> - INFO: iter: 4800, lr: 0.000965, 'loss': '26.509308', time: 2.507, eta: 1 day, 0:31:00
+2020-04-15 02:08:28,652 - <__main__> - INFO: iter: 4820, lr: 0.000965, 'loss': '25.363211', time: 2.560, eta: 1 day, 1:01:17
+2020-04-15 02:09:20,257 - <__main__> - INFO: iter: 4840, lr: 0.000965, 'loss': '26.352003', time: 2.580, eta: 1 day, 1:12:04
+2020-04-15 02:10:09,999 - <__main__> - INFO: iter: 4860, lr: 0.000965, 'loss': '23.962187', time: 2.487, eta: 1 day, 0:16:33
+2020-04-15 02:11:02,280 - <__main__> - INFO: iter: 4880, lr: 0.000965, 'loss': '24.844902', time: 2.614, eta: 1 day, 1:30:05
+2020-04-15 02:11:49,685 - <__main__> - INFO: iter: 4900, lr: 0.000965, 'loss': '25.723961', time: 2.370, eta: 23:06:35
+2020-04-15 02:12:39,047 - <__main__> - INFO: iter: 4920, lr: 0.000965, 'loss': '24.723333', time: 2.468, eta: 1 day, 0:03:04
+2020-04-15 02:13:29,038 - <__main__> - INFO: iter: 4940, lr: 0.000963, 'loss': '27.950697', time: 2.499, eta: 1 day, 0:20:30
+2020-04-15 02:14:18,336 - <__main__> - INFO: iter: 4960, lr: 0.000963, 'loss': '25.943859', time: 2.465, eta: 23:59:30
+2020-04-15 02:15:06,695 - <__main__> - INFO: iter: 4980, lr: 0.000963, 'loss': '25.786251', time: 2.418, eta: 23:31:15
+2020-04-15 02:15:59,243 - <__main__> - INFO: iter: 5000, lr: 0.000963, 'loss': '24.000422', time: 2.627, eta: 1 day, 1:32:38
+2020-04-15 02:15:59,243 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/5000.
+2020-04-15 02:16:06,061 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 02:16:19,912 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 02:16:19,912 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 02:16:19,913 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 02:16:20,085 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 02:16:20,095 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 78.57
+2020-04-15 02:16:20,096 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 02:16:28,209 - <__main__> - INFO: Best eval box ap: 78.57412708283981, in iter: 5000
+2020-04-15 02:17:01,814 - <__main__> - INFO: iter: 5020, lr: 0.000963, 'loss': '26.779980', time: 3.129, eta: 1 day, 6:23:55
+2020-04-15 02:17:54,379 - <__main__> - INFO: iter: 5040, lr: 0.000963, 'loss': '26.313547', time: 2.628, eta: 1 day, 1:31:25
+2020-04-15 02:18:44,206 - <__main__> - INFO: iter: 5060, lr: 0.000963, 'loss': '26.928104', time: 2.491, eta: 1 day, 0:10:47
+2020-04-15 02:19:35,797 - <__main__> - INFO: iter: 5080, lr: 0.000963, 'loss': '25.994558', time: 2.580, eta: 1 day, 1:01:17
+2020-04-15 02:20:26,316 - <__main__> - INFO: iter: 5100, lr: 0.000960, 'loss': '24.047638', time: 2.526, eta: 1 day, 0:29:15
+2020-04-15 02:21:19,727 - <__main__> - INFO: iter: 5120, lr: 0.000960, 'loss': '25.084080', time: 2.671, eta: 1 day, 1:52:29
+2020-04-15 02:22:10,622 - <__main__> - INFO: iter: 5140, lr: 0.000960, 'loss': '24.130512', time: 2.545, eta: 1 day, 0:38:28
+2020-04-15 02:23:01,255 - <__main__> - INFO: iter: 5160, lr: 0.000960, 'loss': '24.952789', time: 2.532, eta: 1 day, 0:30:03
+2020-04-15 02:23:51,838 - <__main__> - INFO: iter: 5180, lr: 0.000960, 'loss': '24.702694', time: 2.529, eta: 1 day, 0:27:44
+2020-04-15 02:24:41,728 - <__main__> - INFO: iter: 5200, lr: 0.000960, 'loss': '25.985355', time: 2.494, eta: 1 day, 0:06:48
+2020-04-15 02:25:34,255 - <__main__> - INFO: iter: 5220, lr: 0.000960, 'loss': '26.095779', time: 2.626, eta: 1 day, 1:22:25
+2020-04-15 02:26:25,884 - <__main__> - INFO: iter: 5240, lr: 0.000960, 'loss': '24.667509', time: 2.582, eta: 1 day, 0:55:34
+2020-04-15 02:27:18,367 - <__main__> - INFO: iter: 5260, lr: 0.000960, 'loss': '23.649410', time: 2.624, eta: 1 day, 1:19:20
+2020-04-15 02:28:07,900 - <__main__> - INFO: iter: 5280, lr: 0.000958, 'loss': '24.322668', time: 2.477, eta: 23:53:10
+2020-04-15 02:28:58,309 - <__main__> - INFO: iter: 5300, lr: 0.000958, 'loss': '25.347769', time: 2.520, eta: 1 day, 0:17:38
+2020-04-15 02:29:48,229 - <__main__> - INFO: iter: 5320, lr: 0.000958, 'loss': '25.493061', time: 2.496, eta: 1 day, 0:02:40
+2020-04-15 02:30:40,897 - <__main__> - INFO: iter: 5340, lr: 0.000958, 'loss': '25.894033', time: 2.633, eta: 1 day, 1:21:14
+2020-04-15 02:31:30,182 - <__main__> - INFO: iter: 5360, lr: 0.000958, 'loss': '24.926395', time: 2.464, eta: 23:42:41
+2020-04-15 02:32:20,640 - <__main__> - INFO: iter: 5380, lr: 0.000958, 'loss': '23.856598', time: 2.523, eta: 1 day, 0:15:43
+2020-04-15 02:33:11,494 - <__main__> - INFO: iter: 5400, lr: 0.000958, 'loss': '24.489693', time: 2.543, eta: 1 day, 0:26:18
+2020-04-15 02:34:02,972 - <__main__> - INFO: iter: 5420, lr: 0.000958, 'loss': '23.943634', time: 2.574, eta: 1 day, 0:43:22
+2020-04-15 02:34:51,187 - <__main__> - INFO: iter: 5440, lr: 0.000955, 'loss': '25.391233', time: 2.411, eta: 23:08:36
+2020-04-15 02:35:38,701 - <__main__> - INFO: iter: 5460, lr: 0.000955, 'loss': '24.990490', time: 2.376, eta: 22:47:36
+2020-04-15 02:36:29,483 - <__main__> - INFO: iter: 5480, lr: 0.000955, 'loss': '25.001740', time: 2.539, eta: 1 day, 0:20:49
+2020-04-15 02:37:21,610 - <__main__> - INFO: iter: 5500, lr: 0.000955, 'loss': '26.541462', time: 2.606, eta: 1 day, 0:58:38
+2020-04-15 02:38:14,315 - <__main__> - INFO: iter: 5520, lr: 0.000955, 'loss': '24.502237', time: 2.635, eta: 1 day, 1:14:24
+2020-04-15 02:39:03,365 - <__main__> - INFO: iter: 5540, lr: 0.000955, 'loss': '24.633415', time: 2.452, eta: 23:28:32
+2020-04-15 02:39:52,002 - <__main__> - INFO: iter: 5560, lr: 0.000955, 'loss': '25.618370', time: 2.432, eta: 23:15:55
+2020-04-15 02:40:44,157 - <__main__> - INFO: iter: 5580, lr: 0.000955, 'loss': '25.614361', time: 2.608, eta: 1 day, 0:55:56
+2020-04-15 02:41:35,398 - <__main__> - INFO: iter: 5600, lr: 0.000955, 'loss': '24.349388', time: 2.562, eta: 1 day, 0:28:54
+2020-04-15 02:42:27,067 - <__main__> - INFO: iter: 5620, lr: 0.000952, 'loss': '24.328184', time: 2.583, eta: 1 day, 0:40:18
+2020-04-15 02:43:21,834 - <__main__> - INFO: iter: 5640, lr: 0.000952, 'loss': '24.731873', time: 2.738, eta: 1 day, 2:08:10
+2020-04-15 02:44:15,284 - <__main__> - INFO: iter: 5660, lr: 0.000952, 'loss': '27.275452', time: 2.672, eta: 1 day, 1:29:32
+2020-04-15 02:45:05,264 - <__main__> - INFO: iter: 5680, lr: 0.000952, 'loss': '24.736248', time: 2.499, eta: 23:49:26
+2020-04-15 02:45:54,525 - <__main__> - INFO: iter: 5700, lr: 0.000952, 'loss': '24.996206', time: 2.463, eta: 23:28:01
+2020-04-15 02:46:43,592 - <__main__> - INFO: iter: 5720, lr: 0.000952, 'loss': '25.877907', time: 2.453, eta: 23:21:43
+2020-04-15 02:47:31,085 - <__main__> - INFO: iter: 5740, lr: 0.000952, 'loss': '25.141945', time: 2.375, eta: 22:35:55
+2020-04-15 02:48:22,935 - <__main__> - INFO: iter: 5760, lr: 0.000952, 'loss': '25.794868', time: 2.592, eta: 1 day, 0:39:24
+2020-04-15 02:49:13,522 - <__main__> - INFO: iter: 5780, lr: 0.000949, 'loss': '24.465595', time: 2.529, eta: 1 day, 0:02:33
+2020-04-15 02:50:03,556 - <__main__> - INFO: iter: 5800, lr: 0.000949, 'loss': '25.284122', time: 2.502, eta: 23:45:59
+2020-04-15 02:50:51,351 - <__main__> - INFO: iter: 5820, lr: 0.000949, 'loss': '23.340805', time: 2.390, eta: 22:41:21
+2020-04-15 02:51:40,360 - <__main__> - INFO: iter: 5840, lr: 0.000949, 'loss': '24.503105', time: 2.450, eta: 23:15:06
+2020-04-15 02:52:32,053 - <__main__> - INFO: iter: 5860, lr: 0.000949, 'loss': '27.801592', time: 2.585, eta: 1 day, 0:30:40
+2020-04-15 02:53:22,521 - <__main__> - INFO: iter: 5880, lr: 0.000949, 'loss': '25.853701', time: 2.523, eta: 23:54:57
+2020-04-15 02:54:11,920 - <__main__> - INFO: iter: 5900, lr: 0.000949, 'loss': '24.838110', time: 2.470, eta: 23:23:46
+2020-04-15 02:55:01,633 - <__main__> - INFO: iter: 5920, lr: 0.000949, 'loss': '25.279573', time: 2.486, eta: 23:31:49
+2020-04-15 02:55:52,810 - <__main__> - INFO: iter: 5940, lr: 0.000949, 'loss': '24.192059', time: 2.559, eta: 1 day, 0:12:35
+2020-04-15 02:56:44,578 - <__main__> - INFO: iter: 5960, lr: 0.000946, 'loss': '25.163277', time: 2.588, eta: 1 day, 0:28:29
+2020-04-15 02:57:37,578 - <__main__> - INFO: iter: 5980, lr: 0.000946, 'loss': '23.914984', time: 2.650, eta: 1 day, 1:02:33
+2020-04-15 02:58:28,445 - <__main__> - INFO: iter: 6000, lr: 0.000946, 'loss': '24.011858', time: 2.543, eta: 1 day, 0:01:14
+2020-04-15 02:58:28,450 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/6000.
+2020-04-15 02:58:36,427 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 02:58:50,521 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 02:58:50,523 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 02:58:50,523 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 02:58:50,689 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 02:58:50,699 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 73.90
+2020-04-15 02:59:25,229 - <__main__> - INFO: iter: 6020, lr: 0.000946, 'loss': '22.649210', time: 2.839, eta: 1 day, 2:47:55
+2020-04-15 03:00:15,658 - <__main__> - INFO: iter: 6040, lr: 0.000946, 'loss': '25.884470', time: 2.522, eta: 23:47:11
+2020-04-15 03:01:06,647 - <__main__> - INFO: iter: 6060, lr: 0.000946, 'loss': '24.724539', time: 2.549, eta: 1 day, 0:02:07
+2020-04-15 03:01:57,419 - <__main__> - INFO: iter: 6080, lr: 0.000946, 'loss': '23.385607', time: 2.539, eta: 23:55:07
+2020-04-15 03:02:51,723 - <__main__> - INFO: iter: 6100, lr: 0.000946, 'loss': '24.080849', time: 2.715, eta: 1 day, 1:34:06
+2020-04-15 03:03:40,876 - <__main__> - INFO: iter: 6120, lr: 0.000943, 'loss': '25.266388', time: 2.458, eta: 23:07:45
+2020-04-15 03:04:31,946 - <__main__> - INFO: iter: 6140, lr: 0.000943, 'loss': '24.814182', time: 2.553, eta: 1 day, 0:01:00
+2020-04-15 03:05:22,030 - <__main__> - INFO: iter: 6160, lr: 0.000943, 'loss': '25.975605', time: 2.504, eta: 23:32:21
+2020-04-15 03:06:09,810 - <__main__> - INFO: iter: 6180, lr: 0.000943, 'loss': '24.631905', time: 2.389, eta: 22:26:36
+2020-04-15 03:06:58,418 - <__main__> - INFO: iter: 6200, lr: 0.000943, 'loss': '24.842945', time: 2.430, eta: 22:49:07
+2020-04-15 03:07:47,777 - <__main__> - INFO: iter: 6220, lr: 0.000943, 'loss': '24.363901', time: 2.468, eta: 23:09:26
+2020-04-15 03:08:37,920 - <__main__> - INFO: iter: 6240, lr: 0.000943, 'loss': '23.884289', time: 2.507, eta: 23:30:42
+2020-04-15 03:09:31,906 - <__main__> - INFO: iter: 6260, lr: 0.000943, 'loss': '23.925165', time: 2.699, eta: 1 day, 1:17:54
+2020-04-15 03:10:23,032 - <__main__> - INFO: iter: 6280, lr: 0.000943, 'loss': '24.095221', time: 2.556, eta: 23:56:39
+2020-04-15 03:11:10,974 - <__main__> - INFO: iter: 6300, lr: 0.000940, 'loss': '24.836599', time: 2.397, eta: 22:26:22
+2020-04-15 03:12:02,428 - <__main__> - INFO: iter: 6320, lr: 0.000940, 'loss': '24.647900', time: 2.573, eta: 1 day, 0:04:09
+2020-04-15 03:12:51,940 - <__main__> - INFO: iter: 6340, lr: 0.000940, 'loss': '24.642122', time: 2.476, eta: 23:08:48
+2020-04-15 03:13:43,494 - <__main__> - INFO: iter: 6360, lr: 0.000940, 'loss': '23.980507', time: 2.578, eta: 1 day, 0:05:11
+2020-04-15 03:14:34,753 - <__main__> - INFO: iter: 6380, lr: 0.000940, 'loss': '25.506855', time: 2.563, eta: 23:56:08
+2020-04-15 03:15:27,530 - <__main__> - INFO: iter: 6400, lr: 0.000940, 'loss': '23.859858', time: 2.639, eta: 1 day, 0:37:43
+2020-04-15 03:16:17,788 - <__main__> - INFO: iter: 6420, lr: 0.000940, 'loss': '24.972157', time: 2.513, eta: 23:26:23
+2020-04-15 03:17:07,664 - <__main__> - INFO: iter: 6440, lr: 0.000940, 'loss': '25.578899', time: 2.494, eta: 23:14:52
+2020-04-15 03:17:54,516 - <__main__> - INFO: iter: 6460, lr: 0.000937, 'loss': '24.185047', time: 2.343, eta: 21:49:30
+2020-04-15 03:18:44,567 - <__main__> - INFO: iter: 6480, lr: 0.000937, 'loss': '24.418816', time: 2.503, eta: 23:18:04
+2020-04-15 03:19:38,640 - <__main__> - INFO: iter: 6500, lr: 0.000937, 'loss': '23.283491', time: 2.704, eta: 1 day, 1:09:34
+2020-04-15 03:20:29,861 - <__main__> - INFO: iter: 6520, lr: 0.000937, 'loss': '23.365490', time: 2.561, eta: 23:49:05
+2020-04-15 03:21:17,892 - <__main__> - INFO: iter: 6540, lr: 0.000937, 'loss': '23.110830', time: 2.401, eta: 22:19:12
+2020-04-15 03:22:09,203 - <__main__> - INFO: iter: 6560, lr: 0.000937, 'loss': '23.891815', time: 2.566, eta: 23:49:52
+2020-04-15 03:23:00,256 - <__main__> - INFO: iter: 6580, lr: 0.000937, 'loss': '24.513405', time: 2.553, eta: 23:41:47
+2020-04-15 03:23:46,834 - <__main__> - INFO: iter: 6600, lr: 0.000937, 'loss': '24.603495', time: 2.329, eta: 21:36:27
+2020-04-15 03:24:35,770 - <__main__> - INFO: iter: 6620, lr: 0.000937, 'loss': '24.798096', time: 2.447, eta: 22:41:13
+2020-04-15 03:25:23,779 - <__main__> - INFO: iter: 6640, lr: 0.000934, 'loss': '25.450726', time: 2.401, eta: 22:14:40
+2020-04-15 03:26:16,148 - <__main__> - INFO: iter: 6660, lr: 0.000934, 'loss': '24.185184', time: 2.618, eta: 1 day, 0:14:57
+2020-04-15 03:27:05,367 - <__main__> - INFO: iter: 6680, lr: 0.000934, 'loss': '24.905130', time: 2.461, eta: 22:46:42
+2020-04-15 03:27:56,863 - <__main__> - INFO: iter: 6700, lr: 0.000934, 'loss': '24.584057', time: 2.575, eta: 23:48:58
+2020-04-15 03:28:48,054 - <__main__> - INFO: iter: 6720, lr: 0.000934, 'loss': '23.982513', time: 2.560, eta: 23:39:40
+2020-04-15 03:29:37,641 - <__main__> - INFO: iter: 6740, lr: 0.000934, 'loss': '22.669228', time: 2.479, eta: 22:54:22
+2020-04-15 03:30:30,715 - <__main__> - INFO: iter: 6760, lr: 0.000934, 'loss': '23.205952', time: 2.654, eta: 1 day, 0:30:09
+2020-04-15 03:31:23,912 - <__main__> - INFO: iter: 6780, lr: 0.000934, 'loss': '24.484245', time: 2.660, eta: 1 day, 0:32:40
+2020-04-15 03:32:10,746 - <__main__> - INFO: iter: 6800, lr: 0.000930, 'loss': '25.573040', time: 2.342, eta: 21:35:44
+2020-04-15 03:33:01,727 - <__main__> - INFO: iter: 6820, lr: 0.000930, 'loss': '25.151840', time: 2.549, eta: 23:29:37
+2020-04-15 03:33:54,873 - <__main__> - INFO: iter: 6840, lr: 0.000930, 'loss': '23.099817', time: 2.657, eta: 1 day, 0:28:34
+2020-04-15 03:34:46,821 - <__main__> - INFO: iter: 6860, lr: 0.000930, 'loss': '23.153215', time: 2.597, eta: 23:54:40
+2020-04-15 03:35:38,574 - <__main__> - INFO: iter: 6880, lr: 0.000930, 'loss': '23.819050', time: 2.588, eta: 23:48:21
+2020-04-15 03:36:25,136 - <__main__> - INFO: iter: 6900, lr: 0.000930, 'loss': '22.817123', time: 2.328, eta: 21:24:20
+2020-04-15 03:37:16,341 - <__main__> - INFO: iter: 6920, lr: 0.000930, 'loss': '25.016684', time: 2.560, eta: 23:31:33
+2020-04-15 03:38:07,617 - <__main__> - INFO: iter: 6940, lr: 0.000930, 'loss': '23.770927', time: 2.564, eta: 23:32:39
+2020-04-15 03:38:57,333 - <__main__> - INFO: iter: 6960, lr: 0.000930, 'loss': '24.400793', time: 2.486, eta: 22:48:50
+2020-04-15 03:39:45,382 - <__main__> - INFO: iter: 6980, lr: 0.000927, 'loss': '23.975077', time: 2.402, eta: 22:02:07
+2020-04-15 03:40:35,577 - <__main__> - INFO: iter: 7000, lr: 0.000927, 'loss': '23.714890', time: 2.510, eta: 23:00:21
+2020-04-15 03:40:35,578 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/7000.
+2020-04-15 03:40:43,280 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 03:40:57,641 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 03:40:57,641 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 03:40:57,641 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 03:40:57,831 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 03:40:57,840 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 70.26
+2020-04-15 03:41:32,219 - <__main__> - INFO: iter: 7020, lr: 0.000927, 'loss': '23.219652', time: 2.832, eta: 1 day, 1:56:43
+2020-04-15 03:42:24,436 - <__main__> - INFO: iter: 7040, lr: 0.000927, 'loss': '23.239580', time: 2.611, eta: 23:54:14
+2020-04-15 03:43:16,453 - <__main__> - INFO: iter: 7060, lr: 0.000927, 'loss': '23.322493', time: 2.601, eta: 23:47:49
+2020-04-15 03:44:06,462 - <__main__> - INFO: iter: 7080, lr: 0.000927, 'loss': '23.003811', time: 2.501, eta: 22:51:58
+2020-04-15 03:44:53,796 - <__main__> - INFO: iter: 7100, lr: 0.000927, 'loss': '23.248230', time: 2.367, eta: 21:37:45
+2020-04-15 03:45:42,884 - <__main__> - INFO: iter: 7120, lr: 0.000927, 'loss': '23.101730', time: 2.454, eta: 22:24:57
+2020-04-15 03:46:31,643 - <__main__> - INFO: iter: 7140, lr: 0.000923, 'loss': '24.583870', time: 2.438, eta: 22:15:10
+2020-04-15 03:47:21,585 - <__main__> - INFO: iter: 7160, lr: 0.000923, 'loss': '22.363722', time: 2.497, eta: 22:46:44
+2020-04-15 03:48:12,643 - <__main__> - INFO: iter: 7180, lr: 0.000923, 'loss': '22.577717', time: 2.553, eta: 23:16:28
+2020-04-15 03:49:05,767 - <__main__> - INFO: iter: 7200, lr: 0.000923, 'loss': '23.875303', time: 2.656, eta: 1 day, 0:12:03
+2020-04-15 03:49:57,007 - <__main__> - INFO: iter: 7220, lr: 0.000923, 'loss': '23.686945', time: 2.562, eta: 23:19:40
+2020-04-15 03:50:47,046 - <__main__> - INFO: iter: 7240, lr: 0.000923, 'loss': '21.833988', time: 2.502, eta: 22:46:03
+2020-04-15 03:51:39,504 - <__main__> - INFO: iter: 7260, lr: 0.000923, 'loss': '24.977186', time: 2.623, eta: 23:51:12
+2020-04-15 03:52:31,515 - <__main__> - INFO: iter: 7280, lr: 0.000923, 'loss': '23.176512', time: 2.601, eta: 23:38:11
+2020-04-15 03:53:24,699 - <__main__> - INFO: iter: 7300, lr: 0.000923, 'loss': '21.928091', time: 2.659, eta: 1 day, 0:09:15
+2020-04-15 03:54:16,259 - <__main__> - INFO: iter: 7320, lr: 0.000920, 'loss': '25.235905', time: 2.578, eta: 23:24:08
+2020-04-15 03:55:09,372 - <__main__> - INFO: iter: 7340, lr: 0.000920, 'loss': '23.816864', time: 2.656, eta: 1 day, 0:05:36
+2020-04-15 03:55:59,936 - <__main__> - INFO: iter: 7360, lr: 0.000920, 'loss': '21.491373', time: 2.528, eta: 22:55:19
+2020-04-15 03:56:51,924 - <__main__> - INFO: iter: 7380, lr: 0.000920, 'loss': '23.497154', time: 2.599, eta: 23:33:12
+2020-04-15 03:57:43,250 - <__main__> - INFO: iter: 7400, lr: 0.000920, 'loss': '23.267027', time: 2.566, eta: 23:14:21
+2020-04-15 03:58:31,560 - <__main__> - INFO: iter: 7420, lr: 0.000920, 'loss': '23.301376', time: 2.415, eta: 21:51:35
+2020-04-15 03:59:19,828 - <__main__> - INFO: iter: 7440, lr: 0.000920, 'loss': '24.767250', time: 2.413, eta: 21:49:40
+2020-04-15 04:00:13,596 - <__main__> - INFO: iter: 7460, lr: 0.000920, 'loss': '23.433683', time: 2.688, eta: 1 day, 0:18:01
+2020-04-15 04:01:03,506 - <__main__> - INFO: iter: 7480, lr: 0.000916, 'loss': '23.667099', time: 2.495, eta: 22:32:33
+2020-04-15 04:01:54,675 - <__main__> - INFO: iter: 7500, lr: 0.000916, 'loss': '23.234306', time: 2.559, eta: 23:05:52
+2020-04-15 04:02:44,728 - <__main__> - INFO: iter: 7520, lr: 0.000916, 'loss': '22.615463', time: 2.503, eta: 22:34:41
+2020-04-15 04:03:34,730 - <__main__> - INFO: iter: 7540, lr: 0.000916, 'loss': '23.282263', time: 2.500, eta: 22:32:33
+2020-04-15 04:04:27,196 - <__main__> - INFO: iter: 7560, lr: 0.000916, 'loss': '23.814581', time: 2.623, eta: 23:38:21
+2020-04-15 04:05:17,873 - <__main__> - INFO: iter: 7580, lr: 0.000916, 'loss': '22.941795', time: 2.534, eta: 22:49:06
+2020-04-15 04:06:07,856 - <__main__> - INFO: iter: 7600, lr: 0.000916, 'loss': '23.480816', time: 2.499, eta: 22:29:35
+2020-04-15 04:06:55,212 - <__main__> - INFO: iter: 7620, lr: 0.000916, 'loss': '23.194336', time: 2.368, eta: 21:17:46
+2020-04-15 04:07:45,892 - <__main__> - INFO: iter: 7640, lr: 0.000916, 'loss': '24.309422', time: 2.534, eta: 22:46:39
+2020-04-15 04:08:33,849 - <__main__> - INFO: iter: 7660, lr: 0.000912, 'loss': '23.801426', time: 2.398, eta: 21:32:26
+2020-04-15 04:09:23,802 - <__main__> - INFO: iter: 7680, lr: 0.000912, 'loss': '23.419315', time: 2.498, eta: 22:25:25
+2020-04-15 04:10:14,555 - <__main__> - INFO: iter: 7700, lr: 0.000912, 'loss': '24.553917', time: 2.538, eta: 22:46:04
+2020-04-15 04:11:05,961 - <__main__> - INFO: iter: 7720, lr: 0.000912, 'loss': '23.467598', time: 2.570, eta: 23:02:49
+2020-04-15 04:11:54,912 - <__main__> - INFO: iter: 7740, lr: 0.000912, 'loss': '22.584787', time: 2.448, eta: 21:55:57
+2020-04-15 04:12:46,013 - <__main__> - INFO: iter: 7760, lr: 0.000912, 'loss': '22.996916', time: 2.555, eta: 22:52:56
+2020-04-15 04:13:38,230 - <__main__> - INFO: iter: 7780, lr: 0.000912, 'loss': '22.564709', time: 2.611, eta: 23:22:01
+2020-04-15 04:14:30,469 - <__main__> - INFO: iter: 7800, lr: 0.000912, 'loss': '22.403456', time: 2.612, eta: 23:21:44
+2020-04-15 04:15:21,260 - <__main__> - INFO: iter: 7820, lr: 0.000908, 'loss': '24.668146', time: 2.540, eta: 22:42:02
+2020-04-15 04:16:12,421 - <__main__> - INFO: iter: 7840, lr: 0.000908, 'loss': '23.145277', time: 2.558, eta: 22:51:07
+2020-04-15 04:17:01,166 - <__main__> - INFO: iter: 7860, lr: 0.000908, 'loss': '24.550484', time: 2.437, eta: 21:45:32
+2020-04-15 04:17:52,631 - <__main__> - INFO: iter: 7880, lr: 0.000908, 'loss': '23.682638', time: 2.573, eta: 22:57:33
+2020-04-15 04:18:40,132 - <__main__> - INFO: iter: 7900, lr: 0.000908, 'loss': '21.025333', time: 2.375, eta: 21:10:38
+2020-04-15 04:19:34,271 - <__main__> - INFO: iter: 7920, lr: 0.000908, 'loss': '21.581209', time: 2.707, eta: 1 day, 0:07:19
+2020-04-15 04:20:23,014 - <__main__> - INFO: iter: 7940, lr: 0.000908, 'loss': '23.408924', time: 2.437, eta: 21:42:17
+2020-04-15 04:21:14,103 - <__main__> - INFO: iter: 7960, lr: 0.000908, 'loss': '22.837337', time: 2.554, eta: 22:44:01
+2020-04-15 04:22:03,563 - <__main__> - INFO: iter: 7980, lr: 0.000908, 'loss': '23.070160', time: 2.473, eta: 21:59:47
+2020-04-15 04:22:52,514 - <__main__> - INFO: iter: 8000, lr: 0.000905, 'loss': '22.194086', time: 2.448, eta: 21:45:21
+2020-04-15 04:22:52,515 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/8000.
+2020-04-15 04:23:00,407 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 04:23:14,281 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 04:23:14,282 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 04:23:14,282 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 04:23:14,423 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 04:23:14,431 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 76.67
+2020-04-15 04:23:50,417 - <__main__> - INFO: iter: 8020, lr: 0.000905, 'loss': '23.787931', time: 2.895, eta: 1 day, 1:43:06
+2020-04-15 04:24:42,703 - <__main__> - INFO: iter: 8040, lr: 0.000905, 'loss': '22.738804', time: 2.614, eta: 23:12:33
+2020-04-15 04:25:32,949 - <__main__> - INFO: iter: 8060, lr: 0.000905, 'loss': '21.366470', time: 2.512, eta: 22:17:24
+2020-04-15 04:26:20,319 - <__main__> - INFO: iter: 8080, lr: 0.000905, 'loss': '21.488308', time: 2.368, eta: 21:00:00
+2020-04-15 04:27:11,049 - <__main__> - INFO: iter: 8100, lr: 0.000905, 'loss': '23.462219', time: 2.537, eta: 22:28:36
+2020-04-15 04:28:02,542 - <__main__> - INFO: iter: 8120, lr: 0.000905, 'loss': '23.651106', time: 2.575, eta: 22:47:56
+2020-04-15 04:28:49,625 - <__main__> - INFO: iter: 8140, lr: 0.000905, 'loss': '23.471848', time: 2.354, eta: 20:50:02
+2020-04-15 04:29:38,304 - <__main__> - INFO: iter: 8160, lr: 0.000901, 'loss': '23.468464', time: 2.433, eta: 21:31:21
+2020-04-15 04:30:30,194 - <__main__> - INFO: iter: 8180, lr: 0.000901, 'loss': '22.892796', time: 2.595, eta: 22:56:14
+2020-04-15 04:31:19,714 - <__main__> - INFO: iter: 8200, lr: 0.000901, 'loss': '22.524763', time: 2.476, eta: 21:52:16
+2020-04-15 04:32:09,053 - <__main__> - INFO: iter: 8220, lr: 0.000901, 'loss': '21.963991', time: 2.467, eta: 21:46:39
+2020-04-15 04:32:57,879 - <__main__> - INFO: iter: 8240, lr: 0.000901, 'loss': '22.887371', time: 2.441, eta: 21:32:13
+2020-04-15 04:33:48,137 - <__main__> - INFO: iter: 8260, lr: 0.000901, 'loss': '21.784523', time: 2.513, eta: 22:09:20
+2020-04-15 04:34:36,687 - <__main__> - INFO: iter: 8280, lr: 0.000901, 'loss': '22.027405', time: 2.428, eta: 21:23:20
+2020-04-15 04:35:24,355 - <__main__> - INFO: iter: 8300, lr: 0.000901, 'loss': '22.356907', time: 2.383, eta: 20:59:13
+2020-04-15 04:36:13,579 - <__main__> - INFO: iter: 8320, lr: 0.000901, 'loss': '21.567698', time: 2.461, eta: 21:39:32
+2020-04-15 04:37:05,190 - <__main__> - INFO: iter: 8340, lr: 0.000897, 'loss': '23.622295', time: 2.580, eta: 22:41:38
+2020-04-15 04:37:51,957 - <__main__> - INFO: iter: 8360, lr: 0.000897, 'loss': '22.110622', time: 2.338, eta: 20:33:04
+2020-04-15 04:38:42,699 - <__main__> - INFO: iter: 8380, lr: 0.000897, 'loss': '23.056770', time: 2.537, eta: 22:17:03
+2020-04-15 04:39:34,548 - <__main__> - INFO: iter: 8400, lr: 0.000897, 'loss': '22.272182', time: 2.592, eta: 22:45:21
+2020-04-15 04:40:26,754 - <__main__> - INFO: iter: 8420, lr: 0.000897, 'loss': '22.021843', time: 2.610, eta: 22:53:53
+2020-04-15 04:41:16,111 - <__main__> - INFO: iter: 8440, lr: 0.000897, 'loss': '21.091331', time: 2.468, eta: 21:38:04
+2020-04-15 04:42:05,680 - <__main__> - INFO: iter: 8460, lr: 0.000897, 'loss': '23.240454', time: 2.478, eta: 21:42:50
+2020-04-15 04:42:56,675 - <__main__> - INFO: iter: 8480, lr: 0.000897, 'loss': '21.274525', time: 2.550, eta: 22:19:28
+2020-04-15 04:43:43,146 - <__main__> - INFO: iter: 8500, lr: 0.000892, 'loss': '21.996407', time: 2.324, eta: 20:19:52
+2020-04-15 04:44:35,361 - <__main__> - INFO: iter: 8520, lr: 0.000892, 'loss': '24.773497', time: 2.611, eta: 22:49:46
+2020-04-15 04:45:25,107 - <__main__> - INFO: iter: 8540, lr: 0.000892, 'loss': '23.911469', time: 2.487, eta: 21:44:11
+2020-04-15 04:46:15,034 - <__main__> - INFO: iter: 8560, lr: 0.000892, 'loss': '21.972681', time: 2.496, eta: 21:48:03
+2020-04-15 04:47:03,875 - <__main__> - INFO: iter: 8580, lr: 0.000892, 'loss': '23.744993', time: 2.442, eta: 21:18:50
+2020-04-15 04:47:53,327 - <__main__> - INFO: iter: 8600, lr: 0.000892, 'loss': '22.482498', time: 2.473, eta: 21:33:58
+2020-04-15 04:48:43,625 - <__main__> - INFO: iter: 8620, lr: 0.000892, 'loss': '22.040821', time: 2.515, eta: 21:55:17
+2020-04-15 04:49:33,673 - <__main__> - INFO: iter: 8640, lr: 0.000892, 'loss': '23.351517', time: 2.502, eta: 21:47:55
+2020-04-15 04:50:22,537 - <__main__> - INFO: iter: 8660, lr: 0.000892, 'loss': '23.042587', time: 2.443, eta: 21:16:09
+2020-04-15 04:51:12,682 - <__main__> - INFO: iter: 8680, lr: 0.000888, 'loss': '21.259325', time: 2.507, eta: 21:48:47
+2020-04-15 04:52:01,930 - <__main__> - INFO: iter: 8700, lr: 0.000888, 'loss': '21.529047', time: 2.462, eta: 21:24:33
+2020-04-15 04:52:52,764 - <__main__> - INFO: iter: 8720, lr: 0.000888, 'loss': '21.380564', time: 2.542, eta: 22:05:04
+2020-04-15 04:53:45,011 - <__main__> - INFO: iter: 8740, lr: 0.000888, 'loss': '22.568432', time: 2.612, eta: 22:41:02
+2020-04-15 04:54:35,900 - <__main__> - INFO: iter: 8760, lr: 0.000888, 'loss': '22.473038', time: 2.544, eta: 22:04:46
+2020-04-15 04:55:25,395 - <__main__> - INFO: iter: 8780, lr: 0.000888, 'loss': '23.546463', time: 2.475, eta: 21:27:43
+2020-04-15 04:56:15,119 - <__main__> - INFO: iter: 8800, lr: 0.000888, 'loss': '21.404690', time: 2.486, eta: 21:32:49
+2020-04-15 04:57:07,342 - <__main__> - INFO: iter: 8820, lr: 0.000888, 'loss': '22.327267', time: 2.611, eta: 22:36:55
+2020-04-15 04:57:54,002 - <__main__> - INFO: iter: 8840, lr: 0.000884, 'loss': '22.522312', time: 2.333, eta: 20:11:36
+2020-04-15 04:58:42,711 - <__main__> - INFO: iter: 8860, lr: 0.000884, 'loss': '23.321743', time: 2.435, eta: 21:04:00
+2020-04-15 04:59:33,665 - <__main__> - INFO: iter: 8880, lr: 0.000884, 'loss': '22.550972', time: 2.548, eta: 22:01:24
+2020-04-15 05:00:23,183 - <__main__> - INFO: iter: 8900, lr: 0.000884, 'loss': '22.312439', time: 2.476, eta: 21:23:20
+2020-04-15 05:01:16,210 - <__main__> - INFO: iter: 8920, lr: 0.000884, 'loss': '22.300299', time: 2.651, eta: 22:53:24
+2020-04-15 05:02:07,887 - <__main__> - INFO: iter: 8940, lr: 0.000884, 'loss': '21.710751', time: 2.584, eta: 22:17:35
+2020-04-15 05:02:58,992 - <__main__> - INFO: iter: 8960, lr: 0.000884, 'loss': '21.197487', time: 2.555, eta: 22:01:52
+2020-04-15 05:03:50,417 - <__main__> - INFO: iter: 8980, lr: 0.000884, 'loss': '21.097832', time: 2.571, eta: 22:09:20
+2020-04-15 05:04:42,856 - <__main__> - INFO: iter: 9000, lr: 0.000884, 'loss': '23.371876', time: 2.622, eta: 22:34:40
+2020-04-15 05:04:42,860 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/9000.
+2020-04-15 05:04:50,109 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 05:05:04,019 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 05:05:04,019 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 05:05:04,020 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 05:05:04,179 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 05:05:04,187 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 78.95
+2020-04-15 05:05:04,188 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 05:05:12,176 - <__main__> - INFO: Best eval box ap: 78.94971309306511, in iter: 9000
+2020-04-15 05:05:38,978 - <__main__> - INFO: iter: 9020, lr: 0.000880, 'loss': '23.314192', time: 2.806, eta: 1 day, 0:08:53
+2020-04-15 05:06:28,345 - <__main__> - INFO: iter: 9040, lr: 0.000880, 'loss': '21.418812', time: 2.468, eta: 21:13:40
+2020-04-15 05:07:16,428 - <__main__> - INFO: iter: 9060, lr: 0.000880, 'loss': '22.833622', time: 2.404, eta: 20:39:43
+2020-04-15 05:08:06,620 - <__main__> - INFO: iter: 9080, lr: 0.000880, 'loss': '21.783554', time: 2.510, eta: 21:33:17
+2020-04-15 05:08:57,628 - <__main__> - INFO: iter: 9100, lr: 0.000880, 'loss': '22.033806', time: 2.550, eta: 21:53:26
+2020-04-15 05:09:46,755 - <__main__> - INFO: iter: 9120, lr: 0.000880, 'loss': '23.260223', time: 2.456, eta: 21:04:12
+2020-04-15 05:10:38,872 - <__main__> - INFO: iter: 9140, lr: 0.000880, 'loss': '23.102360', time: 2.606, eta: 22:20:16
+2020-04-15 05:11:26,158 - <__main__> - INFO: iter: 9160, lr: 0.000880, 'loss': '21.074677', time: 2.364, eta: 20:15:14
+2020-04-15 05:12:13,151 - <__main__> - INFO: iter: 9180, lr: 0.000875, 'loss': '22.312450', time: 2.350, eta: 20:06:57
+2020-04-15 05:13:02,301 - <__main__> - INFO: iter: 9200, lr: 0.000875, 'loss': '22.118317', time: 2.458, eta: 21:01:32
+2020-04-15 05:13:51,444 - <__main__> - INFO: iter: 9220, lr: 0.000875, 'loss': '23.462914', time: 2.457, eta: 21:00:28
+2020-04-15 05:14:40,174 - <__main__> - INFO: iter: 9240, lr: 0.000875, 'loss': '21.939978', time: 2.437, eta: 20:49:07
+2020-04-15 05:15:30,353 - <__main__> - INFO: iter: 9260, lr: 0.000875, 'loss': '23.559647', time: 2.509, eta: 21:25:24
+2020-04-15 05:16:20,651 - <__main__> - INFO: iter: 9280, lr: 0.000875, 'loss': '21.942482', time: 2.515, eta: 21:27:38
+2020-04-15 05:17:10,527 - <__main__> - INFO: iter: 9300, lr: 0.000875, 'loss': '22.707962', time: 2.494, eta: 21:15:59
+2020-04-15 05:18:00,697 - <__main__> - INFO: iter: 9320, lr: 0.000875, 'loss': '23.720741', time: 2.508, eta: 21:22:40
+2020-04-15 05:18:47,857 - <__main__> - INFO: iter: 9340, lr: 0.000875, 'loss': '23.325327', time: 2.358, eta: 20:04:57
+2020-04-15 05:19:36,271 - <__main__> - INFO: iter: 9360, lr: 0.000871, 'loss': '21.971394', time: 2.421, eta: 20:36:09
+2020-04-15 05:20:25,373 - <__main__> - INFO: iter: 9380, lr: 0.000871, 'loss': '22.545242', time: 2.455, eta: 20:52:56
+2020-04-15 05:21:15,854 - <__main__> - INFO: iter: 9400, lr: 0.000871, 'loss': '22.212666', time: 2.524, eta: 21:27:15
+2020-04-15 05:22:03,760 - <__main__> - INFO: iter: 9420, lr: 0.000871, 'loss': '21.214952', time: 2.395, eta: 20:20:44
+2020-04-15 05:22:49,278 - <__main__> - INFO: iter: 9440, lr: 0.000871, 'loss': '20.511589', time: 2.276, eta: 19:19:14
+2020-04-15 05:23:40,826 - <__main__> - INFO: iter: 9460, lr: 0.000871, 'loss': '20.073631', time: 2.577, eta: 21:51:53
+2020-04-15 05:24:31,373 - <__main__> - INFO: iter: 9480, lr: 0.000871, 'loss': '22.267525', time: 2.527, eta: 21:25:34
+2020-04-15 05:25:22,837 - <__main__> - INFO: iter: 9500, lr: 0.000871, 'loss': '21.113228', time: 2.573, eta: 21:48:01
+2020-04-15 05:26:09,538 - <__main__> - INFO: iter: 9520, lr: 0.000866, 'loss': '22.349106', time: 2.335, eta: 19:46:12
+2020-04-15 05:26:58,014 - <__main__> - INFO: iter: 9540, lr: 0.000866, 'loss': '21.835079', time: 2.424, eta: 20:30:30
+2020-04-15 05:27:49,077 - <__main__> - INFO: iter: 9560, lr: 0.000866, 'loss': '21.868435', time: 2.553, eta: 21:35:17
+2020-04-15 05:28:36,797 - <__main__> - INFO: iter: 9580, lr: 0.000866, 'loss': '22.221268', time: 2.386, eta: 20:09:41
+2020-04-15 05:29:24,900 - <__main__> - INFO: iter: 9600, lr: 0.000866, 'loss': '22.105774', time: 2.405, eta: 20:18:37
+2020-04-15 05:30:14,749 - <__main__> - INFO: iter: 9620, lr: 0.000866, 'loss': '21.875360', time: 2.492, eta: 21:02:01
+2020-04-15 05:31:04,931 - <__main__> - INFO: iter: 9640, lr: 0.000866, 'loss': '22.351761', time: 2.509, eta: 21:09:35
+2020-04-15 05:31:54,737 - <__main__> - INFO: iter: 9660, lr: 0.000866, 'loss': '21.888241', time: 2.490, eta: 20:59:18
+2020-04-15 05:32:46,851 - <__main__> - INFO: iter: 9680, lr: 0.000866, 'loss': '21.765142', time: 2.606, eta: 21:56:40
+2020-04-15 05:33:34,705 - <__main__> - INFO: iter: 9700, lr: 0.000862, 'loss': '21.935734', time: 2.393, eta: 20:08:19
+2020-04-15 05:34:22,730 - <__main__> - INFO: iter: 9720, lr: 0.000862, 'loss': '21.488995', time: 2.401, eta: 20:11:49
+2020-04-15 05:35:16,227 - <__main__> - INFO: iter: 9740, lr: 0.000862, 'loss': '21.104414', time: 2.675, eta: 22:29:01
+2020-04-15 05:36:07,577 - <__main__> - INFO: iter: 9760, lr: 0.000862, 'loss': '22.221180', time: 2.567, eta: 21:34:00
+2020-04-15 05:36:56,409 - <__main__> - INFO: iter: 9780, lr: 0.000862, 'loss': '20.508001', time: 2.442, eta: 20:29:45
+2020-04-15 05:37:44,492 - <__main__> - INFO: iter: 9800, lr: 0.000862, 'loss': '22.360287', time: 2.404, eta: 20:10:05
+2020-04-15 05:38:33,981 - <__main__> - INFO: iter: 9820, lr: 0.000862, 'loss': '21.107449', time: 2.474, eta: 20:44:38
+2020-04-15 05:39:22,004 - <__main__> - INFO: iter: 9840, lr: 0.000862, 'loss': '23.045101', time: 2.401, eta: 20:06:58
+2020-04-15 05:40:09,195 - <__main__> - INFO: iter: 9860, lr: 0.000857, 'loss': '21.823452', time: 2.360, eta: 19:45:17
+2020-04-15 05:41:00,708 - <__main__> - INFO: iter: 9880, lr: 0.000857, 'loss': '21.835014', time: 2.576, eta: 21:32:57
+2020-04-15 05:41:49,907 - <__main__> - INFO: iter: 9900, lr: 0.000857, 'loss': '21.916605', time: 2.460, eta: 20:34:05
+2020-04-15 05:42:38,794 - <__main__> - INFO: iter: 9920, lr: 0.000857, 'loss': '21.078648', time: 2.444, eta: 20:25:25
+2020-04-15 05:43:28,875 - <__main__> - INFO: iter: 9940, lr: 0.000857, 'loss': '22.366369', time: 2.504, eta: 20:54:30
+2020-04-15 05:44:18,883 - <__main__> - INFO: iter: 9960, lr: 0.000857, 'loss': '20.587227', time: 2.500, eta: 20:51:52
+2020-04-15 05:45:10,903 - <__main__> - INFO: iter: 9980, lr: 0.000857, 'loss': '23.025818', time: 2.601, eta: 21:41:22
+2020-04-15 05:46:00,813 - <__main__> - INFO: iter: 10000, lr: 0.000857, 'loss': '20.369656', time: 2.496, eta: 20:47:45
+2020-04-15 05:46:00,814 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/10000.
+2020-04-15 05:46:09,222 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 05:46:23,103 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 05:46:23,104 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 05:46:23,105 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 05:46:23,247 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 05:46:23,255 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 77.20
+2020-04-15 05:46:59,373 - <__main__> - INFO: iter: 10020, lr: 0.000857, 'loss': '21.881100', time: 2.928, eta: 1 day, 0:23:00
+2020-04-15 05:47:50,569 - <__main__> - INFO: iter: 10040, lr: 0.000852, 'loss': '22.026970', time: 2.560, eta: 21:18:12
+2020-04-15 05:48:42,623 - <__main__> - INFO: iter: 10060, lr: 0.000852, 'loss': '21.960756', time: 2.603, eta: 21:38:45
+2020-04-15 05:49:31,348 - <__main__> - INFO: iter: 10080, lr: 0.000852, 'loss': '21.379150', time: 2.436, eta: 20:14:51
+2020-04-15 05:50:20,565 - <__main__> - INFO: iter: 10100, lr: 0.000852, 'loss': '21.569517', time: 2.461, eta: 20:26:18
+2020-04-15 05:51:10,683 - <__main__> - INFO: iter: 10120, lr: 0.000852, 'loss': '22.767471', time: 2.506, eta: 20:47:56
+2020-04-15 05:51:57,198 - <__main__> - INFO: iter: 10140, lr: 0.000852, 'loss': '21.716843', time: 2.326, eta: 19:17:27
+2020-04-15 05:52:48,871 - <__main__> - INFO: iter: 10160, lr: 0.000852, 'loss': '21.294674', time: 2.584, eta: 21:24:56
+2020-04-15 05:53:40,103 - <__main__> - INFO: iter: 10180, lr: 0.000852, 'loss': '20.788517', time: 2.562, eta: 21:13:06
+2020-04-15 05:54:27,317 - <__main__> - INFO: iter: 10200, lr: 0.000848, 'loss': '20.631969', time: 2.361, eta: 19:32:27
+2020-04-15 05:55:19,347 - <__main__> - INFO: iter: 10220, lr: 0.000848, 'loss': '22.289854', time: 2.602, eta: 21:31:13
+2020-04-15 05:56:09,541 - <__main__> - INFO: iter: 10240, lr: 0.000848, 'loss': '21.100748', time: 2.510, eta: 20:44:48
+2020-04-15 05:56:59,540 - <__main__> - INFO: iter: 10260, lr: 0.000848, 'loss': '19.127079', time: 2.500, eta: 20:39:08
+2020-04-15 05:57:49,922 - <__main__> - INFO: iter: 10280, lr: 0.000848, 'loss': '21.986750', time: 2.519, eta: 20:47:46
+2020-04-15 05:58:39,834 - <__main__> - INFO: iter: 10300, lr: 0.000848, 'loss': '21.215496', time: 2.496, eta: 20:35:20
+2020-04-15 05:59:31,553 - <__main__> - INFO: iter: 10320, lr: 0.000848, 'loss': '21.635967', time: 2.586, eta: 21:19:10
+2020-04-15 06:00:23,412 - <__main__> - INFO: iter: 10340, lr: 0.000848, 'loss': '22.603455', time: 2.593, eta: 21:21:47
+2020-04-15 06:01:14,191 - <__main__> - INFO: iter: 10360, lr: 0.000848, 'loss': '21.421816', time: 2.539, eta: 20:54:13
+2020-04-15 06:02:04,849 - <__main__> - INFO: iter: 10380, lr: 0.000843, 'loss': '21.005768', time: 2.533, eta: 20:50:25
+2020-04-15 06:02:55,535 - <__main__> - INFO: iter: 10400, lr: 0.000843, 'loss': '21.635807', time: 2.534, eta: 20:50:13
+2020-04-15 06:03:44,729 - <__main__> - INFO: iter: 10420, lr: 0.000843, 'loss': '21.178095', time: 2.460, eta: 20:12:39
+2020-04-15 06:04:36,437 - <__main__> - INFO: iter: 10440, lr: 0.000843, 'loss': '21.308441', time: 2.585, eta: 21:13:43
+2020-04-15 06:05:28,357 - <__main__> - INFO: iter: 10460, lr: 0.000843, 'loss': '21.645218', time: 2.596, eta: 21:18:07
+2020-04-15 06:06:19,407 - <__main__> - INFO: iter: 10480, lr: 0.000843, 'loss': '21.061821', time: 2.552, eta: 20:55:48
+2020-04-15 06:07:09,915 - <__main__> - INFO: iter: 10500, lr: 0.000843, 'loss': '20.975643', time: 2.525, eta: 20:41:40
+2020-04-15 06:08:03,727 - <__main__> - INFO: iter: 10520, lr: 0.000843, 'loss': '22.110638', time: 2.691, eta: 22:01:59
+2020-04-15 06:08:51,125 - <__main__> - INFO: iter: 10540, lr: 0.000838, 'loss': '21.145397', time: 2.370, eta: 19:23:35
+2020-04-15 06:09:42,403 - <__main__> - INFO: iter: 10560, lr: 0.000838, 'loss': '21.124680', time: 2.564, eta: 20:58:02
+2020-04-15 06:10:37,122 - <__main__> - INFO: iter: 10580, lr: 0.000838, 'loss': '19.666496', time: 2.736, eta: 22:21:32
+2020-04-15 06:11:26,889 - <__main__> - INFO: iter: 10600, lr: 0.000838, 'loss': '21.644564', time: 2.488, eta: 20:19:17
+2020-04-15 06:12:17,411 - <__main__> - INFO: iter: 10620, lr: 0.000838, 'loss': '21.692451', time: 2.526, eta: 20:36:56
+2020-04-15 06:13:05,974 - <__main__> - INFO: iter: 10640, lr: 0.000838, 'loss': '21.381615', time: 2.428, eta: 19:48:10
+2020-04-15 06:13:57,797 - <__main__> - INFO: iter: 10660, lr: 0.000838, 'loss': '21.875504', time: 2.591, eta: 21:07:05
+2020-04-15 06:14:46,942 - <__main__> - INFO: iter: 10680, lr: 0.000838, 'loss': '20.768391', time: 2.457, eta: 20:00:45
+2020-04-15 06:15:36,213 - <__main__> - INFO: iter: 10700, lr: 0.000838, 'loss': '19.332258', time: 2.464, eta: 20:03:02
+2020-04-15 06:16:27,459 - <__main__> - INFO: iter: 10720, lr: 0.000833, 'loss': '23.130419', time: 2.562, eta: 20:50:24
+2020-04-15 06:17:17,292 - <__main__> - INFO: iter: 10740, lr: 0.000833, 'loss': '21.295666', time: 2.492, eta: 20:15:05
+2020-04-15 06:18:11,366 - <__main__> - INFO: iter: 10760, lr: 0.000833, 'loss': '20.867561', time: 2.704, eta: 21:57:36
+2020-04-15 06:19:02,908 - <__main__> - INFO: iter: 10780, lr: 0.000833, 'loss': '21.522274', time: 2.577, eta: 20:55:02
+2020-04-15 06:19:54,340 - <__main__> - INFO: iter: 10800, lr: 0.000833, 'loss': '21.253479', time: 2.572, eta: 20:51:29
+2020-04-15 06:20:44,787 - <__main__> - INFO: iter: 10820, lr: 0.000833, 'loss': '21.870890', time: 2.522, eta: 20:26:42
+2020-04-15 06:21:34,195 - <__main__> - INFO: iter: 10840, lr: 0.000833, 'loss': '21.482677', time: 2.470, eta: 20:00:36
+2020-04-15 06:22:22,424 - <__main__> - INFO: iter: 10860, lr: 0.000833, 'loss': '21.542042', time: 2.411, eta: 19:31:09
+2020-04-15 06:23:12,360 - <__main__> - INFO: iter: 10880, lr: 0.000828, 'loss': '21.709240', time: 2.497, eta: 20:11:46
+2020-04-15 06:24:02,107 - <__main__> - INFO: iter: 10900, lr: 0.000828, 'loss': '21.143677', time: 2.487, eta: 20:06:22
+2020-04-15 06:24:53,657 - <__main__> - INFO: iter: 10920, lr: 0.000828, 'loss': '20.063049', time: 2.578, eta: 20:49:15
+2020-04-15 06:25:44,904 - <__main__> - INFO: iter: 10940, lr: 0.000828, 'loss': '20.837709', time: 2.562, eta: 20:41:00
+2020-04-15 06:26:39,040 - <__main__> - INFO: iter: 10960, lr: 0.000828, 'loss': '21.366020', time: 2.707, eta: 21:50:06
+2020-04-15 06:27:30,600 - <__main__> - INFO: iter: 10980, lr: 0.000828, 'loss': '21.941635', time: 2.578, eta: 20:46:51
+2020-04-15 06:28:23,656 - <__main__> - INFO: iter: 11000, lr: 0.000828, 'loss': '21.312727', time: 2.653, eta: 21:22:13
+2020-04-15 06:28:23,657 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/11000.
+2020-04-15 06:28:32,807 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 06:28:46,714 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 06:28:46,714 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 06:28:46,715 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 06:28:46,880 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 06:28:46,888 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 72.66
+2020-04-15 06:29:21,874 - <__main__> - INFO: iter: 11020, lr: 0.000828, 'loss': '21.394905', time: 2.911, eta: 23:25:56
+2020-04-15 06:30:13,462 - <__main__> - INFO: iter: 11040, lr: 0.000828, 'loss': '20.399157', time: 2.579, eta: 20:44:59
+2020-04-15 06:31:02,265 - <__main__> - INFO: iter: 11060, lr: 0.000823, 'loss': '20.693426', time: 2.440, eta: 19:36:58
+2020-04-15 06:31:57,158 - <__main__> - INFO: iter: 11080, lr: 0.000823, 'loss': '20.600197', time: 2.745, eta: 22:02:54
+2020-04-15 06:32:47,725 - <__main__> - INFO: iter: 11100, lr: 0.000823, 'loss': '20.893250', time: 2.528, eta: 20:17:48
+2020-04-15 06:33:36,386 - <__main__> - INFO: iter: 11120, lr: 0.000823, 'loss': '19.247583', time: 2.433, eta: 19:31:06
+2020-04-15 06:34:25,363 - <__main__> - INFO: iter: 11140, lr: 0.000823, 'loss': '19.021910', time: 2.449, eta: 19:37:54
+2020-04-15 06:35:18,923 - <__main__> - INFO: iter: 11160, lr: 0.000823, 'loss': '22.514759', time: 2.678, eta: 21:27:13
+2020-04-15 06:36:08,106 - <__main__> - INFO: iter: 11180, lr: 0.000823, 'loss': '23.205540', time: 2.459, eta: 19:41:12
+2020-04-15 06:36:59,844 - <__main__> - INFO: iter: 11200, lr: 0.000823, 'loss': '21.502007', time: 2.587, eta: 20:41:42
+2020-04-15 06:37:48,272 - <__main__> - INFO: iter: 11220, lr: 0.000818, 'loss': '21.529030', time: 2.421, eta: 19:21:27
+2020-04-15 06:38:40,646 - <__main__> - INFO: iter: 11240, lr: 0.000818, 'loss': '21.632130', time: 2.619, eta: 20:55:13
+2020-04-15 06:39:32,893 - <__main__> - INFO: iter: 11260, lr: 0.000818, 'loss': '20.598526', time: 2.612, eta: 20:51:19
+2020-04-15 06:40:25,032 - <__main__> - INFO: iter: 11280, lr: 0.000818, 'loss': '23.700062', time: 2.607, eta: 20:47:50
+2020-04-15 06:41:14,272 - <__main__> - INFO: iter: 11300, lr: 0.000818, 'loss': '21.549778', time: 2.462, eta: 19:37:40
+2020-04-15 06:42:06,110 - <__main__> - INFO: iter: 11320, lr: 0.000818, 'loss': '21.192120', time: 2.592, eta: 20:38:56
+2020-04-15 06:42:55,396 - <__main__> - INFO: iter: 11340, lr: 0.000818, 'loss': '21.158592', time: 2.464, eta: 19:37:04
+2020-04-15 06:43:46,175 - <__main__> - INFO: iter: 11360, lr: 0.000818, 'loss': '19.820547', time: 2.539, eta: 20:11:57
+2020-04-15 06:44:37,297 - <__main__> - INFO: iter: 11380, lr: 0.000818, 'loss': '20.347530', time: 2.556, eta: 20:19:18
+2020-04-15 06:45:27,509 - <__main__> - INFO: iter: 11400, lr: 0.000812, 'loss': '20.557034', time: 2.511, eta: 19:56:41
+2020-04-15 06:46:17,842 - <__main__> - INFO: iter: 11420, lr: 0.000812, 'loss': '19.866913', time: 2.517, eta: 19:58:45
+2020-04-15 06:47:09,805 - <__main__> - INFO: iter: 11440, lr: 0.000812, 'loss': '23.886562', time: 2.598, eta: 20:36:43
+2020-04-15 06:47:59,971 - <__main__> - INFO: iter: 11460, lr: 0.000812, 'loss': '21.371868', time: 2.508, eta: 19:53:07
+2020-04-15 06:48:53,209 - <__main__> - INFO: iter: 11480, lr: 0.000812, 'loss': '20.756638', time: 2.662, eta: 21:05:16
+2020-04-15 06:49:44,261 - <__main__> - INFO: iter: 11500, lr: 0.000812, 'loss': '22.151615', time: 2.553, eta: 20:12:29
+2020-04-15 06:50:32,902 - <__main__> - INFO: iter: 11520, lr: 0.000812, 'loss': '20.624947', time: 2.432, eta: 19:14:24
+2020-04-15 06:51:22,652 - <__main__> - INFO: iter: 11540, lr: 0.000812, 'loss': '21.558994', time: 2.487, eta: 19:39:53
+2020-04-15 06:52:10,643 - <__main__> - INFO: iter: 11560, lr: 0.000807, 'loss': '22.665829', time: 2.400, eta: 18:57:24
+2020-04-15 06:53:01,534 - <__main__> - INFO: iter: 11580, lr: 0.000807, 'loss': '20.542221', time: 2.545, eta: 20:05:15
+2020-04-15 06:53:50,501 - <__main__> - INFO: iter: 11600, lr: 0.000807, 'loss': '20.350389', time: 2.448, eta: 19:18:51
+2020-04-15 06:54:38,269 - <__main__> - INFO: iter: 11620, lr: 0.000807, 'loss': '19.094551', time: 2.388, eta: 18:49:44
+2020-04-15 06:55:28,467 - <__main__> - INFO: iter: 11640, lr: 0.000807, 'loss': '21.045946', time: 2.510, eta: 19:46:20
+2020-04-15 06:56:19,374 - <__main__> - INFO: iter: 11660, lr: 0.000807, 'loss': '19.925495', time: 2.545, eta: 20:02:16
+2020-04-15 06:57:12,112 - <__main__> - INFO: iter: 11680, lr: 0.000807, 'loss': '19.583950', time: 2.637, eta: 20:44:38
+2020-04-15 06:58:02,706 - <__main__> - INFO: iter: 11700, lr: 0.000807, 'loss': '20.039135', time: 2.530, eta: 19:53:08
+2020-04-15 06:58:54,739 - <__main__> - INFO: iter: 11720, lr: 0.000807, 'loss': '21.861057', time: 2.602, eta: 20:26:14
+2020-04-15 06:59:41,373 - <__main__> - INFO: iter: 11740, lr: 0.000802, 'loss': '19.813957', time: 2.332, eta: 18:18:13
+2020-04-15 07:00:35,484 - <__main__> - INFO: iter: 11760, lr: 0.000802, 'loss': '20.077448', time: 2.706, eta: 21:13:24
+2020-04-15 07:01:23,935 - <__main__> - INFO: iter: 11780, lr: 0.000802, 'loss': '20.320770', time: 2.423, eta: 18:59:24
+2020-04-15 07:02:14,291 - <__main__> - INFO: iter: 11800, lr: 0.000802, 'loss': '20.020191', time: 2.518, eta: 19:43:20
+2020-04-15 07:03:05,091 - <__main__> - INFO: iter: 11820, lr: 0.000802, 'loss': '20.381727', time: 2.540, eta: 19:52:58
+2020-04-15 07:03:56,145 - <__main__> - INFO: iter: 11840, lr: 0.000802, 'loss': '21.884094', time: 2.553, eta: 19:58:02
+2020-04-15 07:04:45,597 - <__main__> - INFO: iter: 11860, lr: 0.000802, 'loss': '20.695278', time: 2.473, eta: 19:19:38
+2020-04-15 07:05:33,859 - <__main__> - INFO: iter: 11880, lr: 0.000802, 'loss': '21.172295', time: 2.413, eta: 18:50:56
+2020-04-15 07:06:26,263 - <__main__> - INFO: iter: 11900, lr: 0.000797, 'loss': '21.559254', time: 2.620, eta: 20:27:07
+2020-04-15 07:07:18,593 - <__main__> - INFO: iter: 11920, lr: 0.000797, 'loss': '22.333635', time: 2.616, eta: 20:24:31
+2020-04-15 07:08:10,085 - <__main__> - INFO: iter: 11940, lr: 0.000797, 'loss': '20.922840', time: 2.575, eta: 20:04:03
+2020-04-15 07:08:58,968 - <__main__> - INFO: iter: 11960, lr: 0.000797, 'loss': '22.344536', time: 2.444, eta: 19:02:14
+2020-04-15 07:09:49,530 - <__main__> - INFO: iter: 11980, lr: 0.000797, 'loss': '21.198795', time: 2.528, eta: 19:40:36
+2020-04-15 07:10:40,115 - <__main__> - INFO: iter: 12000, lr: 0.000797, 'loss': '19.958536', time: 2.529, eta: 19:40:19
+2020-04-15 07:10:40,115 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/12000.
+2020-04-15 07:10:48,635 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 07:11:02,473 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 07:11:02,474 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 07:11:02,474 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 07:11:02,647 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 07:11:02,656 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 72.93
+2020-04-15 07:11:39,134 - <__main__> - INFO: iter: 12020, lr: 0.000797, 'loss': '20.782547', time: 2.951, eta: 22:56:07
+2020-04-15 07:12:31,399 - <__main__> - INFO: iter: 12040, lr: 0.000797, 'loss': '19.958910', time: 2.613, eta: 20:17:47
+2020-04-15 07:13:19,763 - <__main__> - INFO: iter: 12060, lr: 0.000797, 'loss': '21.059181', time: 2.418, eta: 18:46:04
+2020-04-15 07:14:10,446 - <__main__> - INFO: iter: 12080, lr: 0.000791, 'loss': '19.543022', time: 2.534, eta: 19:39:12
+2020-04-15 07:15:03,313 - <__main__> - INFO: iter: 12100, lr: 0.000791, 'loss': '21.464981', time: 2.643, eta: 20:29:10
+2020-04-15 07:15:53,066 - <__main__> - INFO: iter: 12120, lr: 0.000791, 'loss': '20.363379', time: 2.488, eta: 19:15:54
+2020-04-15 07:16:45,031 - <__main__> - INFO: iter: 12140, lr: 0.000791, 'loss': '21.763449', time: 2.598, eta: 20:06:26
+2020-04-15 07:17:36,544 - <__main__> - INFO: iter: 12160, lr: 0.000791, 'loss': '20.353189', time: 2.576, eta: 19:55:07
+2020-04-15 07:18:28,950 - <__main__> - INFO: iter: 12180, lr: 0.000791, 'loss': '20.963257', time: 2.620, eta: 20:14:55
+2020-04-15 07:19:20,351 - <__main__> - INFO: iter: 12200, lr: 0.000791, 'loss': '19.778748', time: 2.570, eta: 19:50:44
+2020-04-15 07:20:10,242 - <__main__> - INFO: iter: 12220, lr: 0.000791, 'loss': '20.472168', time: 2.495, eta: 19:15:01
+2020-04-15 07:20:59,519 - <__main__> - INFO: iter: 12240, lr: 0.000786, 'loss': '19.277531', time: 2.464, eta: 18:59:56
+2020-04-15 07:21:47,836 - <__main__> - INFO: iter: 12260, lr: 0.000786, 'loss': '21.237169', time: 2.416, eta: 18:36:56
+2020-04-15 07:22:38,282 - <__main__> - INFO: iter: 12280, lr: 0.000786, 'loss': '19.955971', time: 2.522, eta: 19:25:16
+2020-04-15 07:23:29,344 - <__main__> - INFO: iter: 12300, lr: 0.000786, 'loss': '20.636683', time: 2.553, eta: 19:38:42
+2020-04-15 07:24:18,997 - <__main__> - INFO: iter: 12320, lr: 0.000786, 'loss': '20.111444', time: 2.483, eta: 19:05:20
+2020-04-15 07:25:12,109 - <__main__> - INFO: iter: 12340, lr: 0.000786, 'loss': '20.507769', time: 2.656, eta: 20:24:12
+2020-04-15 07:26:02,283 - <__main__> - INFO: iter: 12360, lr: 0.000786, 'loss': '19.202143', time: 2.509, eta: 19:15:40
+2020-04-15 07:26:51,394 - <__main__> - INFO: iter: 12380, lr: 0.000786, 'loss': '20.225655', time: 2.456, eta: 18:50:22
+2020-04-15 07:27:44,919 - <__main__> - INFO: iter: 12400, lr: 0.000786, 'loss': '20.505405', time: 2.676, eta: 20:31:03
+2020-04-15 07:28:32,732 - <__main__> - INFO: iter: 12420, lr: 0.000780, 'loss': '19.878441', time: 2.391, eta: 18:18:54
+2020-04-15 07:29:24,556 - <__main__> - INFO: iter: 12440, lr: 0.000780, 'loss': '20.379490', time: 2.591, eta: 19:50:14
+2020-04-15 07:30:15,972 - <__main__> - INFO: iter: 12460, lr: 0.000780, 'loss': '20.951227', time: 2.571, eta: 19:39:56
+2020-04-15 07:31:06,340 - <__main__> - INFO: iter: 12480, lr: 0.000780, 'loss': '19.378620', time: 2.518, eta: 19:15:07
+2020-04-15 07:31:57,564 - <__main__> - INFO: iter: 12500, lr: 0.000780, 'loss': '20.687189', time: 2.561, eta: 19:33:53
+2020-04-15 07:32:50,385 - <__main__> - INFO: iter: 12520, lr: 0.000780, 'loss': '20.146576', time: 2.641, eta: 20:09:34
+2020-04-15 07:33:40,105 - <__main__> - INFO: iter: 12540, lr: 0.000780, 'loss': '22.243080', time: 2.486, eta: 18:57:46
+2020-04-15 07:34:32,441 - <__main__> - INFO: iter: 12560, lr: 0.000780, 'loss': '21.075146', time: 2.617, eta: 19:56:45
+2020-04-15 07:35:19,388 - <__main__> - INFO: iter: 12580, lr: 0.000775, 'loss': '19.512104', time: 2.347, eta: 17:52:43
+2020-04-15 07:36:09,834 - <__main__> - INFO: iter: 12600, lr: 0.000775, 'loss': '19.871517', time: 2.522, eta: 19:11:50
+2020-04-15 07:37:01,811 - <__main__> - INFO: iter: 12620, lr: 0.000775, 'loss': '20.390390', time: 2.599, eta: 19:45:57
+2020-04-15 07:37:54,839 - <__main__> - INFO: iter: 12640, lr: 0.000775, 'loss': '21.124950', time: 2.651, eta: 20:09:02
+2020-04-15 07:38:43,736 - <__main__> - INFO: iter: 12660, lr: 0.000775, 'loss': '20.534101', time: 2.445, eta: 18:34:03
+2020-04-15 07:39:36,750 - <__main__> - INFO: iter: 12680, lr: 0.000775, 'loss': '20.411160', time: 2.651, eta: 20:06:54
+2020-04-15 07:40:28,134 - <__main__> - INFO: iter: 12700, lr: 0.000775, 'loss': '20.442776', time: 2.569, eta: 19:29:00
+2020-04-15 07:41:18,243 - <__main__> - INFO: iter: 12720, lr: 0.000775, 'loss': '19.851074', time: 2.505, eta: 18:59:08
+2020-04-15 07:42:09,667 - <__main__> - INFO: iter: 12740, lr: 0.000775, 'loss': '22.121296', time: 2.571, eta: 19:28:11
+2020-04-15 07:42:55,783 - <__main__> - INFO: iter: 12760, lr: 0.000769, 'loss': '19.302441', time: 2.306, eta: 17:26:49
+2020-04-15 07:43:46,015 - <__main__> - INFO: iter: 12780, lr: 0.000769, 'loss': '20.396187', time: 2.512, eta: 18:59:26
+2020-04-15 07:44:35,096 - <__main__> - INFO: iter: 12800, lr: 0.000769, 'loss': '20.694565', time: 2.454, eta: 18:32:29
+2020-04-15 07:45:25,617 - <__main__> - INFO: iter: 12820, lr: 0.000769, 'loss': '20.309265', time: 2.526, eta: 19:04:17
+2020-04-15 07:46:15,587 - <__main__> - INFO: iter: 12840, lr: 0.000769, 'loss': '20.438604', time: 2.498, eta: 18:50:59
+2020-04-15 07:47:07,451 - <__main__> - INFO: iter: 12860, lr: 0.000769, 'loss': '20.441101', time: 2.593, eta: 19:32:59
+2020-04-15 07:48:00,051 - <__main__> - INFO: iter: 12880, lr: 0.000769, 'loss': '19.367098', time: 2.630, eta: 19:48:46
+2020-04-15 07:48:50,696 - <__main__> - INFO: iter: 12900, lr: 0.000769, 'loss': '20.522369', time: 2.532, eta: 19:03:43
+2020-04-15 07:49:40,231 - <__main__> - INFO: iter: 12920, lr: 0.000763, 'loss': '21.544258', time: 2.477, eta: 18:37:53
+2020-04-15 07:50:29,436 - <__main__> - INFO: iter: 12940, lr: 0.000763, 'loss': '19.474176', time: 2.460, eta: 18:29:31
+2020-04-15 07:51:21,248 - <__main__> - INFO: iter: 12960, lr: 0.000763, 'loss': '19.749941', time: 2.591, eta: 19:27:30
+2020-04-15 07:52:12,164 - <__main__> - INFO: iter: 12980, lr: 0.000763, 'loss': '20.629055', time: 2.546, eta: 19:06:26
+2020-04-15 07:53:01,915 - <__main__> - INFO: iter: 13000, lr: 0.000763, 'loss': '20.991425', time: 2.488, eta: 18:39:25
+2020-04-15 07:53:01,916 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/13000.
+2020-04-15 07:53:10,968 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 07:53:24,766 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 07:53:24,767 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 07:53:24,767 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 07:53:24,914 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 07:53:24,922 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 74.03
+2020-04-15 07:53:58,653 - <__main__> - INFO: iter: 13020, lr: 0.000763, 'loss': '21.703476', time: 2.837, eta: 21:15:38
+2020-04-15 07:54:47,923 - <__main__> - INFO: iter: 13040, lr: 0.000763, 'loss': '19.605911', time: 2.464, eta: 18:26:56
+2020-04-15 07:55:37,137 - <__main__> - INFO: iter: 13060, lr: 0.000763, 'loss': '20.942768', time: 2.461, eta: 18:24:51
+2020-04-15 07:56:25,191 - <__main__> - INFO: iter: 13080, lr: 0.000763, 'loss': '19.447350', time: 2.403, eta: 17:57:59
+2020-04-15 07:57:12,390 - <__main__> - INFO: iter: 13100, lr: 0.000758, 'loss': '20.430946', time: 2.360, eta: 17:38:03
+2020-04-15 07:58:02,915 - <__main__> - INFO: iter: 13120, lr: 0.000758, 'loss': '20.297127', time: 2.526, eta: 18:51:45
+2020-04-15 07:58:55,001 - <__main__> - INFO: iter: 13140, lr: 0.000758, 'loss': '19.259424', time: 2.604, eta: 19:25:51
+2020-04-15 07:59:46,034 - <__main__> - INFO: iter: 13160, lr: 0.000758, 'loss': '19.448719', time: 2.552, eta: 19:01:29
+2020-04-15 08:00:37,263 - <__main__> - INFO: iter: 13180, lr: 0.000758, 'loss': '20.152262', time: 2.561, eta: 19:04:54
+2020-04-15 08:01:25,806 - <__main__> - INFO: iter: 13200, lr: 0.000758, 'loss': '20.449366', time: 2.427, eta: 18:04:07
+2020-04-15 08:02:14,871 - <__main__> - INFO: iter: 13220, lr: 0.000758, 'loss': '20.218254', time: 2.453, eta: 18:14:58
+2020-04-15 08:03:05,424 - <__main__> - INFO: iter: 13240, lr: 0.000758, 'loss': '20.899374', time: 2.528, eta: 18:47:20
+2020-04-15 08:03:56,659 - <__main__> - INFO: iter: 13260, lr: 0.000752, 'loss': '21.047276', time: 2.562, eta: 19:01:42
+2020-04-15 08:04:44,824 - <__main__> - INFO: iter: 13280, lr: 0.000752, 'loss': '19.856379', time: 2.408, eta: 17:52:27
+2020-04-15 08:05:34,511 - <__main__> - INFO: iter: 13300, lr: 0.000752, 'loss': '19.460625', time: 2.484, eta: 18:25:31
+2020-04-15 08:06:21,542 - <__main__> - INFO: iter: 13320, lr: 0.000752, 'loss': '19.922693', time: 2.352, eta: 17:25:38
+2020-04-15 08:07:14,867 - <__main__> - INFO: iter: 13340, lr: 0.000752, 'loss': '19.394987', time: 2.666, eta: 19:44:42
+2020-04-15 08:08:05,131 - <__main__> - INFO: iter: 13360, lr: 0.000752, 'loss': '20.878155', time: 2.513, eta: 18:35:52
+2020-04-15 08:08:56,179 - <__main__> - INFO: iter: 13380, lr: 0.000752, 'loss': '20.126080', time: 2.552, eta: 18:52:24
+2020-04-15 08:09:45,103 - <__main__> - INFO: iter: 13400, lr: 0.000752, 'loss': '20.064922', time: 2.446, eta: 18:04:31
+2020-04-15 08:10:34,848 - <__main__> - INFO: iter: 13420, lr: 0.000752, 'loss': '20.123119', time: 2.487, eta: 18:21:48
+2020-04-15 08:11:23,814 - <__main__> - INFO: iter: 13440, lr: 0.000746, 'loss': '20.822624', time: 2.448, eta: 18:03:47
+2020-04-15 08:12:14,249 - <__main__> - INFO: iter: 13460, lr: 0.000746, 'loss': '18.799845', time: 2.522, eta: 18:35:26
+2020-04-15 08:13:03,877 - <__main__> - INFO: iter: 13480, lr: 0.000746, 'loss': '19.227402', time: 2.481, eta: 18:16:46
+2020-04-15 08:13:54,744 - <__main__> - INFO: iter: 13500, lr: 0.000746, 'loss': '20.335720', time: 2.543, eta: 18:43:18
+2020-04-15 08:14:45,658 - <__main__> - INFO: iter: 13520, lr: 0.000746, 'loss': '20.097744', time: 2.546, eta: 18:43:33
+2020-04-15 08:15:38,145 - <__main__> - INFO: iter: 13540, lr: 0.000746, 'loss': '20.377804', time: 2.624, eta: 19:17:18
+2020-04-15 08:16:30,393 - <__main__> - INFO: iter: 13560, lr: 0.000746, 'loss': '20.680761', time: 2.612, eta: 19:11:11
+2020-04-15 08:17:20,171 - <__main__> - INFO: iter: 13580, lr: 0.000746, 'loss': '20.365372', time: 2.489, eta: 18:15:56
+2020-04-15 08:18:10,346 - <__main__> - INFO: iter: 13600, lr: 0.000740, 'loss': '20.337648', time: 2.509, eta: 18:23:52
+2020-04-15 08:19:01,594 - <__main__> - INFO: iter: 13620, lr: 0.000740, 'loss': '20.828140', time: 2.562, eta: 18:46:34
+2020-04-15 08:19:52,604 - <__main__> - INFO: iter: 13640, lr: 0.000740, 'loss': '19.615978', time: 2.551, eta: 18:40:32
+2020-04-15 08:20:41,658 - <__main__> - INFO: iter: 13660, lr: 0.000740, 'loss': '20.002909', time: 2.453, eta: 17:56:43
+2020-04-15 08:21:34,046 - <__main__> - INFO: iter: 13680, lr: 0.000740, 'loss': '19.845177', time: 2.619, eta: 19:09:02
+2020-04-15 08:22:29,926 - <__main__> - INFO: iter: 13700, lr: 0.000740, 'loss': '19.032139', time: 2.794, eta: 20:24:41
+2020-04-15 08:23:22,038 - <__main__> - INFO: iter: 13720, lr: 0.000740, 'loss': '19.332399', time: 2.606, eta: 19:01:14
+2020-04-15 08:24:13,547 - <__main__> - INFO: iter: 13740, lr: 0.000740, 'loss': '20.538712', time: 2.575, eta: 18:47:12
+2020-04-15 08:25:03,341 - <__main__> - INFO: iter: 13760, lr: 0.000740, 'loss': '20.665768', time: 2.490, eta: 18:08:49
+2020-04-15 08:25:53,482 - <__main__> - INFO: iter: 13780, lr: 0.000734, 'loss': '18.962914', time: 2.507, eta: 18:15:34
+2020-04-15 08:26:45,683 - <__main__> - INFO: iter: 13800, lr: 0.000734, 'loss': '19.639801', time: 2.610, eta: 18:59:43
+2020-04-15 08:27:33,863 - <__main__> - INFO: iter: 13820, lr: 0.000734, 'loss': '20.129559', time: 2.409, eta: 17:31:07
+2020-04-15 08:28:23,610 - <__main__> - INFO: iter: 13840, lr: 0.000734, 'loss': '19.418697', time: 2.487, eta: 18:04:28
+2020-04-15 08:29:15,511 - <__main__> - INFO: iter: 13860, lr: 0.000734, 'loss': '20.302584', time: 2.595, eta: 18:50:35
+2020-04-15 08:30:06,158 - <__main__> - INFO: iter: 13880, lr: 0.000734, 'loss': '20.620714', time: 2.532, eta: 18:22:25
+2020-04-15 08:30:56,046 - <__main__> - INFO: iter: 13900, lr: 0.000734, 'loss': '20.754364', time: 2.494, eta: 18:05:03
+2020-04-15 08:31:45,900 - <__main__> - INFO: iter: 13920, lr: 0.000734, 'loss': '19.009911', time: 2.493, eta: 18:03:28
+2020-04-15 08:32:34,557 - <__main__> - INFO: iter: 13940, lr: 0.000728, 'loss': '19.674728', time: 2.433, eta: 17:36:40
+2020-04-15 08:33:25,222 - <__main__> - INFO: iter: 13960, lr: 0.000728, 'loss': '19.204269', time: 2.533, eta: 18:19:24
+2020-04-15 08:34:16,525 - <__main__> - INFO: iter: 13980, lr: 0.000728, 'loss': '18.558681', time: 2.565, eta: 18:32:25
+2020-04-15 08:35:09,283 - <__main__> - INFO: iter: 14000, lr: 0.000728, 'loss': '19.632593', time: 2.638, eta: 19:03:05
+2020-04-15 08:35:09,284 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/14000.
+2020-04-15 08:35:19,555 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 08:35:33,739 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 08:35:33,739 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 08:35:33,750 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 08:35:33,903 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 08:35:33,910 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 76.78
+2020-04-15 08:36:09,469 - <__main__> - INFO: iter: 14020, lr: 0.000728, 'loss': '20.088333', time: 3.009, eta: 21:43:01
+2020-04-15 08:37:01,924 - <__main__> - INFO: iter: 14040, lr: 0.000728, 'loss': '19.132488', time: 2.623, eta: 18:54:47
+2020-04-15 08:37:56,812 - <__main__> - INFO: iter: 14060, lr: 0.000728, 'loss': '19.763876', time: 2.744, eta: 19:46:29
+2020-04-15 08:38:48,491 - <__main__> - INFO: iter: 14080, lr: 0.000728, 'loss': '18.647228', time: 2.584, eta: 18:36:16
+2020-04-15 08:39:38,440 - <__main__> - INFO: iter: 14100, lr: 0.000728, 'loss': '20.147438', time: 2.497, eta: 17:58:04
+2020-04-15 08:40:25,744 - <__main__> - INFO: iter: 14120, lr: 0.000723, 'loss': '19.931732', time: 2.365, eta: 17:00:10
+2020-04-15 08:41:18,210 - <__main__> - INFO: iter: 14140, lr: 0.000723, 'loss': '19.386276', time: 2.623, eta: 18:50:39
+2020-04-15 08:42:04,390 - <__main__> - INFO: iter: 14160, lr: 0.000723, 'loss': '19.475182', time: 2.309, eta: 16:34:24
+2020-04-15 08:42:56,371 - <__main__> - INFO: iter: 14180, lr: 0.000723, 'loss': '18.698893', time: 2.599, eta: 18:38:27
+2020-04-15 08:43:47,631 - <__main__> - INFO: iter: 14200, lr: 0.000723, 'loss': '19.159145', time: 2.563, eta: 18:22:05
+2020-04-15 08:44:40,134 - <__main__> - INFO: iter: 14220, lr: 0.000723, 'loss': '19.211262', time: 2.625, eta: 18:47:57
+2020-04-15 08:45:30,126 - <__main__> - INFO: iter: 14240, lr: 0.000723, 'loss': '18.918167', time: 2.500, eta: 17:53:09
+2020-04-15 08:46:23,943 - <__main__> - INFO: iter: 14260, lr: 0.000723, 'loss': '20.268810', time: 2.691, eta: 19:14:22
+2020-04-15 08:47:14,936 - <__main__> - INFO: iter: 14280, lr: 0.000717, 'loss': '18.346909', time: 2.550, eta: 18:12:56
+2020-04-15 08:48:03,769 - <__main__> - INFO: iter: 14300, lr: 0.000717, 'loss': '20.439514', time: 2.442, eta: 17:25:47
+2020-04-15 08:48:54,862 - <__main__> - INFO: iter: 14320, lr: 0.000717, 'loss': '19.387213', time: 2.555, eta: 18:13:27
+2020-04-15 08:49:46,935 - <__main__> - INFO: iter: 14340, lr: 0.000717, 'loss': '18.947784', time: 2.604, eta: 18:33:28
+2020-04-15 08:50:36,948 - <__main__> - INFO: iter: 14360, lr: 0.000717, 'loss': '19.832619', time: 2.501, eta: 17:48:37
+2020-04-15 08:51:30,154 - <__main__> - INFO: iter: 14380, lr: 0.000717, 'loss': '21.189041', time: 2.660, eta: 18:55:54
+2020-04-15 08:52:25,108 - <__main__> - INFO: iter: 14400, lr: 0.000717, 'loss': '19.180269', time: 2.748, eta: 19:32:25
+2020-04-15 08:53:16,469 - <__main__> - INFO: iter: 14420, lr: 0.000717, 'loss': '20.178961', time: 2.568, eta: 18:14:50
+2020-04-15 08:54:09,916 - <__main__> - INFO: iter: 14440, lr: 0.000717, 'loss': '19.761227', time: 2.672, eta: 18:58:22
+2020-04-15 08:55:03,089 - <__main__> - INFO: iter: 14460, lr: 0.000710, 'loss': '19.324356', time: 2.659, eta: 18:51:42
+2020-04-15 08:55:54,177 - <__main__> - INFO: iter: 14480, lr: 0.000710, 'loss': '19.090513', time: 2.554, eta: 18:06:28
+2020-04-15 08:56:47,860 - <__main__> - INFO: iter: 14500, lr: 0.000710, 'loss': '20.277903', time: 2.684, eta: 19:00:45
+2020-04-15 08:57:37,123 - <__main__> - INFO: iter: 14520, lr: 0.000710, 'loss': '18.637575', time: 2.463, eta: 17:26:00
+2020-04-15 08:58:27,568 - <__main__> - INFO: iter: 14540, lr: 0.000710, 'loss': '19.400684', time: 2.522, eta: 17:50:16
+2020-04-15 08:59:15,842 - <__main__> - INFO: iter: 14560, lr: 0.000710, 'loss': '20.000864', time: 2.414, eta: 17:03:24
+2020-04-15 09:00:04,466 - <__main__> - INFO: iter: 14580, lr: 0.000710, 'loss': '18.941307', time: 2.431, eta: 17:10:00
+2020-04-15 09:00:55,484 - <__main__> - INFO: iter: 14600, lr: 0.000710, 'loss': '19.698467', time: 2.551, eta: 17:59:53
+2020-04-15 09:01:46,847 - <__main__> - INFO: iter: 14620, lr: 0.000704, 'loss': '18.269302', time: 2.568, eta: 18:06:19
+2020-04-15 09:02:39,707 - <__main__> - INFO: iter: 14640, lr: 0.000704, 'loss': '19.200731', time: 2.643, eta: 18:37:04
+2020-04-15 09:03:30,490 - <__main__> - INFO: iter: 14660, lr: 0.000704, 'loss': '19.332127', time: 2.539, eta: 17:52:23
+2020-04-15 09:04:21,337 - <__main__> - INFO: iter: 14680, lr: 0.000704, 'loss': '18.798656', time: 2.542, eta: 17:52:52
+2020-04-15 09:05:13,273 - <__main__> - INFO: iter: 14700, lr: 0.000704, 'loss': '19.900696', time: 2.597, eta: 18:14:58
+2020-04-15 09:06:04,432 - <__main__> - INFO: iter: 14720, lr: 0.000704, 'loss': '20.856014', time: 2.558, eta: 17:57:45
+2020-04-15 09:06:54,866 - <__main__> - INFO: iter: 14740, lr: 0.000704, 'loss': '18.826679', time: 2.522, eta: 17:41:37
+2020-04-15 09:07:45,607 - <__main__> - INFO: iter: 14760, lr: 0.000704, 'loss': '19.754459', time: 2.537, eta: 17:47:15
+2020-04-15 09:08:37,420 - <__main__> - INFO: iter: 14780, lr: 0.000704, 'loss': '19.202862', time: 2.591, eta: 18:08:55
+2020-04-15 09:09:27,337 - <__main__> - INFO: iter: 14800, lr: 0.000698, 'loss': '20.298698', time: 2.496, eta: 17:28:16
+2020-04-15 09:10:19,696 - <__main__> - INFO: iter: 14820, lr: 0.000698, 'loss': '19.861973', time: 2.618, eta: 18:18:40
+2020-04-15 09:11:11,763 - <__main__> - INFO: iter: 14840, lr: 0.000698, 'loss': '19.424332', time: 2.603, eta: 18:11:39
+2020-04-15 09:11:59,259 - <__main__> - INFO: iter: 14860, lr: 0.000698, 'loss': '18.848318', time: 2.375, eta: 16:35:02
+2020-04-15 09:12:49,861 - <__main__> - INFO: iter: 14880, lr: 0.000698, 'loss': '20.093510', time: 2.530, eta: 17:39:15
+2020-04-15 09:13:41,466 - <__main__> - INFO: iter: 14900, lr: 0.000698, 'loss': '19.644199', time: 2.580, eta: 17:59:23
+2020-04-15 09:14:32,557 - <__main__> - INFO: iter: 14920, lr: 0.000698, 'loss': '18.702980', time: 2.555, eta: 17:47:47
+2020-04-15 09:15:25,064 - <__main__> - INFO: iter: 14940, lr: 0.000698, 'loss': '18.366020', time: 2.625, eta: 18:16:32
+2020-04-15 09:16:16,581 - <__main__> - INFO: iter: 14960, lr: 0.000692, 'loss': '18.882437', time: 2.576, eta: 17:55:00
+2020-04-15 09:17:05,065 - <__main__> - INFO: iter: 14980, lr: 0.000692, 'loss': '18.238306', time: 2.424, eta: 16:50:51
+2020-04-15 09:17:54,124 - <__main__> - INFO: iter: 15000, lr: 0.000692, 'loss': '20.014338', time: 2.453, eta: 17:02:05
+2020-04-15 09:17:54,127 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/15000.
+2020-04-15 09:18:03,901 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 09:18:18,049 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 09:18:18,049 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 09:18:18,049 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 09:18:18,194 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 09:18:18,202 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 77.04
+2020-04-15 09:18:51,943 - <__main__> - INFO: iter: 15020, lr: 0.000692, 'loss': '18.681950', time: 2.891, eta: 20:03:35
+2020-04-15 09:19:40,100 - <__main__> - INFO: iter: 15040, lr: 0.000692, 'loss': '19.056047', time: 2.408, eta: 16:41:39
+2020-04-15 09:20:28,403 - <__main__> - INFO: iter: 15060, lr: 0.000692, 'loss': '19.047260', time: 2.415, eta: 16:43:54
+2020-04-15 09:21:17,709 - <__main__> - INFO: iter: 15080, lr: 0.000692, 'loss': '19.272491', time: 2.465, eta: 17:03:55
+2020-04-15 09:22:06,452 - <__main__> - INFO: iter: 15100, lr: 0.000692, 'loss': '19.171810', time: 2.437, eta: 16:51:24
+2020-04-15 09:23:01,326 - <__main__> - INFO: iter: 15120, lr: 0.000692, 'loss': '18.830273', time: 2.744, eta: 18:57:45
+2020-04-15 09:23:53,278 - <__main__> - INFO: iter: 15140, lr: 0.000686, 'loss': '18.525448', time: 2.598, eta: 17:56:14
+2020-04-15 09:24:41,842 - <__main__> - INFO: iter: 15160, lr: 0.000686, 'loss': '18.953571', time: 2.428, eta: 16:45:17
+2020-04-15 09:25:33,372 - <__main__> - INFO: iter: 15180, lr: 0.000686, 'loss': '19.543392', time: 2.576, eta: 17:45:47
+2020-04-15 09:26:23,320 - <__main__> - INFO: iter: 15200, lr: 0.000686, 'loss': '19.954258', time: 2.497, eta: 17:12:16
+2020-04-15 09:27:15,424 - <__main__> - INFO: iter: 15220, lr: 0.000686, 'loss': '18.746918', time: 2.605, eta: 17:55:56
+2020-04-15 09:28:10,147 - <__main__> - INFO: iter: 15240, lr: 0.000686, 'loss': '19.426392', time: 2.736, eta: 18:49:05
+2020-04-15 09:28:58,492 - <__main__> - INFO: iter: 15260, lr: 0.000686, 'loss': '19.000793', time: 2.417, eta: 16:36:44
+2020-04-15 09:29:47,058 - <__main__> - INFO: iter: 15280, lr: 0.000686, 'loss': '19.215248', time: 2.428, eta: 16:40:27
+2020-04-15 09:30:35,110 - <__main__> - INFO: iter: 15300, lr: 0.000680, 'loss': '19.222427', time: 2.403, eta: 16:29:04
+2020-04-15 09:31:24,900 - <__main__> - INFO: iter: 15320, lr: 0.000680, 'loss': '19.022442', time: 2.489, eta: 17:04:00
+2020-04-15 09:32:17,352 - <__main__> - INFO: iter: 15340, lr: 0.000680, 'loss': '18.763580', time: 2.623, eta: 17:57:54
+2020-04-15 09:33:08,924 - <__main__> - INFO: iter: 15360, lr: 0.000680, 'loss': '19.637341', time: 2.579, eta: 17:38:56
+2020-04-15 09:34:00,847 - <__main__> - INFO: iter: 15380, lr: 0.000680, 'loss': '19.876457', time: 2.596, eta: 17:45:17
+2020-04-15 09:34:52,570 - <__main__> - INFO: iter: 15400, lr: 0.000680, 'loss': '18.418720', time: 2.586, eta: 17:40:19
+2020-04-15 09:35:44,076 - <__main__> - INFO: iter: 15420, lr: 0.000680, 'loss': '18.854010', time: 2.575, eta: 17:35:00
+2020-04-15 09:36:34,445 - <__main__> - INFO: iter: 15440, lr: 0.000680, 'loss': '18.659491', time: 2.518, eta: 17:10:52
+2020-04-15 09:37:25,873 - <__main__> - INFO: iter: 15460, lr: 0.000680, 'loss': '20.262684', time: 2.571, eta: 17:31:41
+2020-04-15 09:38:17,807 - <__main__> - INFO: iter: 15480, lr: 0.000673, 'loss': '17.884743', time: 2.597, eta: 17:41:12
+2020-04-15 09:39:12,630 - <__main__> - INFO: iter: 15500, lr: 0.000673, 'loss': '19.373899', time: 2.741, eta: 18:39:16
+2020-04-15 09:40:02,012 - <__main__> - INFO: iter: 15520, lr: 0.000673, 'loss': '19.240606', time: 2.469, eta: 16:47:24
+2020-04-15 09:40:51,703 - <__main__> - INFO: iter: 15540, lr: 0.000673, 'loss': '17.771963', time: 2.485, eta: 16:52:52
+2020-04-15 09:41:41,327 - <__main__> - INFO: iter: 15560, lr: 0.000673, 'loss': '18.695591', time: 2.481, eta: 16:50:40
+2020-04-15 09:42:31,401 - <__main__> - INFO: iter: 15580, lr: 0.000673, 'loss': '19.170403', time: 2.504, eta: 16:59:00
+2020-04-15 09:43:23,117 - <__main__> - INFO: iter: 15600, lr: 0.000673, 'loss': '18.727863', time: 2.586, eta: 17:31:35
+2020-04-15 09:44:13,619 - <__main__> - INFO: iter: 15620, lr: 0.000673, 'loss': '19.024616', time: 2.525, eta: 17:06:01
+2020-04-15 09:45:02,239 - <__main__> - INFO: iter: 15640, lr: 0.000667, 'loss': '18.838459', time: 2.431, eta: 16:26:57
+2020-04-15 09:45:51,521 - <__main__> - INFO: iter: 15660, lr: 0.000667, 'loss': '18.734884', time: 2.464, eta: 16:39:36
+2020-04-15 09:46:44,305 - <__main__> - INFO: iter: 15680, lr: 0.000667, 'loss': '18.032623', time: 2.639, eta: 17:49:44
+2020-04-15 09:47:35,162 - <__main__> - INFO: iter: 15700, lr: 0.000667, 'loss': '19.486563', time: 2.543, eta: 17:09:51
+2020-04-15 09:48:24,799 - <__main__> - INFO: iter: 15720, lr: 0.000667, 'loss': '18.721087', time: 2.482, eta: 16:44:20
+2020-04-15 09:49:16,859 - <__main__> - INFO: iter: 15740, lr: 0.000667, 'loss': '19.350285', time: 2.603, eta: 17:32:28
+2020-04-15 09:50:08,680 - <__main__> - INFO: iter: 15760, lr: 0.000667, 'loss': '18.479757', time: 2.591, eta: 17:26:45
+2020-04-15 09:50:59,030 - <__main__> - INFO: iter: 15780, lr: 0.000667, 'loss': '19.058022', time: 2.518, eta: 16:56:17
+2020-04-15 09:51:50,113 - <__main__> - INFO: iter: 15800, lr: 0.000667, 'loss': '19.078989', time: 2.554, eta: 17:10:07
+2020-04-15 09:52:38,247 - <__main__> - INFO: iter: 15820, lr: 0.000661, 'loss': '19.839520', time: 2.407, eta: 16:09:53
+2020-04-15 09:53:29,928 - <__main__> - INFO: iter: 15840, lr: 0.000661, 'loss': '19.368460', time: 2.584, eta: 17:20:31
+2020-04-15 09:54:17,285 - <__main__> - INFO: iter: 15860, lr: 0.000661, 'loss': '19.726814', time: 2.368, eta: 15:52:40
+2020-04-15 09:55:07,673 - <__main__> - INFO: iter: 15880, lr: 0.000661, 'loss': '19.488739', time: 2.519, eta: 16:52:47
+2020-04-15 09:55:59,541 - <__main__> - INFO: iter: 15900, lr: 0.000661, 'loss': '19.525427', time: 2.593, eta: 17:21:41
+2020-04-15 09:56:52,022 - <__main__> - INFO: iter: 15920, lr: 0.000661, 'loss': '18.599596', time: 2.624, eta: 17:33:07
+2020-04-15 09:57:41,500 - <__main__> - INFO: iter: 15940, lr: 0.000661, 'loss': '18.994076', time: 2.474, eta: 16:32:01
+2020-04-15 09:58:32,843 - <__main__> - INFO: iter: 15960, lr: 0.000661, 'loss': '18.445698', time: 2.567, eta: 17:08:33
+2020-04-15 09:59:21,392 - <__main__> - INFO: iter: 15980, lr: 0.000655, 'loss': '18.586254', time: 2.427, eta: 16:11:47
+2020-04-15 10:00:12,203 - <__main__> - INFO: iter: 16000, lr: 0.000655, 'loss': '18.965096', time: 2.541, eta: 16:56:13
+2020-04-15 10:00:12,203 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/16000.
+2020-04-15 10:00:22,725 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 10:00:36,829 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 10:00:36,829 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 10:00:36,830 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 10:00:36,977 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 10:00:36,985 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 71.23
+2020-04-15 10:01:07,990 - <__main__> - INFO: iter: 16020, lr: 0.000655, 'loss': '18.220387', time: 2.789, eta: 18:34:48
+2020-04-15 10:01:58,806 - <__main__> - INFO: iter: 16040, lr: 0.000655, 'loss': '18.343094', time: 2.541, eta: 16:54:37
+2020-04-15 10:02:49,224 - <__main__> - INFO: iter: 16060, lr: 0.000655, 'loss': '19.505459', time: 2.521, eta: 16:45:50
+2020-04-15 10:03:38,995 - <__main__> - INFO: iter: 16080, lr: 0.000655, 'loss': '17.821526', time: 2.489, eta: 16:32:07
+2020-04-15 10:04:29,757 - <__main__> - INFO: iter: 16100, lr: 0.000655, 'loss': '18.672102', time: 2.538, eta: 16:50:59
+2020-04-15 10:05:20,883 - <__main__> - INFO: iter: 16120, lr: 0.000655, 'loss': '18.121826', time: 2.556, eta: 16:57:25
+2020-04-15 10:06:09,062 - <__main__> - INFO: iter: 16140, lr: 0.000655, 'loss': '18.870316', time: 2.409, eta: 15:57:56
+2020-04-15 10:06:57,509 - <__main__> - INFO: iter: 16160, lr: 0.000648, 'loss': '19.242275', time: 2.422, eta: 16:02:28
+2020-04-15 10:07:46,766 - <__main__> - INFO: iter: 16180, lr: 0.000648, 'loss': '20.071358', time: 2.463, eta: 16:17:45
+2020-04-15 10:08:36,811 - <__main__> - INFO: iter: 16200, lr: 0.000648, 'loss': '18.771400', time: 2.502, eta: 16:32:33
+2020-04-15 10:09:27,259 - <__main__> - INFO: iter: 16220, lr: 0.000648, 'loss': '18.916119', time: 2.522, eta: 16:39:43
+2020-04-15 10:10:19,539 - <__main__> - INFO: iter: 16240, lr: 0.000648, 'loss': '18.324369', time: 2.614, eta: 17:15:07
+2020-04-15 10:11:08,723 - <__main__> - INFO: iter: 16260, lr: 0.000648, 'loss': '19.399746', time: 2.459, eta: 16:13:01
+2020-04-15 10:11:59,284 - <__main__> - INFO: iter: 16280, lr: 0.000648, 'loss': '19.002247', time: 2.528, eta: 16:39:25
+2020-04-15 10:12:49,979 - <__main__> - INFO: iter: 16300, lr: 0.000648, 'loss': '18.953188', time: 2.535, eta: 16:41:13
+2020-04-15 10:13:38,485 - <__main__> - INFO: iter: 16320, lr: 0.000642, 'loss': '18.381439', time: 2.425, eta: 15:57:12
+2020-04-15 10:14:29,227 - <__main__> - INFO: iter: 16340, lr: 0.000642, 'loss': '18.439518', time: 2.537, eta: 16:40:26
+2020-04-15 10:15:20,668 - <__main__> - INFO: iter: 16360, lr: 0.000642, 'loss': '19.759212', time: 2.572, eta: 16:53:23
+2020-04-15 10:16:11,153 - <__main__> - INFO: iter: 16380, lr: 0.000642, 'loss': '19.381155', time: 2.524, eta: 16:33:42
+2020-04-15 10:16:59,944 - <__main__> - INFO: iter: 16400, lr: 0.000642, 'loss': '18.331661', time: 2.440, eta: 15:59:33
+2020-04-15 10:17:48,781 - <__main__> - INFO: iter: 16420, lr: 0.000642, 'loss': '18.165619', time: 2.442, eta: 15:59:39
+2020-04-15 10:18:38,260 - <__main__> - INFO: iter: 16440, lr: 0.000642, 'loss': '19.006718', time: 2.474, eta: 16:11:25
+2020-04-15 10:19:28,661 - <__main__> - INFO: iter: 16460, lr: 0.000642, 'loss': '18.752827', time: 2.520, eta: 16:28:41
+2020-04-15 10:20:19,517 - <__main__> - INFO: iter: 16480, lr: 0.000642, 'loss': '18.330986', time: 2.543, eta: 16:36:46
+2020-04-15 10:21:07,897 - <__main__> - INFO: iter: 16500, lr: 0.000635, 'loss': '18.789330', time: 2.419, eta: 15:47:27
+2020-04-15 10:21:56,394 - <__main__> - INFO: iter: 16520, lr: 0.000635, 'loss': '19.342119', time: 2.425, eta: 15:48:54
+2020-04-15 10:22:47,127 - <__main__> - INFO: iter: 16540, lr: 0.000635, 'loss': '18.806656', time: 2.537, eta: 16:31:49
+2020-04-15 10:23:37,569 - <__main__> - INFO: iter: 16560, lr: 0.000635, 'loss': '17.835169', time: 2.522, eta: 16:25:17
+2020-04-15 10:24:30,394 - <__main__> - INFO: iter: 16580, lr: 0.000635, 'loss': '19.365738', time: 2.641, eta: 17:10:59
+2020-04-15 10:25:20,393 - <__main__> - INFO: iter: 16600, lr: 0.000635, 'loss': '18.746628', time: 2.500, eta: 16:14:58
+2020-04-15 10:26:10,748 - <__main__> - INFO: iter: 16620, lr: 0.000635, 'loss': '18.592569', time: 2.518, eta: 16:21:05
+2020-04-15 10:27:03,291 - <__main__> - INFO: iter: 16640, lr: 0.000635, 'loss': '18.757748', time: 2.627, eta: 17:02:50
+2020-04-15 10:27:51,355 - <__main__> - INFO: iter: 16660, lr: 0.000629, 'loss': '18.279613', time: 2.403, eta: 15:34:51
+2020-04-15 10:28:41,032 - <__main__> - INFO: iter: 16680, lr: 0.000629, 'loss': '19.382030', time: 2.484, eta: 16:05:24
+2020-04-15 10:29:30,094 - <__main__> - INFO: iter: 16700, lr: 0.000629, 'loss': '18.414410', time: 2.453, eta: 15:52:35
+2020-04-15 10:30:21,078 - <__main__> - INFO: iter: 16720, lr: 0.000629, 'loss': '19.482746', time: 2.549, eta: 16:29:05
+2020-04-15 10:31:13,973 - <__main__> - INFO: iter: 16740, lr: 0.000629, 'loss': '18.429291', time: 2.645, eta: 17:05:17
+2020-04-15 10:32:03,950 - <__main__> - INFO: iter: 16760, lr: 0.000629, 'loss': '19.769217', time: 2.499, eta: 16:07:52
+2020-04-15 10:32:52,658 - <__main__> - INFO: iter: 16780, lr: 0.000629, 'loss': '17.308149', time: 2.435, eta: 15:42:30
+2020-04-15 10:33:40,683 - <__main__> - INFO: iter: 16800, lr: 0.000629, 'loss': '18.721436', time: 2.401, eta: 15:28:28
+2020-04-15 10:34:30,916 - <__main__> - INFO: iter: 16820, lr: 0.000629, 'loss': '19.057911', time: 2.512, eta: 16:10:20
+2020-04-15 10:35:18,774 - <__main__> - INFO: iter: 16840, lr: 0.000622, 'loss': '19.110636', time: 2.393, eta: 15:23:39
+2020-04-15 10:36:09,528 - <__main__> - INFO: iter: 16860, lr: 0.000622, 'loss': '17.985252', time: 2.538, eta: 16:18:43
+2020-04-15 10:36:59,603 - <__main__> - INFO: iter: 16880, lr: 0.000622, 'loss': '18.590519', time: 2.504, eta: 16:04:46
+2020-04-15 10:37:51,593 - <__main__> - INFO: iter: 16900, lr: 0.000622, 'loss': '17.503439', time: 2.600, eta: 16:40:49
+2020-04-15 10:38:56,459 - <__main__> - INFO: iter: 16920, lr: 0.000622, 'loss': '18.254501', time: 3.243, eta: 20:47:34
+2020-04-15 10:39:45,119 - <__main__> - INFO: iter: 16940, lr: 0.000622, 'loss': '19.457024', time: 2.433, eta: 15:35:05
+2020-04-15 10:40:36,214 - <__main__> - INFO: iter: 16960, lr: 0.000622, 'loss': '19.400349', time: 2.555, eta: 16:21:01
+2020-04-15 10:41:25,464 - <__main__> - INFO: iter: 16980, lr: 0.000622, 'loss': '18.026646', time: 2.463, eta: 15:44:48
+2020-04-15 10:42:13,695 - <__main__> - INFO: iter: 17000, lr: 0.000616, 'loss': '18.058216', time: 2.412, eta: 15:24:25
+2020-04-15 10:42:13,696 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/17000.
+2020-04-15 10:42:22,185 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 10:42:36,420 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 10:42:36,420 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 10:42:36,420 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 10:42:36,575 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 10:42:36,582 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 69.86
+2020-04-15 10:43:16,417 - <__main__> - INFO: iter: 17020, lr: 0.000616, 'loss': '18.167009', time: 3.136, eta: 20:01:07
+2020-04-15 10:44:09,989 - <__main__> - INFO: iter: 17040, lr: 0.000616, 'loss': '18.633581', time: 2.679, eta: 17:05:00
+2020-04-15 10:44:59,949 - <__main__> - INFO: iter: 17060, lr: 0.000616, 'loss': '18.856701', time: 2.498, eta: 15:55:04
+2020-04-15 10:45:50,576 - <__main__> - INFO: iter: 17080, lr: 0.000616, 'loss': '18.326237', time: 2.531, eta: 16:06:58
+2020-04-15 10:46:38,018 - <__main__> - INFO: iter: 17100, lr: 0.000616, 'loss': '17.711618', time: 2.372, eta: 15:05:20
+2020-04-15 10:47:31,029 - <__main__> - INFO: iter: 17120, lr: 0.000616, 'loss': '20.254236', time: 2.651, eta: 16:50:45
+2020-04-15 10:48:22,276 - <__main__> - INFO: iter: 17140, lr: 0.000616, 'loss': '20.331543', time: 2.562, eta: 16:16:14
+2020-04-15 10:49:14,226 - <__main__> - INFO: iter: 17160, lr: 0.000616, 'loss': '18.378145', time: 2.597, eta: 16:28:45
+2020-04-15 10:50:02,514 - <__main__> - INFO: iter: 17180, lr: 0.000609, 'loss': '19.266224', time: 2.414, eta: 15:18:17
+2020-04-15 10:50:52,244 - <__main__> - INFO: iter: 17200, lr: 0.000609, 'loss': '18.067070', time: 2.487, eta: 15:44:53
+2020-04-15 10:51:44,899 - <__main__> - INFO: iter: 17220, lr: 0.000609, 'loss': '17.944378', time: 2.633, eta: 16:39:32
+2020-04-15 10:52:33,022 - <__main__> - INFO: iter: 17240, lr: 0.000609, 'loss': '18.690504', time: 2.406, eta: 15:12:44
+2020-04-15 10:53:24,176 - <__main__> - INFO: iter: 17260, lr: 0.000609, 'loss': '18.252598', time: 2.558, eta: 16:09:22
+2020-04-15 10:54:14,185 - <__main__> - INFO: iter: 17280, lr: 0.000609, 'loss': '19.173603', time: 2.500, eta: 15:46:50
+2020-04-15 10:55:03,187 - <__main__> - INFO: iter: 17300, lr: 0.000609, 'loss': '17.477974', time: 2.450, eta: 15:26:56
+2020-04-15 10:55:52,066 - <__main__> - INFO: iter: 17320, lr: 0.000609, 'loss': '18.606031', time: 2.444, eta: 15:23:50
+2020-04-15 10:56:42,004 - <__main__> - INFO: iter: 17340, lr: 0.000603, 'loss': '18.307796', time: 2.497, eta: 15:42:58
+2020-04-15 10:57:33,619 - <__main__> - INFO: iter: 17360, lr: 0.000603, 'loss': '17.193314', time: 2.581, eta: 16:13:47
+2020-04-15 10:58:24,969 - <__main__> - INFO: iter: 17380, lr: 0.000603, 'loss': '19.767487', time: 2.568, eta: 16:07:57
+2020-04-15 10:59:16,967 - <__main__> - INFO: iter: 17400, lr: 0.000603, 'loss': '18.744141', time: 2.600, eta: 16:19:17
+2020-04-15 11:00:08,254 - <__main__> - INFO: iter: 17420, lr: 0.000603, 'loss': '19.041733', time: 2.564, eta: 16:05:01
+2020-04-15 11:00:59,460 - <__main__> - INFO: iter: 17440, lr: 0.000603, 'loss': '18.557283', time: 2.560, eta: 16:02:43
+2020-04-15 11:01:47,798 - <__main__> - INFO: iter: 17460, lr: 0.000603, 'loss': '17.888359', time: 2.417, eta: 15:07:55
+2020-04-15 11:02:38,581 - <__main__> - INFO: iter: 17480, lr: 0.000603, 'loss': '17.727882', time: 2.539, eta: 15:53:02
+2020-04-15 11:03:29,167 - <__main__> - INFO: iter: 17500, lr: 0.000603, 'loss': '18.366539', time: 2.529, eta: 15:48:28
+2020-04-15 11:04:19,305 - <__main__> - INFO: iter: 17520, lr: 0.000596, 'loss': '18.768332', time: 2.507, eta: 15:39:14
+2020-04-15 11:05:10,022 - <__main__> - INFO: iter: 17540, lr: 0.000596, 'loss': '18.617828', time: 2.536, eta: 15:49:15
+2020-04-15 11:06:03,015 - <__main__> - INFO: iter: 17560, lr: 0.000596, 'loss': '17.195744', time: 2.650, eta: 16:30:57
+2020-04-15 11:06:53,054 - <__main__> - INFO: iter: 17580, lr: 0.000596, 'loss': '18.341820', time: 2.502, eta: 15:34:53
+2020-04-15 11:07:43,572 - <__main__> - INFO: iter: 17600, lr: 0.000596, 'loss': '17.897430', time: 2.526, eta: 15:43:00
+2020-04-15 11:08:38,722 - <__main__> - INFO: iter: 17620, lr: 0.000596, 'loss': '18.581093', time: 2.757, eta: 17:08:31
+2020-04-15 11:09:31,043 - <__main__> - INFO: iter: 17640, lr: 0.000596, 'loss': '18.116344', time: 2.616, eta: 16:14:56
+2020-04-15 11:10:22,513 - <__main__> - INFO: iter: 17660, lr: 0.000596, 'loss': '17.973690', time: 2.574, eta: 15:58:12
+2020-04-15 11:11:15,852 - <__main__> - INFO: iter: 17680, lr: 0.000590, 'loss': '18.464449', time: 2.667, eta: 16:32:03
+2020-04-15 11:12:09,054 - <__main__> - INFO: iter: 17700, lr: 0.000590, 'loss': '17.765759', time: 2.660, eta: 16:28:44
+2020-04-15 11:13:05,277 - <__main__> - INFO: iter: 17720, lr: 0.000590, 'loss': '18.244455', time: 2.811, eta: 17:23:49
+2020-04-15 11:14:03,028 - <__main__> - INFO: iter: 17740, lr: 0.000590, 'loss': '18.153431', time: 2.888, eta: 17:51:16
+2020-04-15 11:14:56,455 - <__main__> - INFO: iter: 17760, lr: 0.000590, 'loss': '18.530087', time: 2.671, eta: 16:30:12
+2020-04-15 11:15:50,107 - <__main__> - INFO: iter: 17780, lr: 0.000590, 'loss': '18.182386', time: 2.683, eta: 16:33:26
+2020-04-15 11:16:46,784 - <__main__> - INFO: iter: 17800, lr: 0.000590, 'loss': '17.155966', time: 2.834, eta: 17:28:31
+2020-04-15 11:17:43,326 - <__main__> - INFO: iter: 17820, lr: 0.000590, 'loss': '18.323919', time: 2.827, eta: 17:25:05
+2020-04-15 11:18:40,237 - <__main__> - INFO: iter: 17840, lr: 0.000590, 'loss': '17.807478', time: 2.846, eta: 17:30:57
+2020-04-15 11:19:31,308 - <__main__> - INFO: iter: 17860, lr: 0.000583, 'loss': '18.229740', time: 2.554, eta: 15:42:14
+2020-04-15 11:20:25,926 - <__main__> - INFO: iter: 17880, lr: 0.000583, 'loss': '17.949661', time: 2.731, eta: 16:46:48
+2020-04-15 11:21:18,584 - <__main__> - INFO: iter: 17900, lr: 0.000583, 'loss': '19.107094', time: 2.633, eta: 16:09:47
+2020-04-15 11:22:09,034 - <__main__> - INFO: iter: 17920, lr: 0.000583, 'loss': '18.048588', time: 2.523, eta: 15:28:16
+2020-04-15 11:23:01,891 - <__main__> - INFO: iter: 17940, lr: 0.000583, 'loss': '17.817707', time: 2.643, eta: 16:11:39
+2020-04-15 11:23:51,088 - <__main__> - INFO: iter: 17960, lr: 0.000583, 'loss': '18.821030', time: 2.460, eta: 15:03:36
+2020-04-15 11:24:39,340 - <__main__> - INFO: iter: 17980, lr: 0.000583, 'loss': '16.852617', time: 2.413, eta: 14:45:25
+2020-04-15 11:25:29,169 - <__main__> - INFO: iter: 18000, lr: 0.000583, 'loss': '17.773148', time: 2.491, eta: 15:13:31
+2020-04-15 11:25:29,169 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/18000.
+2020-04-15 11:25:35,004 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 11:25:48,663 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 11:25:48,663 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 11:25:48,664 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 11:25:48,789 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 11:25:48,796 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 76.14
+2020-04-15 11:26:21,076 - <__main__> - INFO: iter: 18020, lr: 0.000577, 'loss': '18.294466', time: 2.595, eta: 15:50:46
+2020-04-15 11:27:09,752 - <__main__> - INFO: iter: 18040, lr: 0.000577, 'loss': '17.120010', time: 2.434, eta: 14:50:45
+2020-04-15 11:28:00,826 - <__main__> - INFO: iter: 18060, lr: 0.000577, 'loss': '18.365227', time: 2.554, eta: 15:33:48
+2020-04-15 11:28:54,882 - <__main__> - INFO: iter: 18080, lr: 0.000577, 'loss': '18.646194', time: 2.703, eta: 16:27:26
+2020-04-15 11:29:45,124 - <__main__> - INFO: iter: 18100, lr: 0.000577, 'loss': '19.169073', time: 2.512, eta: 15:16:54
+2020-04-15 11:30:34,713 - <__main__> - INFO: iter: 18120, lr: 0.000577, 'loss': '18.890339', time: 2.480, eta: 15:04:11
+2020-04-15 11:31:27,620 - <__main__> - INFO: iter: 18140, lr: 0.000577, 'loss': '17.986782', time: 2.645, eta: 16:03:45
+2020-04-15 11:32:20,221 - <__main__> - INFO: iter: 18160, lr: 0.000577, 'loss': '16.658958', time: 2.630, eta: 15:57:19
+2020-04-15 11:33:08,776 - <__main__> - INFO: iter: 18180, lr: 0.000577, 'loss': '17.959415', time: 2.428, eta: 14:42:53
+2020-04-15 11:33:57,480 - <__main__> - INFO: iter: 18200, lr: 0.000570, 'loss': '18.744354', time: 2.435, eta: 14:44:47
+2020-04-15 11:34:48,191 - <__main__> - INFO: iter: 18220, lr: 0.000570, 'loss': '18.339319', time: 2.536, eta: 15:20:26
+2020-04-15 11:35:38,365 - <__main__> - INFO: iter: 18240, lr: 0.000570, 'loss': '17.867771', time: 2.509, eta: 15:09:47
+2020-04-15 11:36:27,388 - <__main__> - INFO: iter: 18260, lr: 0.000570, 'loss': '17.776224', time: 2.451, eta: 14:48:09
+2020-04-15 11:37:18,896 - <__main__> - INFO: iter: 18280, lr: 0.000570, 'loss': '17.604397', time: 2.575, eta: 15:32:16
+2020-04-15 11:38:09,572 - <__main__> - INFO: iter: 18300, lr: 0.000570, 'loss': '18.213642', time: 2.534, eta: 15:16:23
+2020-04-15 11:38:59,377 - <__main__> - INFO: iter: 18320, lr: 0.000570, 'loss': '17.291567', time: 2.490, eta: 14:59:48
+2020-04-15 11:39:50,335 - <__main__> - INFO: iter: 18340, lr: 0.000570, 'loss': '17.009821', time: 2.548, eta: 15:19:47
+2020-04-15 11:40:39,321 - <__main__> - INFO: iter: 18360, lr: 0.000563, 'loss': '16.975742', time: 2.449, eta: 14:43:22
+2020-04-15 11:41:29,947 - <__main__> - INFO: iter: 18380, lr: 0.000563, 'loss': '18.755407', time: 2.531, eta: 15:12:06
+2020-04-15 11:42:19,055 - <__main__> - INFO: iter: 18400, lr: 0.000563, 'loss': '17.611153', time: 2.455, eta: 14:43:57
+2020-04-15 11:43:09,841 - <__main__> - INFO: iter: 18420, lr: 0.000563, 'loss': '17.149645', time: 2.539, eta: 15:13:17
+2020-04-15 11:44:02,320 - <__main__> - INFO: iter: 18440, lr: 0.000563, 'loss': '17.909283', time: 2.624, eta: 15:42:54
+2020-04-15 11:44:51,607 - <__main__> - INFO: iter: 18460, lr: 0.000563, 'loss': '18.433723', time: 2.464, eta: 14:44:41
+2020-04-15 11:45:40,726 - <__main__> - INFO: iter: 18480, lr: 0.000563, 'loss': '17.758139', time: 2.456, eta: 14:40:51
+2020-04-15 11:46:30,886 - <__main__> - INFO: iter: 18500, lr: 0.000563, 'loss': '17.771347', time: 2.508, eta: 14:58:42
+2020-04-15 11:47:22,500 - <__main__> - INFO: iter: 18520, lr: 0.000563, 'loss': '17.436417', time: 2.581, eta: 15:23:54
+2020-04-15 11:48:13,435 - <__main__> - INFO: iter: 18540, lr: 0.000557, 'loss': '18.227272', time: 2.547, eta: 15:10:52
+2020-04-15 11:49:06,649 - <__main__> - INFO: iter: 18560, lr: 0.000557, 'loss': '18.217754', time: 2.661, eta: 15:50:45
+2020-04-15 11:49:58,854 - <__main__> - INFO: iter: 18580, lr: 0.000557, 'loss': '17.453417', time: 2.610, eta: 15:31:51
+2020-04-15 11:50:51,114 - <__main__> - INFO: iter: 18600, lr: 0.000557, 'loss': '17.935564', time: 2.613, eta: 15:31:58
+2020-04-15 11:51:44,199 - <__main__> - INFO: iter: 18620, lr: 0.000557, 'loss': '18.375704', time: 2.654, eta: 15:45:47
+2020-04-15 11:52:36,354 - <__main__> - INFO: iter: 18640, lr: 0.000557, 'loss': '18.496357', time: 2.608, eta: 15:28:21
+2020-04-15 11:53:25,209 - <__main__> - INFO: iter: 18660, lr: 0.000557, 'loss': '18.268705', time: 2.443, eta: 14:28:48
+2020-04-15 11:54:16,546 - <__main__> - INFO: iter: 18680, lr: 0.000557, 'loss': '17.715508', time: 2.567, eta: 15:12:04
+2020-04-15 11:55:04,535 - <__main__> - INFO: iter: 18700, lr: 0.000550, 'loss': '17.745144', time: 2.399, eta: 14:11:49
+2020-04-15 11:55:54,341 - <__main__> - INFO: iter: 18720, lr: 0.000550, 'loss': '17.810823', time: 2.490, eta: 14:43:12
+2020-04-15 11:56:45,589 - <__main__> - INFO: iter: 18740, lr: 0.000550, 'loss': '16.694260', time: 2.562, eta: 15:07:56
+2020-04-15 11:57:36,352 - <__main__> - INFO: iter: 18760, lr: 0.000550, 'loss': '18.750542', time: 2.538, eta: 14:58:31
+2020-04-15 11:58:26,754 - <__main__> - INFO: iter: 18780, lr: 0.000550, 'loss': '17.019279', time: 2.520, eta: 14:51:16
+2020-04-15 11:59:17,294 - <__main__> - INFO: iter: 18800, lr: 0.000550, 'loss': '18.530535', time: 2.527, eta: 14:52:51
+2020-04-15 12:00:08,402 - <__main__> - INFO: iter: 18820, lr: 0.000550, 'loss': '16.962864', time: 2.555, eta: 15:02:03
+2020-04-15 12:01:02,633 - <__main__> - INFO: iter: 18840, lr: 0.000550, 'loss': '18.607523', time: 2.712, eta: 15:56:15
+2020-04-15 12:01:55,979 - <__main__> - INFO: iter: 18860, lr: 0.000550, 'loss': '19.373199', time: 2.667, eta: 15:39:47
+2020-04-15 12:02:47,369 - <__main__> - INFO: iter: 18880, lr: 0.000543, 'loss': '18.497753', time: 2.569, eta: 15:04:27
+2020-04-15 12:03:38,327 - <__main__> - INFO: iter: 18900, lr: 0.000543, 'loss': '18.240128', time: 2.548, eta: 14:56:00
+2020-04-15 12:04:27,652 - <__main__> - INFO: iter: 18920, lr: 0.000543, 'loss': '18.072147', time: 2.466, eta: 14:26:27
+2020-04-15 12:05:21,546 - <__main__> - INFO: iter: 18940, lr: 0.000543, 'loss': '17.984184', time: 2.695, eta: 15:45:50
+2020-04-15 12:06:11,604 - <__main__> - INFO: iter: 18960, lr: 0.000543, 'loss': '18.602005', time: 2.503, eta: 14:37:41
+2020-04-15 12:07:02,438 - <__main__> - INFO: iter: 18980, lr: 0.000543, 'loss': '17.363781', time: 2.542, eta: 14:50:26
+2020-04-15 12:07:57,242 - <__main__> - INFO: iter: 19000, lr: 0.000543, 'loss': '18.452087', time: 2.740, eta: 15:59:03
+2020-04-15 12:07:57,244 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/19000.
+2020-04-15 12:08:02,676 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 12:08:16,344 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 12:08:16,344 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 12:08:16,344 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 12:08:16,481 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 12:08:16,487 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 80.63
+2020-04-15 12:08:16,488 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/best_model.
+2020-04-15 12:08:24,880 - <__main__> - INFO: Best eval box ap: 80.62823461715442, in iter: 19000
+2020-04-15 12:08:56,205 - <__main__> - INFO: iter: 19020, lr: 0.000543, 'loss': '17.836983', time: 2.948, eta: 17:10:51
+2020-04-15 12:09:45,634 - <__main__> - INFO: iter: 19040, lr: 0.000537, 'loss': '17.761322', time: 2.471, eta: 14:23:21
+2020-04-15 12:10:36,033 - <__main__> - INFO: iter: 19060, lr: 0.000537, 'loss': '17.287825', time: 2.520, eta: 14:39:28
+2020-04-15 12:11:26,260 - <__main__> - INFO: iter: 19080, lr: 0.000537, 'loss': '18.220119', time: 2.511, eta: 14:35:37
+2020-04-15 12:12:12,793 - <__main__> - INFO: iter: 19100, lr: 0.000537, 'loss': '17.531982', time: 2.327, eta: 13:30:26
+2020-04-15 12:13:02,326 - <__main__> - INFO: iter: 19120, lr: 0.000537, 'loss': '19.020777', time: 2.477, eta: 14:21:53
+2020-04-15 12:13:52,770 - <__main__> - INFO: iter: 19140, lr: 0.000537, 'loss': '19.352146', time: 2.522, eta: 14:36:50
+2020-04-15 12:14:43,983 - <__main__> - INFO: iter: 19160, lr: 0.000537, 'loss': '17.279163', time: 2.561, eta: 14:49:26
+2020-04-15 12:15:35,961 - <__main__> - INFO: iter: 19180, lr: 0.000537, 'loss': '18.131918', time: 2.599, eta: 15:01:48
+2020-04-15 12:16:28,045 - <__main__> - INFO: iter: 19200, lr: 0.000537, 'loss': '17.355024', time: 2.604, eta: 15:02:47
+2020-04-15 12:17:16,203 - <__main__> - INFO: iter: 19220, lr: 0.000530, 'loss': '17.291100', time: 2.408, eta: 13:53:55
+2020-04-15 12:18:07,339 - <__main__> - INFO: iter: 19240, lr: 0.000530, 'loss': '19.156204', time: 2.557, eta: 14:44:39
+2020-04-15 12:18:55,336 - <__main__> - INFO: iter: 19260, lr: 0.000530, 'loss': '17.213312', time: 2.400, eta: 13:49:33
+2020-04-15 12:19:46,000 - <__main__> - INFO: iter: 19280, lr: 0.000530, 'loss': '17.230606', time: 2.533, eta: 14:34:47
+2020-04-15 12:20:36,971 - <__main__> - INFO: iter: 19300, lr: 0.000530, 'loss': '17.518538', time: 2.549, eta: 14:39:14
+2020-04-15 12:21:25,502 - <__main__> - INFO: iter: 19320, lr: 0.000530, 'loss': '18.086557', time: 2.427, eta: 13:56:21
+2020-04-15 12:22:20,553 - <__main__> - INFO: iter: 19340, lr: 0.000530, 'loss': '17.577866', time: 2.753, eta: 15:47:46
+2020-04-15 12:23:11,812 - <__main__> - INFO: iter: 19360, lr: 0.000530, 'loss': '17.814051', time: 2.563, eta: 14:41:39
+2020-04-15 12:24:03,834 - <__main__> - INFO: iter: 19380, lr: 0.000523, 'loss': '18.095663', time: 2.601, eta: 14:53:54
+2020-04-15 12:24:57,533 - <__main__> - INFO: iter: 19400, lr: 0.000523, 'loss': '18.185915', time: 2.685, eta: 15:21:50
+2020-04-15 12:25:50,236 - <__main__> - INFO: iter: 19420, lr: 0.000523, 'loss': '18.316076', time: 2.635, eta: 15:03:50
+2020-04-15 12:26:41,968 - <__main__> - INFO: iter: 19440, lr: 0.000523, 'loss': '17.559853', time: 2.587, eta: 14:46:21
+2020-04-15 12:27:30,681 - <__main__> - INFO: iter: 19460, lr: 0.000523, 'loss': '16.879650', time: 2.436, eta: 13:53:47
+2020-04-15 12:28:23,646 - <__main__> - INFO: iter: 19480, lr: 0.000523, 'loss': '17.749138', time: 2.648, eta: 15:05:41
+2020-04-15 12:29:16,491 - <__main__> - INFO: iter: 19500, lr: 0.000523, 'loss': '18.501286', time: 2.642, eta: 15:02:46
+2020-04-15 12:30:06,114 - <__main__> - INFO: iter: 19520, lr: 0.000523, 'loss': '18.533857', time: 2.481, eta: 14:06:54
+2020-04-15 12:30:57,363 - <__main__> - INFO: iter: 19540, lr: 0.000523, 'loss': '17.652287', time: 2.562, eta: 14:33:47
+2020-04-15 12:31:44,944 - <__main__> - INFO: iter: 19560, lr: 0.000517, 'loss': '18.430557', time: 2.379, eta: 13:30:27
+2020-04-15 12:32:35,977 - <__main__> - INFO: iter: 19580, lr: 0.000517, 'loss': '17.811943', time: 2.552, eta: 14:28:25
+2020-04-15 12:33:27,385 - <__main__> - INFO: iter: 19600, lr: 0.000517, 'loss': '17.265434', time: 2.570, eta: 14:33:55
+2020-04-15 12:34:19,161 - <__main__> - INFO: iter: 19620, lr: 0.000517, 'loss': '17.261158', time: 2.589, eta: 14:39:22
+2020-04-15 12:35:06,298 - <__main__> - INFO: iter: 19640, lr: 0.000517, 'loss': '17.919445', time: 2.357, eta: 13:19:43
+2020-04-15 12:35:58,673 - <__main__> - INFO: iter: 19660, lr: 0.000517, 'loss': '17.611103', time: 2.619, eta: 14:47:45
+2020-04-15 12:36:48,652 - <__main__> - INFO: iter: 19680, lr: 0.000517, 'loss': '17.391451', time: 2.499, eta: 14:06:18
+2020-04-15 12:37:37,589 - <__main__> - INFO: iter: 19700, lr: 0.000517, 'loss': '17.472532', time: 2.447, eta: 13:47:51
+2020-04-15 12:38:23,726 - <__main__> - INFO: iter: 19720, lr: 0.000510, 'loss': '16.601999', time: 2.307, eta: 12:59:42
+2020-04-15 12:39:15,138 - <__main__> - INFO: iter: 19740, lr: 0.000510, 'loss': '17.499569', time: 2.571, eta: 14:28:00
+2020-04-15 12:40:07,172 - <__main__> - INFO: iter: 19760, lr: 0.000510, 'loss': '17.909218', time: 2.602, eta: 14:37:39
+2020-04-15 12:41:00,156 - <__main__> - INFO: iter: 19780, lr: 0.000510, 'loss': '17.103561', time: 2.649, eta: 14:52:46
+2020-04-15 12:41:51,188 - <__main__> - INFO: iter: 19800, lr: 0.000510, 'loss': '17.777096', time: 2.552, eta: 14:19:02
+2020-04-15 12:42:41,757 - <__main__> - INFO: iter: 19820, lr: 0.000510, 'loss': '18.045626', time: 2.528, eta: 14:10:23
+2020-04-15 12:43:32,273 - <__main__> - INFO: iter: 19840, lr: 0.000510, 'loss': '18.350800', time: 2.526, eta: 14:08:40
+2020-04-15 12:44:22,986 - <__main__> - INFO: iter: 19860, lr: 0.000510, 'loss': '18.470890', time: 2.536, eta: 14:11:07
+2020-04-15 12:45:17,858 - <__main__> - INFO: iter: 19880, lr: 0.000510, 'loss': '17.852749', time: 2.744, eta: 15:20:02
+2020-04-15 12:46:05,983 - <__main__> - INFO: iter: 19900, lr: 0.000503, 'loss': '17.352251', time: 2.406, eta: 13:26:05
+2020-04-15 12:46:58,470 - <__main__> - INFO: iter: 19920, lr: 0.000503, 'loss': '18.885387', time: 2.624, eta: 14:38:15
+2020-04-15 12:47:49,715 - <__main__> - INFO: iter: 19940, lr: 0.000503, 'loss': '17.492077', time: 2.562, eta: 14:16:39
+2020-04-15 12:48:40,528 - <__main__> - INFO: iter: 19960, lr: 0.000503, 'loss': '18.449574', time: 2.541, eta: 14:08:34
+2020-04-15 12:49:33,447 - <__main__> - INFO: iter: 19980, lr: 0.000503, 'loss': '17.226582', time: 2.646, eta: 14:42:51
+2020-04-15 12:50:21,428 - <__main__> - INFO: iter: 20000, lr: 0.000503, 'loss': '17.494236', time: 2.399, eta: 13:19:41
+2020-04-15 12:50:21,428 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/20000.
+2020-04-15 12:50:27,196 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 12:50:40,837 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 12:50:40,837 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 12:50:40,838 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 12:50:40,966 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 12:50:40,973 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 68.25
+2020-04-15 12:51:17,157 - <__main__> - INFO: iter: 20020, lr: 0.000503, 'loss': '16.958958', time: 2.786, eta: 15:27:53
+2020-04-15 12:52:07,033 - <__main__> - INFO: iter: 20040, lr: 0.000503, 'loss': '17.459122', time: 2.494, eta: 13:49:35
+2020-04-15 12:52:54,704 - <__main__> - INFO: iter: 20060, lr: 0.000497, 'loss': '17.943621', time: 2.384, eta: 13:12:08
+2020-04-15 12:53:44,213 - <__main__> - INFO: iter: 20080, lr: 0.000497, 'loss': '17.352062', time: 2.475, eta: 13:41:51
+2020-04-15 12:54:34,716 - <__main__> - INFO: iter: 20100, lr: 0.000497, 'loss': '17.257225', time: 2.525, eta: 13:57:30
+2020-04-15 12:55:24,734 - <__main__> - INFO: iter: 20120, lr: 0.000497, 'loss': '17.650257', time: 2.501, eta: 13:48:38
+2020-04-15 12:56:15,975 - <__main__> - INFO: iter: 20140, lr: 0.000497, 'loss': '17.708248', time: 2.562, eta: 14:08:01
+2020-04-15 12:57:08,150 - <__main__> - INFO: iter: 20160, lr: 0.000497, 'loss': '17.830681', time: 2.609, eta: 14:22:39
+2020-04-15 12:57:59,027 - <__main__> - INFO: iter: 20180, lr: 0.000497, 'loss': '16.503395', time: 2.544, eta: 14:00:18
+2020-04-15 12:58:51,308 - <__main__> - INFO: iter: 20200, lr: 0.000497, 'loss': '16.615095', time: 2.614, eta: 14:22:38
+2020-04-15 12:59:39,991 - <__main__> - INFO: iter: 20220, lr: 0.000497, 'loss': '17.419277', time: 2.434, eta: 13:22:27
+2020-04-15 13:00:27,455 - <__main__> - INFO: iter: 20240, lr: 0.000490, 'loss': '18.238266', time: 2.373, eta: 13:01:33
+2020-04-15 13:01:19,549 - <__main__> - INFO: iter: 20260, lr: 0.000490, 'loss': '17.542953', time: 2.605, eta: 14:16:56
+2020-04-15 13:02:09,485 - <__main__> - INFO: iter: 20280, lr: 0.000490, 'loss': '16.806303', time: 2.497, eta: 13:40:38
+2020-04-15 13:02:59,348 - <__main__> - INFO: iter: 20300, lr: 0.000490, 'loss': '17.687344', time: 2.493, eta: 13:38:32
+2020-04-15 13:03:50,417 - <__main__> - INFO: iter: 20320, lr: 0.000490, 'loss': '16.318192', time: 2.554, eta: 13:57:33
+2020-04-15 13:04:42,754 - <__main__> - INFO: iter: 20340, lr: 0.000490, 'loss': '16.089394', time: 2.617, eta: 14:17:26
+2020-04-15 13:05:36,734 - <__main__> - INFO: iter: 20360, lr: 0.000490, 'loss': '17.527122', time: 2.699, eta: 14:43:28
+2020-04-15 13:06:26,694 - <__main__> - INFO: iter: 20380, lr: 0.000490, 'loss': '17.051699', time: 2.498, eta: 13:36:50
+2020-04-15 13:07:20,290 - <__main__> - INFO: iter: 20400, lr: 0.000483, 'loss': '18.214062', time: 2.680, eta: 14:35:23
+2020-04-15 13:08:12,389 - <__main__> - INFO: iter: 20420, lr: 0.000483, 'loss': '17.221756', time: 2.605, eta: 14:10:06
+2020-04-15 13:09:05,367 - <__main__> - INFO: iter: 20440, lr: 0.000483, 'loss': '17.781906', time: 2.649, eta: 14:23:32
+2020-04-15 13:09:59,916 - <__main__> - INFO: iter: 20460, lr: 0.000483, 'loss': '17.946468', time: 2.727, eta: 14:48:13
+2020-04-15 13:10:54,133 - <__main__> - INFO: iter: 20480, lr: 0.000483, 'loss': '17.130384', time: 2.711, eta: 14:41:57
+2020-04-15 13:11:44,552 - <__main__> - INFO: iter: 20500, lr: 0.000483, 'loss': '17.976942', time: 2.521, eta: 13:39:18
+2020-04-15 13:12:35,741 - <__main__> - INFO: iter: 20520, lr: 0.000483, 'loss': '17.846939', time: 2.559, eta: 13:50:57
+2020-04-15 13:13:29,771 - <__main__> - INFO: iter: 20540, lr: 0.000483, 'loss': '17.672226', time: 2.702, eta: 14:36:12
+2020-04-15 13:14:20,977 - <__main__> - INFO: iter: 20560, lr: 0.000483, 'loss': '16.846352', time: 2.560, eta: 13:49:31
+2020-04-15 13:15:09,960 - <__main__> - INFO: iter: 20580, lr: 0.000477, 'loss': '17.280100', time: 2.449, eta: 13:12:42
+2020-04-15 13:16:03,263 - <__main__> - INFO: iter: 20600, lr: 0.000477, 'loss': '18.005405', time: 2.665, eta: 14:21:43
+2020-04-15 13:16:53,654 - <__main__> - INFO: iter: 20620, lr: 0.000477, 'loss': '17.406685', time: 2.520, eta: 13:33:48
+2020-04-15 13:17:45,373 - <__main__> - INFO: iter: 20640, lr: 0.000477, 'loss': '17.583576', time: 2.586, eta: 13:54:24
+2020-04-15 13:18:36,345 - <__main__> - INFO: iter: 20660, lr: 0.000477, 'loss': '16.895147', time: 2.549, eta: 13:41:28
+2020-04-15 13:19:29,350 - <__main__> - INFO: iter: 20680, lr: 0.000477, 'loss': '18.294239', time: 2.650, eta: 14:13:23
+2020-04-15 13:20:22,956 - <__main__> - INFO: iter: 20700, lr: 0.000477, 'loss': '17.575975', time: 2.680, eta: 14:22:09
+2020-04-15 13:21:17,067 - <__main__> - INFO: iter: 20720, lr: 0.000477, 'loss': '16.239620', time: 2.706, eta: 14:29:22
+2020-04-15 13:22:06,375 - <__main__> - INFO: iter: 20740, lr: 0.000470, 'loss': '16.417374', time: 2.465, eta: 13:11:24
+2020-04-15 13:22:58,430 - <__main__> - INFO: iter: 20760, lr: 0.000470, 'loss': '16.835072', time: 2.603, eta: 13:54:36
+2020-04-15 13:23:51,389 - <__main__> - INFO: iter: 20780, lr: 0.000470, 'loss': '17.143600', time: 2.648, eta: 14:08:13
+2020-04-15 13:24:43,772 - <__main__> - INFO: iter: 20800, lr: 0.000470, 'loss': '16.723179', time: 2.619, eta: 13:58:08
+2020-04-15 13:25:34,811 - <__main__> - INFO: iter: 20820, lr: 0.000470, 'loss': '17.355251', time: 2.552, eta: 13:35:46
+2020-04-15 13:26:24,020 - <__main__> - INFO: iter: 20840, lr: 0.000470, 'loss': '17.211515', time: 2.460, eta: 13:05:42
+2020-04-15 13:27:16,214 - <__main__> - INFO: iter: 20860, lr: 0.000470, 'loss': '18.129036', time: 2.610, eta: 13:52:29
+2020-04-15 13:28:06,880 - <__main__> - INFO: iter: 20880, lr: 0.000470, 'loss': '17.054085', time: 2.533, eta: 13:27:17
+2020-04-15 13:28:56,986 - <__main__> - INFO: iter: 20900, lr: 0.000470, 'loss': '17.275476', time: 2.505, eta: 13:17:32
+2020-04-15 13:29:47,719 - <__main__> - INFO: iter: 20920, lr: 0.000463, 'loss': '16.806273', time: 2.537, eta: 13:26:37
+2020-04-15 13:30:41,853 - <__main__> - INFO: iter: 20940, lr: 0.000463, 'loss': '16.991150', time: 2.707, eta: 14:19:50
+2020-04-15 13:31:30,400 - <__main__> - INFO: iter: 20960, lr: 0.000463, 'loss': '17.233892', time: 2.427, eta: 12:50:16
+2020-04-15 13:32:23,646 - <__main__> - INFO: iter: 20980, lr: 0.000463, 'loss': '17.532171', time: 2.662, eta: 14:03:56
+2020-04-15 13:33:15,362 - <__main__> - INFO: iter: 21000, lr: 0.000463, 'loss': '17.275034', time: 2.586, eta: 13:38:50
+2020-04-15 13:33:15,364 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/21000.
+2020-04-15 13:33:21,420 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 13:33:35,221 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 13:33:35,222 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 13:33:35,222 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 13:33:35,377 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 13:33:35,384 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 74.96
+2020-04-15 13:34:10,434 - <__main__> - INFO: iter: 21020, lr: 0.000463, 'loss': '17.195480', time: 2.754, eta: 14:31:02
+2020-04-15 13:34:59,617 - <__main__> - INFO: iter: 21040, lr: 0.000463, 'loss': '18.119558', time: 2.459, eta: 12:57:06
+2020-04-15 13:35:51,474 - <__main__> - INFO: iter: 21060, lr: 0.000463, 'loss': '17.639925', time: 2.593, eta: 13:38:27
+2020-04-15 13:36:42,892 - <__main__> - INFO: iter: 21080, lr: 0.000457, 'loss': '16.916815', time: 2.571, eta: 13:30:41
+2020-04-15 13:37:33,600 - <__main__> - INFO: iter: 21100, lr: 0.000457, 'loss': '16.601761', time: 2.535, eta: 13:18:39
+2020-04-15 13:38:26,476 - <__main__> - INFO: iter: 21120, lr: 0.000457, 'loss': '16.406612', time: 2.644, eta: 13:51:54
+2020-04-15 13:39:15,937 - <__main__> - INFO: iter: 21140, lr: 0.000457, 'loss': '16.934755', time: 2.473, eta: 12:57:21
+2020-04-15 13:40:08,388 - <__main__> - INFO: iter: 21160, lr: 0.000457, 'loss': '17.414356', time: 2.623, eta: 13:43:28
+2020-04-15 13:40:59,628 - <__main__> - INFO: iter: 21180, lr: 0.000457, 'loss': '17.392328', time: 2.562, eta: 13:23:37
+2020-04-15 13:41:50,042 - <__main__> - INFO: iter: 21200, lr: 0.000457, 'loss': '17.059351', time: 2.521, eta: 13:09:48
+2020-04-15 13:42:42,893 - <__main__> - INFO: iter: 21220, lr: 0.000457, 'loss': '17.345249', time: 2.643, eta: 13:47:07
+2020-04-15 13:43:34,187 - <__main__> - INFO: iter: 21240, lr: 0.000457, 'loss': '16.782206', time: 2.565, eta: 13:21:54
+2020-04-15 13:44:22,469 - <__main__> - INFO: iter: 21260, lr: 0.000450, 'loss': '17.150303', time: 2.414, eta: 12:33:59
+2020-04-15 13:45:12,256 - <__main__> - INFO: iter: 21280, lr: 0.000450, 'loss': '17.362103', time: 2.489, eta: 12:56:41
+2020-04-15 13:46:02,755 - <__main__> - INFO: iter: 21300, lr: 0.000450, 'loss': '16.911392', time: 2.525, eta: 13:06:56
+2020-04-15 13:46:52,302 - <__main__> - INFO: iter: 21320, lr: 0.000450, 'loss': '16.747246', time: 2.477, eta: 12:51:16
+2020-04-15 13:47:42,424 - <__main__> - INFO: iter: 21340, lr: 0.000450, 'loss': '15.837728', time: 2.506, eta: 12:59:23
+2020-04-15 13:48:36,222 - <__main__> - INFO: iter: 21360, lr: 0.000450, 'loss': '17.183083', time: 2.690, eta: 13:55:39
+2020-04-15 13:49:27,411 - <__main__> - INFO: iter: 21380, lr: 0.000450, 'loss': '16.620449', time: 2.559, eta: 13:14:17
+2020-04-15 13:50:19,293 - <__main__> - INFO: iter: 21400, lr: 0.000450, 'loss': '17.967148', time: 2.594, eta: 13:24:10
+2020-04-15 13:51:07,462 - <__main__> - INFO: iter: 21420, lr: 0.000443, 'loss': '16.886030', time: 2.408, eta: 12:25:48
+2020-04-15 13:52:00,102 - <__main__> - INFO: iter: 21440, lr: 0.000443, 'loss': '17.089914', time: 2.632, eta: 13:34:09
+2020-04-15 13:52:53,518 - <__main__> - INFO: iter: 21460, lr: 0.000443, 'loss': '16.381065', time: 2.671, eta: 13:45:16
+2020-04-15 13:53:46,134 - <__main__> - INFO: iter: 21480, lr: 0.000443, 'loss': '16.463806', time: 2.631, eta: 13:32:02
+2020-04-15 13:54:36,254 - <__main__> - INFO: iter: 21500, lr: 0.000443, 'loss': '17.537590', time: 2.506, eta: 12:52:41
+2020-04-15 13:55:28,630 - <__main__> - INFO: iter: 21520, lr: 0.000443, 'loss': '16.807156', time: 2.619, eta: 13:26:34
+2020-04-15 13:56:20,559 - <__main__> - INFO: iter: 21540, lr: 0.000443, 'loss': '17.815830', time: 2.597, eta: 13:18:51
+2020-04-15 13:57:11,527 - <__main__> - INFO: iter: 21560, lr: 0.000443, 'loss': '17.649063', time: 2.548, eta: 13:03:12
+2020-04-15 13:58:03,942 - <__main__> - INFO: iter: 21580, lr: 0.000443, 'loss': '16.490461', time: 2.621, eta: 13:24:34
+2020-04-15 13:58:56,239 - <__main__> - INFO: iter: 21600, lr: 0.000437, 'loss': '17.684263', time: 2.615, eta: 13:21:52
+2020-04-15 13:59:45,820 - <__main__> - INFO: iter: 21620, lr: 0.000437, 'loss': '16.954456', time: 2.479, eta: 12:39:25
+2020-04-15 14:00:40,554 - <__main__> - INFO: iter: 21640, lr: 0.000437, 'loss': '17.879913', time: 2.737, eta: 13:57:25
+2020-04-15 14:01:31,254 - <__main__> - INFO: iter: 21660, lr: 0.000437, 'loss': '17.034233', time: 2.535, eta: 12:54:52
+2020-04-15 14:02:20,014 - <__main__> - INFO: iter: 21680, lr: 0.000437, 'loss': '17.098049', time: 2.438, eta: 12:24:23
+2020-04-15 14:03:09,475 - <__main__> - INFO: iter: 21700, lr: 0.000437, 'loss': '16.731812', time: 2.473, eta: 12:34:16
+2020-04-15 14:04:07,019 - <__main__> - INFO: iter: 21720, lr: 0.000437, 'loss': '17.190773', time: 2.877, eta: 14:36:35
+2020-04-15 14:04:59,634 - <__main__> - INFO: iter: 21740, lr: 0.000437, 'loss': '17.372286', time: 2.631, eta: 13:20:37
+2020-04-15 14:05:48,465 - <__main__> - INFO: iter: 21760, lr: 0.000430, 'loss': '18.149347', time: 2.442, eta: 12:22:14
+2020-04-15 14:06:38,929 - <__main__> - INFO: iter: 21780, lr: 0.000430, 'loss': '16.366390', time: 2.523, eta: 12:46:12
+2020-04-15 14:07:30,596 - <__main__> - INFO: iter: 21800, lr: 0.000430, 'loss': '17.448740', time: 2.583, eta: 13:03:37
+2020-04-15 14:08:23,881 - <__main__> - INFO: iter: 21820, lr: 0.000430, 'loss': '18.188110', time: 2.664, eta: 13:27:15
+2020-04-15 14:09:16,417 - <__main__> - INFO: iter: 21840, lr: 0.000430, 'loss': '16.115406', time: 2.627, eta: 13:15:02
+2020-04-15 14:10:06,576 - <__main__> - INFO: iter: 21860, lr: 0.000430, 'loss': '17.276577', time: 2.508, eta: 12:38:15
+2020-04-15 14:10:57,578 - <__main__> - INFO: iter: 21880, lr: 0.000430, 'loss': '17.496304', time: 2.550, eta: 12:50:07
+2020-04-15 14:11:47,591 - <__main__> - INFO: iter: 21900, lr: 0.000430, 'loss': '17.574091', time: 2.501, eta: 12:34:21
+2020-04-15 14:12:37,481 - <__main__> - INFO: iter: 21920, lr: 0.000430, 'loss': '16.901554', time: 2.494, eta: 12:31:40
+2020-04-15 14:13:28,545 - <__main__> - INFO: iter: 21940, lr: 0.000423, 'loss': '16.891291', time: 2.553, eta: 12:48:31
+2020-04-15 14:14:19,048 - <__main__> - INFO: iter: 21960, lr: 0.000423, 'loss': '17.367678', time: 2.525, eta: 12:39:13
+2020-04-15 14:15:12,119 - <__main__> - INFO: iter: 21980, lr: 0.000423, 'loss': '16.386894', time: 2.654, eta: 13:16:56
+2020-04-15 14:16:03,134 - <__main__> - INFO: iter: 22000, lr: 0.000423, 'loss': '16.989439', time: 2.551, eta: 12:45:13
+2020-04-15 14:16:03,134 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/22000.
+2020-04-15 14:16:08,964 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 14:16:22,677 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 14:16:22,677 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 14:16:22,677 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 14:16:22,814 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 14:16:22,820 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 73.38
+2020-04-15 14:17:01,622 - <__main__> - INFO: iter: 22020, lr: 0.000423, 'loss': '16.851883', time: 2.924, eta: 14:36:21
+2020-04-15 14:17:51,101 - <__main__> - INFO: iter: 22040, lr: 0.000423, 'loss': '17.954779', time: 2.474, eta: 12:20:31
+2020-04-15 14:18:46,075 - <__main__> - INFO: iter: 22060, lr: 0.000423, 'loss': '16.584316', time: 2.749, eta: 13:41:51
+2020-04-15 14:19:34,363 - <__main__> - INFO: iter: 22080, lr: 0.000423, 'loss': '16.632708', time: 2.414, eta: 12:01:06
+2020-04-15 14:20:23,470 - <__main__> - INFO: iter: 22100, lr: 0.000417, 'loss': '18.009876', time: 2.455, eta: 12:12:30
+2020-04-15 14:21:17,188 - <__main__> - INFO: iter: 22120, lr: 0.000417, 'loss': '15.936540', time: 2.686, eta: 13:20:22
+2020-04-15 14:22:09,520 - <__main__> - INFO: iter: 22140, lr: 0.000417, 'loss': '16.539110', time: 2.617, eta: 12:58:53
+2020-04-15 14:22:56,992 - <__main__> - INFO: iter: 22160, lr: 0.000417, 'loss': '16.888306', time: 2.374, eta: 11:45:45
+2020-04-15 14:23:46,980 - <__main__> - INFO: iter: 22180, lr: 0.000417, 'loss': '17.172768', time: 2.499, eta: 12:22:19
+2020-04-15 14:24:39,511 - <__main__> - INFO: iter: 22200, lr: 0.000417, 'loss': '17.040335', time: 2.627, eta: 12:59:11
+2020-04-15 14:25:31,475 - <__main__> - INFO: iter: 22220, lr: 0.000417, 'loss': '17.546499', time: 2.598, eta: 12:49:55
+2020-04-15 14:26:24,501 - <__main__> - INFO: iter: 22240, lr: 0.000417, 'loss': '17.658485', time: 2.651, eta: 13:04:47
+2020-04-15 14:27:16,084 - <__main__> - INFO: iter: 22260, lr: 0.000417, 'loss': '16.367758', time: 2.579, eta: 12:42:35
+2020-04-15 14:28:06,903 - <__main__> - INFO: iter: 22280, lr: 0.000410, 'loss': '17.608521', time: 2.541, eta: 12:30:25
+2020-04-15 14:28:57,891 - <__main__> - INFO: iter: 22300, lr: 0.000410, 'loss': '17.446836', time: 2.549, eta: 12:32:02
+2020-04-15 14:29:51,111 - <__main__> - INFO: iter: 22320, lr: 0.000410, 'loss': '16.847202', time: 2.661, eta: 13:04:05
+2020-04-15 14:30:40,633 - <__main__> - INFO: iter: 22340, lr: 0.000410, 'loss': '16.738943', time: 2.476, eta: 12:08:49
+2020-04-15 14:31:30,654 - <__main__> - INFO: iter: 22360, lr: 0.000410, 'loss': '18.248672', time: 2.501, eta: 12:15:18
+2020-04-15 14:32:21,524 - <__main__> - INFO: iter: 22380, lr: 0.000410, 'loss': '17.022684', time: 2.543, eta: 12:26:55
+2020-04-15 14:33:12,256 - <__main__> - INFO: iter: 22400, lr: 0.000410, 'loss': '16.820494', time: 2.537, eta: 12:24:06
+2020-04-15 14:34:01,056 - <__main__> - INFO: iter: 22420, lr: 0.000410, 'loss': '16.157562', time: 2.440, eta: 11:54:53
+2020-04-15 14:34:48,463 - <__main__> - INFO: iter: 22440, lr: 0.000404, 'loss': '16.830769', time: 2.370, eta: 11:33:44
+2020-04-15 14:35:34,810 - <__main__> - INFO: iter: 22460, lr: 0.000404, 'loss': '16.753216', time: 2.317, eta: 11:17:25
+2020-04-15 14:36:28,323 - <__main__> - INFO: iter: 22480, lr: 0.000404, 'loss': '17.435669', time: 2.676, eta: 13:01:16
+2020-04-15 14:37:18,893 - <__main__> - INFO: iter: 22500, lr: 0.000404, 'loss': '17.078854', time: 2.529, eta: 12:17:29
+2020-04-15 14:38:06,274 - <__main__> - INFO: iter: 22520, lr: 0.000404, 'loss': '16.893356', time: 2.369, eta: 11:30:10
+2020-04-15 14:38:57,664 - <__main__> - INFO: iter: 22540, lr: 0.000404, 'loss': '17.348955', time: 2.569, eta: 12:27:43
+2020-04-15 14:39:47,814 - <__main__> - INFO: iter: 22560, lr: 0.000404, 'loss': '17.586334', time: 2.508, eta: 12:08:51
+2020-04-15 14:40:39,572 - <__main__> - INFO: iter: 22580, lr: 0.000404, 'loss': '15.950689', time: 2.588, eta: 12:31:20
+2020-04-15 14:41:28,968 - <__main__> - INFO: iter: 22600, lr: 0.000404, 'loss': '16.024349', time: 2.470, eta: 11:56:14
+2020-04-15 14:42:18,939 - <__main__> - INFO: iter: 22620, lr: 0.000397, 'loss': '16.855110', time: 2.499, eta: 12:03:46
+2020-04-15 14:43:11,082 - <__main__> - INFO: iter: 22640, lr: 0.000397, 'loss': '17.413105', time: 2.607, eta: 12:34:19
+2020-04-15 14:44:03,538 - <__main__> - INFO: iter: 22660, lr: 0.000397, 'loss': '17.419788', time: 2.623, eta: 12:37:59
+2020-04-15 14:44:56,857 - <__main__> - INFO: iter: 22680, lr: 0.000397, 'loss': '16.464804', time: 2.666, eta: 12:49:34
+2020-04-15 14:45:46,569 - <__main__> - INFO: iter: 22700, lr: 0.000397, 'loss': '17.338364', time: 2.486, eta: 11:56:41
+2020-04-15 14:46:38,141 - <__main__> - INFO: iter: 22720, lr: 0.000397, 'loss': '17.655415', time: 2.579, eta: 12:22:37
+2020-04-15 14:47:28,432 - <__main__> - INFO: iter: 22740, lr: 0.000397, 'loss': '16.604244', time: 2.515, eta: 12:03:21
+2020-04-15 14:48:19,253 - <__main__> - INFO: iter: 22760, lr: 0.000397, 'loss': '16.937263', time: 2.541, eta: 12:10:07
+2020-04-15 14:49:09,125 - <__main__> - INFO: iter: 22780, lr: 0.000391, 'loss': '16.847717', time: 2.494, eta: 11:55:39
+2020-04-15 14:49:57,039 - <__main__> - INFO: iter: 22800, lr: 0.000391, 'loss': '16.809645', time: 2.396, eta: 11:26:45
+2020-04-15 14:50:51,657 - <__main__> - INFO: iter: 22820, lr: 0.000391, 'loss': '16.231853', time: 2.731, eta: 13:01:56
+2020-04-15 14:51:41,607 - <__main__> - INFO: iter: 22840, lr: 0.000391, 'loss': '17.114792', time: 2.497, eta: 11:54:17
+2020-04-15 14:52:33,026 - <__main__> - INFO: iter: 22860, lr: 0.000391, 'loss': '17.087767', time: 2.571, eta: 12:14:27
+2020-04-15 14:53:26,030 - <__main__> - INFO: iter: 22880, lr: 0.000391, 'loss': '17.546062', time: 2.650, eta: 12:36:10
+2020-04-15 14:54:16,516 - <__main__> - INFO: iter: 22900, lr: 0.000391, 'loss': '16.484110', time: 2.524, eta: 11:59:24
+2020-04-15 14:55:09,294 - <__main__> - INFO: iter: 22920, lr: 0.000391, 'loss': '17.415674', time: 2.639, eta: 12:31:13
+2020-04-15 14:55:59,725 - <__main__> - INFO: iter: 22940, lr: 0.000391, 'loss': '16.623129', time: 2.522, eta: 11:56:57
+2020-04-15 14:56:50,277 - <__main__> - INFO: iter: 22960, lr: 0.000384, 'loss': '16.974985', time: 2.528, eta: 11:57:48
+2020-04-15 14:57:41,282 - <__main__> - INFO: iter: 22980, lr: 0.000384, 'loss': '16.917360', time: 2.550, eta: 12:03:26
+2020-04-15 14:58:32,396 - <__main__> - INFO: iter: 23000, lr: 0.000384, 'loss': '15.959175', time: 2.556, eta: 12:04:06
+2020-04-15 14:58:32,396 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/23000.
+2020-04-15 14:58:38,057 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 14:58:51,863 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 14:58:51,863 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 14:58:51,863 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 14:58:51,988 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 14:58:51,994 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 69.00
+2020-04-15 14:59:24,721 - <__main__> - INFO: iter: 23020, lr: 0.000384, 'loss': '15.888380', time: 2.616, eta: 12:20:24
+2020-04-15 15:00:16,346 - <__main__> - INFO: iter: 23040, lr: 0.000384, 'loss': '16.641315', time: 2.581, eta: 12:09:37
+2020-04-15 15:01:06,401 - <__main__> - INFO: iter: 23060, lr: 0.000384, 'loss': '17.046787', time: 2.503, eta: 11:46:36
+2020-04-15 15:01:59,071 - <__main__> - INFO: iter: 23080, lr: 0.000384, 'loss': '16.358177', time: 2.633, eta: 12:22:38
+2020-04-15 15:02:47,603 - <__main__> - INFO: iter: 23100, lr: 0.000384, 'loss': '16.233927', time: 2.427, eta: 11:23:29
+2020-04-15 15:03:37,998 - <__main__> - INFO: iter: 23120, lr: 0.000378, 'loss': '16.743059', time: 2.520, eta: 11:48:53
+2020-04-15 15:04:28,104 - <__main__> - INFO: iter: 23140, lr: 0.000378, 'loss': '16.289139', time: 2.505, eta: 11:43:58
+2020-04-15 15:05:18,617 - <__main__> - INFO: iter: 23160, lr: 0.000378, 'loss': '15.916271', time: 2.526, eta: 11:48:52
+2020-04-15 15:06:10,292 - <__main__> - INFO: iter: 23180, lr: 0.000378, 'loss': '16.231369', time: 2.584, eta: 12:04:17
+2020-04-15 15:07:01,039 - <__main__> - INFO: iter: 23200, lr: 0.000378, 'loss': '17.056459', time: 2.537, eta: 11:50:28
+2020-04-15 15:07:49,528 - <__main__> - INFO: iter: 23220, lr: 0.000378, 'loss': '16.367355', time: 2.424, eta: 11:18:02
+2020-04-15 15:08:39,414 - <__main__> - INFO: iter: 23240, lr: 0.000378, 'loss': '16.428312', time: 2.494, eta: 11:36:43
+2020-04-15 15:09:30,034 - <__main__> - INFO: iter: 23260, lr: 0.000378, 'loss': '17.307327', time: 2.531, eta: 11:46:08
+2020-04-15 15:10:20,690 - <__main__> - INFO: iter: 23280, lr: 0.000378, 'loss': '15.978373', time: 2.533, eta: 11:45:49
+2020-04-15 15:11:08,098 - <__main__> - INFO: iter: 23300, lr: 0.000371, 'loss': '16.808750', time: 2.370, eta: 10:59:45
+2020-04-15 15:11:58,427 - <__main__> - INFO: iter: 23320, lr: 0.000371, 'loss': '16.970245', time: 2.516, eta: 11:39:34
+2020-04-15 15:12:52,481 - <__main__> - INFO: iter: 23340, lr: 0.000371, 'loss': '17.077291', time: 2.703, eta: 12:30:26
+2020-04-15 15:13:40,554 - <__main__> - INFO: iter: 23360, lr: 0.000371, 'loss': '16.230257', time: 2.404, eta: 11:06:37
+2020-04-15 15:14:30,259 - <__main__> - INFO: iter: 23380, lr: 0.000371, 'loss': '16.812439', time: 2.485, eta: 11:28:24
+2020-04-15 15:15:20,113 - <__main__> - INFO: iter: 23400, lr: 0.000371, 'loss': '17.684624', time: 2.493, eta: 11:29:38
+2020-04-15 15:16:12,718 - <__main__> - INFO: iter: 23420, lr: 0.000371, 'loss': '16.959660', time: 2.630, eta: 12:06:49
+2020-04-15 15:17:04,891 - <__main__> - INFO: iter: 23440, lr: 0.000371, 'loss': '16.796516', time: 2.609, eta: 11:59:58
+2020-04-15 15:17:54,488 - <__main__> - INFO: iter: 23460, lr: 0.000365, 'loss': '16.985950', time: 2.480, eta: 11:23:37
+2020-04-15 15:18:46,339 - <__main__> - INFO: iter: 23480, lr: 0.000365, 'loss': '17.037415', time: 2.593, eta: 11:53:48
+2020-04-15 15:19:35,165 - <__main__> - INFO: iter: 23500, lr: 0.000365, 'loss': '16.755081', time: 2.441, eta: 11:11:19
+2020-04-15 15:20:24,118 - <__main__> - INFO: iter: 23520, lr: 0.000365, 'loss': '16.641582', time: 2.448, eta: 11:12:19
+2020-04-15 15:21:14,301 - <__main__> - INFO: iter: 23540, lr: 0.000365, 'loss': '16.570431', time: 2.509, eta: 11:28:20
+2020-04-15 15:22:06,840 - <__main__> - INFO: iter: 23560, lr: 0.000365, 'loss': '17.072121', time: 2.627, eta: 11:59:46
+2020-04-15 15:22:57,768 - <__main__> - INFO: iter: 23580, lr: 0.000365, 'loss': '16.083282', time: 2.546, eta: 11:36:51
+2020-04-15 15:23:45,426 - <__main__> - INFO: iter: 23600, lr: 0.000365, 'loss': '16.277660', time: 2.383, eta: 10:51:19
+2020-04-15 15:24:35,784 - <__main__> - INFO: iter: 23620, lr: 0.000365, 'loss': '16.798141', time: 2.518, eta: 11:27:23
+2020-04-15 15:25:24,338 - <__main__> - INFO: iter: 23640, lr: 0.000358, 'loss': '17.176998', time: 2.428, eta: 11:01:56
+2020-04-15 15:26:14,785 - <__main__> - INFO: iter: 23660, lr: 0.000358, 'loss': '16.133394', time: 2.522, eta: 11:26:56
+2020-04-15 15:27:02,744 - <__main__> - INFO: iter: 23680, lr: 0.000358, 'loss': '16.303680', time: 2.398, eta: 10:52:14
+2020-04-15 15:27:54,004 - <__main__> - INFO: iter: 23700, lr: 0.000358, 'loss': '15.904737', time: 2.563, eta: 11:36:16
+2020-04-15 15:28:42,860 - <__main__> - INFO: iter: 23720, lr: 0.000358, 'loss': '16.638512', time: 2.443, eta: 11:02:48
+2020-04-15 15:29:33,430 - <__main__> - INFO: iter: 23740, lr: 0.000358, 'loss': '16.502045', time: 2.529, eta: 11:25:13
+2020-04-15 15:30:26,748 - <__main__> - INFO: iter: 23760, lr: 0.000358, 'loss': '17.169537', time: 2.666, eta: 12:01:33
+2020-04-15 15:31:17,642 - <__main__> - INFO: iter: 23780, lr: 0.000358, 'loss': '16.918463', time: 2.545, eta: 11:27:56
+2020-04-15 15:32:05,011 - <__main__> - INFO: iter: 23800, lr: 0.000352, 'loss': '16.632324', time: 2.368, eta: 10:39:29
+2020-04-15 15:32:58,230 - <__main__> - INFO: iter: 23820, lr: 0.000352, 'loss': '16.597284', time: 2.661, eta: 11:57:34
+2020-04-15 15:33:51,524 - <__main__> - INFO: iter: 23840, lr: 0.000352, 'loss': '17.065887', time: 2.665, eta: 11:57:41
+2020-04-15 15:34:44,247 - <__main__> - INFO: iter: 23860, lr: 0.000352, 'loss': '17.324986', time: 2.636, eta: 11:49:07
+2020-04-15 15:35:35,580 - <__main__> - INFO: iter: 23880, lr: 0.000352, 'loss': '16.460175', time: 2.567, eta: 11:29:34
+2020-04-15 15:36:26,885 - <__main__> - INFO: iter: 23900, lr: 0.000352, 'loss': '17.342714', time: 2.565, eta: 11:28:20
+2020-04-15 15:37:17,894 - <__main__> - INFO: iter: 23920, lr: 0.000352, 'loss': '17.191114', time: 2.550, eta: 11:23:31
+2020-04-15 15:38:10,604 - <__main__> - INFO: iter: 23940, lr: 0.000352, 'loss': '17.050472', time: 2.635, eta: 11:45:25
+2020-04-15 15:39:04,105 - <__main__> - INFO: iter: 23960, lr: 0.000352, 'loss': '16.538216', time: 2.675, eta: 11:55:07
+2020-04-15 15:39:53,228 - <__main__> - INFO: iter: 23980, lr: 0.000345, 'loss': '17.217911', time: 2.456, eta: 10:55:47
+2020-04-15 15:40:42,880 - <__main__> - INFO: iter: 24000, lr: 0.000345, 'loss': '16.078707', time: 2.483, eta: 11:02:01
+2020-04-15 15:40:42,880 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/24000.
+2020-04-15 15:40:48,328 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 15:41:02,180 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 15:41:02,180 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 15:41:02,181 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 15:41:02,304 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 15:41:02,310 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 75.56
+2020-04-15 15:41:38,288 - <__main__> - INFO: iter: 24020, lr: 0.000345, 'loss': '15.605022', time: 2.770, eta: 12:17:51
+2020-04-15 15:42:28,512 - <__main__> - INFO: iter: 24040, lr: 0.000345, 'loss': '17.048929', time: 2.511, eta: 11:07:58
+2020-04-15 15:43:19,276 - <__main__> - INFO: iter: 24060, lr: 0.000345, 'loss': '16.627924', time: 2.538, eta: 11:14:19
+2020-04-15 15:44:12,540 - <__main__> - INFO: iter: 24080, lr: 0.000345, 'loss': '17.670460', time: 2.663, eta: 11:46:38
+2020-04-15 15:45:04,475 - <__main__> - INFO: iter: 24100, lr: 0.000345, 'loss': '16.974522', time: 2.597, eta: 11:28:08
+2020-04-15 15:45:57,295 - <__main__> - INFO: iter: 24120, lr: 0.000345, 'loss': '15.889039', time: 2.641, eta: 11:38:59
+2020-04-15 15:46:44,740 - <__main__> - INFO: iter: 24140, lr: 0.000339, 'loss': '15.190617', time: 2.372, eta: 10:27:03
+2020-04-15 15:47:37,841 - <__main__> - INFO: iter: 24160, lr: 0.000339, 'loss': '17.203205', time: 2.655, eta: 11:40:56
+2020-04-15 15:48:29,158 - <__main__> - INFO: iter: 24180, lr: 0.000339, 'loss': '16.565670', time: 2.566, eta: 11:16:31
+2020-04-15 15:49:21,599 - <__main__> - INFO: iter: 24200, lr: 0.000339, 'loss': '17.290461', time: 2.622, eta: 11:30:28
+2020-04-15 15:50:09,918 - <__main__> - INFO: iter: 24220, lr: 0.000339, 'loss': '17.348343', time: 2.416, eta: 10:35:23
+2020-04-15 15:51:02,896 - <__main__> - INFO: iter: 24240, lr: 0.000339, 'loss': '16.314678', time: 2.649, eta: 11:35:47
+2020-04-15 15:51:55,301 - <__main__> - INFO: iter: 24260, lr: 0.000339, 'loss': '16.955585', time: 2.620, eta: 11:27:21
+2020-04-15 15:52:46,174 - <__main__> - INFO: iter: 24280, lr: 0.000339, 'loss': '16.123079', time: 2.544, eta: 11:06:26
+2020-04-15 15:53:36,876 - <__main__> - INFO: iter: 24300, lr: 0.000339, 'loss': '17.110899', time: 2.535, eta: 11:03:19
+2020-04-15 15:54:25,840 - <__main__> - INFO: iter: 24320, lr: 0.000333, 'loss': '16.898773', time: 2.448, eta: 10:39:50
+2020-04-15 15:55:16,048 - <__main__> - INFO: iter: 24340, lr: 0.000333, 'loss': '16.259624', time: 2.510, eta: 10:55:11
+2020-04-15 15:56:07,763 - <__main__> - INFO: iter: 24360, lr: 0.000333, 'loss': '16.785858', time: 2.586, eta: 11:14:01
+2020-04-15 15:56:59,951 - <__main__> - INFO: iter: 24380, lr: 0.000333, 'loss': '16.484900', time: 2.609, eta: 11:19:17
+2020-04-15 15:57:50,139 - <__main__> - INFO: iter: 24400, lr: 0.000333, 'loss': '16.678204', time: 2.509, eta: 10:52:26
+2020-04-15 15:58:41,802 - <__main__> - INFO: iter: 24420, lr: 0.000333, 'loss': '16.936211', time: 2.583, eta: 11:10:45
+2020-04-15 15:59:30,997 - <__main__> - INFO: iter: 24440, lr: 0.000333, 'loss': '16.959038', time: 2.460, eta: 10:37:54
+2020-04-15 16:00:24,288 - <__main__> - INFO: iter: 24460, lr: 0.000333, 'loss': '16.235622', time: 2.664, eta: 11:30:06
+2020-04-15 16:01:14,347 - <__main__> - INFO: iter: 24480, lr: 0.000327, 'loss': '16.388226', time: 2.503, eta: 10:47:26
+2020-04-15 16:02:04,477 - <__main__> - INFO: iter: 24500, lr: 0.000327, 'loss': '15.950272', time: 2.506, eta: 10:47:30
+2020-04-15 16:02:57,130 - <__main__> - INFO: iter: 24520, lr: 0.000327, 'loss': '15.544774', time: 2.633, eta: 11:19:13
+2020-04-15 16:03:49,206 - <__main__> - INFO: iter: 24540, lr: 0.000327, 'loss': '16.247147', time: 2.604, eta: 11:10:55
+2020-04-15 16:04:41,161 - <__main__> - INFO: iter: 24560, lr: 0.000327, 'loss': '16.122663', time: 2.598, eta: 11:08:28
+2020-04-15 16:05:33,482 - <__main__> - INFO: iter: 24580, lr: 0.000327, 'loss': '16.399920', time: 2.616, eta: 11:12:19
+2020-04-15 16:06:23,845 - <__main__> - INFO: iter: 24600, lr: 0.000327, 'loss': '15.783334', time: 2.518, eta: 10:46:19
+2020-04-15 16:07:16,933 - <__main__> - INFO: iter: 24620, lr: 0.000327, 'loss': '16.563267', time: 2.654, eta: 11:20:24
+2020-04-15 16:08:06,784 - <__main__> - INFO: iter: 24640, lr: 0.000327, 'loss': '17.114624', time: 2.493, eta: 10:38:05
+2020-04-15 16:08:57,376 - <__main__> - INFO: iter: 24660, lr: 0.000320, 'loss': '16.214348', time: 2.530, eta: 10:46:44
+2020-04-15 16:09:48,711 - <__main__> - INFO: iter: 24680, lr: 0.000320, 'loss': '16.881973', time: 2.567, eta: 10:55:22
+2020-04-15 16:10:39,353 - <__main__> - INFO: iter: 24700, lr: 0.000320, 'loss': '16.641760', time: 2.532, eta: 10:45:40
+2020-04-15 16:11:29,635 - <__main__> - INFO: iter: 24720, lr: 0.000320, 'loss': '15.803460', time: 2.514, eta: 10:40:15
+2020-04-15 16:12:20,185 - <__main__> - INFO: iter: 24740, lr: 0.000320, 'loss': '16.544441', time: 2.528, eta: 10:42:49
+2020-04-15 16:13:13,952 - <__main__> - INFO: iter: 24760, lr: 0.000320, 'loss': '15.892768', time: 2.688, eta: 11:22:49
+2020-04-15 16:14:04,532 - <__main__> - INFO: iter: 24780, lr: 0.000320, 'loss': '16.371880', time: 2.529, eta: 10:41:31
+2020-04-15 16:14:55,584 - <__main__> - INFO: iter: 24800, lr: 0.000320, 'loss': '15.823881', time: 2.553, eta: 10:46:39
+2020-04-15 16:15:43,423 - <__main__> - INFO: iter: 24820, lr: 0.000314, 'loss': '15.904495', time: 2.392, eta: 10:05:09
+2020-04-15 16:16:37,766 - <__main__> - INFO: iter: 24840, lr: 0.000314, 'loss': '16.655960', time: 2.717, eta: 11:26:32
+2020-04-15 16:17:27,158 - <__main__> - INFO: iter: 24860, lr: 0.000314, 'loss': '16.475655', time: 2.470, eta: 10:23:09
+2020-04-15 16:18:17,376 - <__main__> - INFO: iter: 24880, lr: 0.000314, 'loss': '16.331135', time: 2.511, eta: 10:32:44
+2020-04-15 16:19:07,450 - <__main__> - INFO: iter: 24900, lr: 0.000314, 'loss': '16.166870', time: 2.504, eta: 10:30:06
+2020-04-15 16:19:59,913 - <__main__> - INFO: iter: 24920, lr: 0.000314, 'loss': '16.819305', time: 2.623, eta: 10:59:16
+2020-04-15 16:20:50,252 - <__main__> - INFO: iter: 24940, lr: 0.000314, 'loss': '16.786598', time: 2.517, eta: 10:31:46
+2020-04-15 16:21:39,505 - <__main__> - INFO: iter: 24960, lr: 0.000314, 'loss': '16.304089', time: 2.463, eta: 10:17:18
+2020-04-15 16:22:29,652 - <__main__> - INFO: iter: 24980, lr: 0.000314, 'loss': '16.986214', time: 2.507, eta: 10:27:40
+2020-04-15 16:23:19,055 - <__main__> - INFO: iter: 25000, lr: 0.000308, 'loss': '16.685793', time: 2.470, eta: 10:17:32
+2020-04-15 16:23:19,055 - <ppdet.utils.checkpoint> - INFO: Save model to output/yolov3_resnet_v2/25000.
+2020-04-15 16:23:24,581 - <ppdet.utils.eval_utils> - INFO: Infer iter 0
+2020-04-15 16:23:38,200 - <ppdet.utils.eval_utils> - INFO: Infer finish iter 25
+2020-04-15 16:23:38,201 - <ppdet.utils.eval_utils> - INFO: Infer total number of images: 245
+2020-04-15 16:23:38,201 - <ppdet.utils.eval_utils> - INFO: Start evaluate...
+2020-04-15 16:23:38,338 - <ppdet.utils.eval_utils> - INFO: Accumulating evaluatation results...
+2020-04-15 16:23:38,345 - <ppdet.utils.eval_utils> - INFO: mAP(0.50, 11point) = 73.99
+2020-04-15 16:24:11,950 - <__main__> - INFO: iter: 25020, lr: 0.000308, 'loss': '15.159618', time: 2.645, eta: 11:00:17
+2020-04-15 16:24:58,706 - <__main__> - INFO: iter: 25040, lr: 0.000308, 'loss': '17.024796', time: 2.338, eta: 9:42:53
+2020-04-15 16:25:48,138 - <__main__> - INFO: iter: 25060, lr: 0.000308, 'loss': '16.047752', time: 2.472, eta: 10:15:25
+2020-04-15 16:27:00,075 - <__main__> - INFO: iter: 25080, lr: 0.000308, 'loss': '16.126818', time: 3.597, eta: 14:54:25
+2020-04-15 16:27:59,458 - <__main__> - INFO: iter: 25100, lr: 0.000308, 'loss': '15.474793', time: 2.969, eta: 12:17:19
+2020-04-15 16:29:09,411 - <__main__> - INFO: iter: 25120, lr: 0.000308, 'loss': '15.984819', time: 3.498, eta: 14:27:25
+2020-04-15 16:30:17,697 - <__main__> - INFO: iter: 25140, lr: 0.000308, 'loss': '16.416225', time: 3.414, eta: 14:05:35
+2020-04-15 16:31:17,806 - <__main__> - INFO: iter: 25160, lr: 0.000302, 'loss': '15.781935', time: 3.005, eta: 12:23:20
+2020-04-15 16:32:07,996 - <__main__> - INFO: iter: 25180, lr: 0.000302, 'loss': '16.374481', time: 2.510, eta: 10:19:51
+2020-04-15 16:33:00,045 - <__main__> - INFO: iter: 25200, lr: 0.000302, 'loss': '15.520804', time: 2.602, eta: 10:41:56
+2020-04-15 16:33:53,167 - <__main__> - INFO: iter: 25220, lr: 0.000302, 'loss': '16.058807', time: 2.656, eta: 10:54:17
+2020-04-15 16:34:41,757 - <__main__> - INFO: iter: 25240, lr: 0.000302, 'loss': '15.839125', time: 2.429, eta: 9:57:38
+2020-04-15 16:35:31,238 - <__main__> - INFO: iter: 25260, lr: 0.000302, 'loss': '16.535030', time: 2.474, eta: 10:07:47
+2020-04-15 16:36:23,349 - <__main__> - INFO: iter: 25280, lr: 0.000302, 'loss': '17.046837', time: 2.606, eta: 10:39:13
+2020-04-15 16:37:14,799 - <__main__> - INFO: iter: 25300, lr: 0.000302, 'loss': '16.917820', time: 2.572, eta: 10:30:15
+2020-04-15 16:38:05,666 - <__main__> - INFO: iter: 25320, lr: 0.000302, 'loss': '15.877443', time: 2.543, eta: 10:22:16
+2020-04-15 16:38:56,446 - <__main__> - INFO: iter: 25340, lr: 0.000296, 'loss': '15.471334', time: 2.539, eta: 10:20:21
+2020-04-15 16:39:48,982 - <__main__> - INFO: iter: 25360, lr: 0.000296, 'loss': '16.740305', time: 2.627, eta: 10:40:57
+2020-04-15 16:40:43,893 - <__main__> - INFO: iter: 25380, lr: 0.000296, 'loss': '16.743818', time: 2.745, eta: 11:08:59
+2020-04-15 16:41:41,009 - <__main__> - INFO: iter: 25400, lr: 0.000296, 'loss': '16.756573', time: 2.856, eta: 11:34:54
+2020-04-15 16:42:30,836 - <__main__> - INFO: iter: 25420, lr: 0.000296, 'loss': '16.616123', time: 2.491, eta: 10:05:23
+2020-04-15 16:43:22,576 - <__main__> - INFO: iter: 25440, lr: 0.000296, 'loss': '16.117527', time: 2.587, eta: 10:27:47
+2020-04-15 16:44:16,543 - <__main__> - INFO: iter: 25460, lr: 0.000296, 'loss': '16.785189', time: 2.698, eta: 10:53:54
+2020-04-15 16:45:08,611 - <__main__> - INFO: iter: 25480, lr: 0.000296, 'loss': '15.714931', time: 2.603, eta: 10:30:01
+2020-04-15 16:45:58,126 - <__main__> - INFO: iter: 25500, lr: 0.000290, 'loss': '15.938820', time: 2.476, eta: 9:58:18
+2020-04-15 16:46:49,201 - <__main__> - INFO: iter: 25520, lr: 0.000290, 'loss': '17.299055', time: 2.554, eta: 10:16:18
+2020-04-15 16:47:41,978 - <__main__> - INFO: iter: 25540, lr: 0.000290, 'loss': '16.654984', time: 2.639, eta: 10:35:58
+2020-04-15 16:48:33,686 - <__main__> - INFO: iter: 25560, lr: 0.000290, 'loss': '17.052177', time: 2.585, eta: 10:22:12
+2020-04-15 16:49:26,742 - <__main__> - INFO: iter: 25580, lr: 0.000290, 'loss': '16.261810', time: 2.653, eta: 10:37:33
+2020-04-15 16:50:16,834 - <__main__> - INFO: iter: 25600, lr: 0.000290, 'loss': '15.565375', time: 2.505, eta: 10:01:06
+2020-04-15 16:51:07,287 - <__main__> - INFO: iter: 25620, lr: 0.000290, 'loss': '17.076319', time: 2.523, eta: 10:04:35
+2020-04-15 16:51:56,316 - <__main__> - INFO: iter: 25640, lr: 0.000290, 'loss': '16.460140', time: 2.451, eta: 9:46:43
+2020-04-15 16:52:48,154 - <__main__> - INFO: iter: 25660, lr: 0.000290, 'loss': '16.705580', time: 2.592, eta: 10:19:26
+2020-04-15 16:53:38,278 - <__main__> - INFO: iter: 25680, lr: 0.000283, 'loss': '16.293713', time: 2.506, eta: 9:58:08
+2020-04-15 16:54:30,054 - <__main__> - INFO: iter: 25700, lr: 0.000283, 'loss': '16.695406', time: 2.589, eta: 10:17:00
+2020-04-15 16:55:19,662 - <__main__> - INFO: iter: 25720, lr: 0.000283, 'loss': '16.770420', time: 2.480, eta: 9:50:20
+2020-04-15 16:56:08,179 - <__main__> - INFO: iter: 25740, lr: 0.000283, 'loss': '16.726093', time: 2.426, eta: 9:36:32
+2020-04-15 16:56:58,768 - <__main__> - INFO: iter: 25760, lr: 0.000283, 'loss': '15.806391', time: 2.529, eta: 10:00:19
+2020-04-15 16:57:49,514 - <__main__> - INFO: iter: 25780, lr: 0.000283, 'loss': '16.330891', time: 2.537, eta: 10:01:20
