@@ -7,8 +7,8 @@ architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
 finetune_exclude_pretrained_params: ['yolo_output']
 use_gpu: True
-use_gpu: False  # ztodo
-max_iters: 40000
+# use_gpu: False  # ztodo
+max_iters: 40000 # ztodo
 log_iter: 20
 log_smooth_window: 20
 snapshot_iter: 1000
@@ -24,7 +24,7 @@ YOLOv3:
 ResNet:
   depth: 50
   variant: d
-  freeze_at: 2
+  freeze_at: 0
   norm_type: bn
   freeze_norm: false
   norm_decay: 0.
@@ -53,7 +53,7 @@ LearningRate:
     step_per_epoch: 170 # ztodo
     epochs: 235 # ztodo
   - !LinearWarmup
-    steps: 2000
+    steps: 4000
     start_factor: 0.
 
 OptimizerBuilder:
