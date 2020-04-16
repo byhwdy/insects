@@ -26,6 +26,24 @@ YOLOv3:
   # yolo_head: YOLOv3Head
   # use_fine_grained_loss: False #
 
+ResNet:
+  depth: 50
+  variant: 'b'
+  freeze_at: 2
+
+  freeze_norm: True
+  norm_type: 'affine_channel'
+  norm_decay: 0.
+
+  feature_maps: [2 3 4 5]
+
+  dcn_v2_stages: []
+  nonlocal_stages: []
+  gcb_stages: []
+  gcb_params: {}
+
+  weight_prefix_name: ''
+
 DarkNet:
   depth: 53
   # norm_type: bn #

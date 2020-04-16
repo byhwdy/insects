@@ -1,23 +1,41 @@
-import sys
-sys.path.append('/paddle/insects')
-
 import paddle.fluid as fluid
 
-boundaries = [100, 200]
-lr_steps = [0.1, 0.01, 0.001]
-learning_rate = fluid.layers.piecewise_decay(boundaries, lr_steps) #case1, Tensor
-#learning_rate = 0.1  #case2, float32
-warmup_steps = 50
-start_lr = 1. / 3.
-end_lr = 0.1
-decayed_lr = fluid.layers.linear_lr_warmup(learning_rate,
-    warmup_steps, start_lr, end_lr)
+def lenet_5(img):
+    '''
+    定义神经网络结构
+    '''
+    conv1 = fluid.nets.simple_img_conv_pool(
+        input=img,
+        filter_size=5,
+        num_filters=20,
+        pool_size=2,
+        pool_stride=2,
+        act="relu")
+
+    conv1_bn = fluid.layers.batch_norm(input=conv1)
+
+    conv2 = fluid.nets.simple_img_conv_pool(
+        input=conv1_bn,
+        filter_size=5,
+        num_filters=50,
+        pool_size=2,
+        pool_stride=2,
+        act="relu")
+
+    predition = fluid.layers.fc(input=conv2, size=10, act="softmax")
+    return predition
+
+# 变量赋值
+image = fluid.layers.data(name="img", shape=[1, 28, 28], dtype="float32")
+predition = lenet_5(image)
 
 place = fluid.CPUPlace()
-exe = fluid.Executor(place)
+exe = fluid.Executor(place=place)
 exe.run(fluid.default_startup_program())
-for i in range(300):
-	out, = exe.run(fetch_list=[decayed_lr.name])
-	print(i, '======', out)
-# case1: [0.33333334]
-# case2: [0.33333334]
+
+# 使用函数 save_inference_model() 保存 paddle 模型
+fluid.io.save_inference_model(
+    "//home/aistudio/paddle_lenet_5_model",
+    feeded_var_names=[image.name],
+    target_vars=[predition],
+    executor=exe)
