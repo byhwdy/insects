@@ -1,20 +1,20 @@
 ####
-# resnet模型
+# 改进resnet模型与yolov3_r50vd_dcn_obj365_pretrained_coco的匹配
 ####
-# val map 最高80%, 无提升，可能是模型与预训练参数不匹配
+#
 ####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
 finetune_exclude_pretrained_params: ['yolo_output']
 use_gpu: True
-# use_gpu: False  # ztodo
+use_gpu: False  # ztodo
 max_iters: 40000
 log_iter: 20
 log_smooth_window: 20
 snapshot_iter: 1000
 save_dir: output
 map_type: 11point
-weights: output/yolov3_resnet_v2/best_model
+weights: output/yolov3_r50vd_dcn_v3/best_model
 num_classes: 7
 use_fine_grained_loss: false
 
@@ -22,12 +22,14 @@ YOLOv3:
   backbone: ResNet
 
 ResNet:
+  depth: 50
+  variant: d
+  freeze_at: 2
   norm_type: bn
-  freeze_at: 0
   freeze_norm: false
   norm_decay: 0.
-  depth: 50
   feature_maps: [3, 4, 5]
+  dcn_v2_stages: [5]
 
 YOLOv3Head:
   anchors: [[19, 29], [28, 20], [25, 40], 

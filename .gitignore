@@ -69,3 +69,6 @@ dataset/insects
 .DS_Store
 
 log/log.txt
+
+pretrain_weights
+model_graph

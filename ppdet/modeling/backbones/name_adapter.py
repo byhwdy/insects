@@ -1,4 +1,3 @@
-
 class NameAdapter(object):
     """Fix the backbones variable names for pretrained weight"""
 
