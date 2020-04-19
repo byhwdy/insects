@@ -102,7 +102,6 @@ def main():
         log_writter = LogWriter(FLAGS.vdl_log_dir, sync_cycle=5)
         with log_writter.mode("train") as vdl_logger:
             train_scalar_loss = vdl_logger.scalar(tag="loss")
-            train_scalar_map = vdl_logger.scalar(tag="map")
         with log_writter.mode("val") as vdl_logger:
             val_scalar_map = vdl_logger.scalar(tag="map")
 
@@ -131,31 +130,23 @@ def main():
 
         # 模型保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
-            current_step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 \
-                                else it//cfg.snapshot_iter+1
 
             # 模型保存
             save_name = str(it) if it != cfg.max_iters - 1 else "final"
             checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
 
-            # 训练集评价
-            results = eval_run(exe, eval_prog, train_loader,
-                                   eval_keys, eval_values)
-            box_ap_stats = eval_results(results, cfg.num_classes)
-            logger.info("train box op: {}, in iter: {}".format(
-                    box_ap_stats, it))
-            if FLAGS.use_vdl:
-                train_scalar_map.add_record(current_step, box_ap_stats)
-
-            # 验证集评价
+            ## 模型评价
             if FLAGS.eval:
+                current_step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 \
+                                    else it//cfg.snapshot_iter+1
+                ## 训练集评价
+
+                ## 验证集评价
                 results = eval_run(exe, eval_prog, eval_loader,
                                    eval_keys, eval_values)
                 box_ap_stats = eval_results(results, cfg.num_classes)
                 logger.info("eval box op: {}, in iter: {}".format(
                     box_ap_stats, it))
-
-                ## 记录map窗口
                 if FLAGS.use_vdl:
                     val_scalar_map.add_record(current_step, box_ap_stats)
 
