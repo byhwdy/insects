@@ -14,7 +14,7 @@ log_smooth_window: 20
 snapshot_iter: 200
 save_dir: output
 map_type: 11point
-weights: output/yolov3_r50vd_dcn_v3/best_model
+weights: output/yolov3_r50vd_dcn_v4/best_model
 num_classes: 7
 use_fine_grained_loss: false
 
