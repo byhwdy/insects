@@ -1,5 +1,5 @@
 ####
-# 改进resnet模型与yolov3_r50vd_dcn_obj365_pretrained_coco的匹配
+# 加入防止过拟合的 标签平滑、drop_block、增大正则化率
 ####
 # 最高val map 82.14
 ####
@@ -41,10 +41,11 @@ YOLOv3Head:
     nms_top_k: 1000
     nms_threshold: 0.45
     background_label: -1
+  drop_block: true
 
 YOLOv3Loss:
   batch_size: 8
-  label_smooth: false
+  label_smooth: True
 
 LearningRate:
   base_lr: 0.001
@@ -61,7 +62,7 @@ OptimizerBuilder:
     momentum: 0.9
     type: Momentum
   regularizer:
-    factor: 0.0005
+    factor: 0.001
     type: L2
 
 _READER_: 'yolov3_darknet_v1_aug_reader.yml'

@@ -6,7 +6,7 @@
 architecture: YOLOv3
 pretrain_weights:
 use_gpu: True
-# use_gpu: False  # ztodo
+use_gpu: False  # ztodo
 max_iters: 20000
 log_iter: 20
 log_smooth_window: 20
