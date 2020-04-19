@@ -78,7 +78,7 @@ def main():
     start_iter = 0
     if FLAGS.resume_checkpoint:
         checkpoint.load_checkpoint(exe, train_prog, FLAGS.resume_checkpoint)
-        start_iter = checkpoint.global_step()
+        start_iter = checkpoint.global_step() + 1
     elif cfg.pretrain_weights:
         checkpoint.load_params(
             exe, train_prog, cfg.pretrain_weights, ignore_params=ignore_params)
@@ -101,9 +101,10 @@ def main():
     if FLAGS.use_vdl:
         log_writter = LogWriter(FLAGS.vdl_log_dir, sync_cycle=5)
         with log_writter.mode("train") as vdl_logger:
-            scalar_loss = vdl_logger.scalar(tag="loss")
+            train_scalar_loss = vdl_logger.scalar(tag="loss")
+            train_scalar_map = vdl_logger.scalar(tag="map")
         with log_writter.mode("val") as vdl_logger:
-            scalar_map = vdl_logger.scalar(tag="map")
+            val_scalar_map = vdl_logger.scalar(tag="map")
 
     for it in range(start_iter, cfg.max_iters):
         # 运行程序
@@ -126,33 +127,48 @@ def main():
             logger.info(strs)
             # vdl
             if FLAGS.use_vdl:
-                scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
+                train_scalar_loss.add_record(it//cfg.log_iter, stats['loss'])
 
-        # 保存与评价窗口
+        # 模型保存与评价窗口
         if (it > 0 and it % cfg.snapshot_iter == 0 or it == cfg.max_iters - 1):
+            current_step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 \
+                                else it//cfg.snapshot_iter+1
+
             # 模型保存
             save_name = str(it) if it != cfg.max_iters - 1 else "final"
             checkpoint.save(exe, train_prog, os.path.join(save_dir, save_name))
 
-            # 评价
+            # 训练集评价
+            results = eval_run(exe, eval_prog, train_loader,
+                                   eval_keys, eval_values)
+            box_ap_stats = eval_results(results, cfg.num_classes)
+            logger.info("train box op: {}, in iter: {}".format(
+                    box_ap_stats, it))
+            if FLAGS.use_vdl:
+                train_scalar_map.add_record(current_step, box_ap_stats)
+
+            # 验证集评价
             if FLAGS.eval:
                 results = eval_run(exe, eval_prog, eval_loader,
                                    eval_keys, eval_values)
                 box_ap_stats = eval_results(results, cfg.num_classes)
+                logger.info("eval box op: {}, in iter: {}".format(
+                    box_ap_stats, it))
+
+                ## 记录map窗口
+                if FLAGS.use_vdl:
+                    val_scalar_map.add_record(current_step, box_ap_stats)
 
                 ## 保存最佳模型
                 if box_ap_stats > best_box_ap_list[0]:
                     best_box_ap_list[0] = box_ap_stats
                     best_box_ap_list[1] = it
                     checkpoint.save(exe, train_prog, os.path.join(save_dir, "best_model"))
-                    logger.info("Best eval box ap: {}, in iter: {}".format(
-                        best_box_ap_list[0], best_box_ap_list[1]))
 
-                ## 记录map窗口
-                if FLAGS.use_vdl:
-                    step = it//cfg.snapshot_iter if it % cfg.snapshot_iter == 0 \
-                           else it//cfg.snapshot_iter+1 
-                    scalar_map.add_record(step, box_ap_stats)
+                # 日志
+                logger.info("Best eval box ap: {}, in iter: {}".format(
+                    best_box_ap_list[0], best_box_ap_list[1]))
+
 
     train_loader.reset()
 

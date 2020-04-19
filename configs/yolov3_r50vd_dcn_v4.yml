@@ -11,7 +11,7 @@ use_gpu: True
 max_iters: 40000 # ztodo
 log_iter: 20
 log_smooth_window: 20
-snapshot_iter: 1000
+snapshot_iter: 200
 save_dir: output
 map_type: 11point
 weights: output/yolov3_r50vd_dcn_v3/best_model
