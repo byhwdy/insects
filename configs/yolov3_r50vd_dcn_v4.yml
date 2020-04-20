@@ -1,7 +1,7 @@
 ####
 # 加入防止过拟合的 标签平滑、drop_block、增大正则化率
 ####
-# 最高val map 82.14
+# 最高val map 84.648, test map 86.63, 上升两个点
 ####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
@@ -14,7 +14,7 @@ log_smooth_window: 20
 snapshot_iter: 400
 save_dir: output
 map_type: 11point
-weights: output/yolov3_r50vd_dcn_v4/best_model
+weights: output/yolov3_r50vd_dcn_v4/36000
 num_classes: 7
 use_fine_grained_loss: false
 
