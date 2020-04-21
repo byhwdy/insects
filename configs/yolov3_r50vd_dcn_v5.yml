@@ -1,7 +1,7 @@
 ####
 # 数据增强，加入随机旋转
 ####
-# 
+# 没啥用，还降了，best val map 83
 ####
 architecture: YOLOv3
 pretrain_weights: https://paddlemodels.bj.bcebos.com/object_detection/yolov3_r50vd_dcn_obj365_pretrained_coco.tar
